@@ -1,0 +1,69 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+[[ -z "$TMUX" ]] && exec tmux
+source ~/.bash_prompt
+
+# aliases
+alias ls='ls --color=auto'
+
+# web development aliases
+alias webs='sudo systemctl start httpd && sudo systemctl start mysqld'
+alias webr='sudo systemctl restart httpd && sudo systemctl restart mysqld'
+alias webq='sudo systemctl stop httpd && sudo systemctl stop mysqld'
+
+alias https='sudo systemctl start httpd'
+alias httpr='sudo systemctl restart httpd'
+alias httpq='sudo systemctl stop httpd'
+
+alias mysqls='sudo systemctl start mysqld'
+alias mysqlr='sudo systemctl restart mysqld'
+alias mysqlq='sudo systemctl stop mysqld'
+
+alias mongos='sudo systemctl start mongodb'
+alias mongor='sudo systemctl restart mongodb'
+alias mongoq='sudo systemctl stop mongodb'
+
+# pacman aliases
+# default action        - install package(s)
+alias pac='sudo pacman -S'
+# [u]pdate              - update a(ll) package(s) to the latest version
+alias pacu='sudo pacman -Syu'
+# [r]emove              - remove package(s)
+alias pacr='sudo pacman -Rns'
+# [s]earch              - search for a package using one or more keywords
+alias pacs='pacman -Ss'
+# [i]nfo                - show information about a package
+alias paci='pacman -Si'
+# [l]ist [o]rphans      - list all packages which are orphaned
+alias paclo='pacman -Qdtq'
+# [r]emove [o]rphans    - recursively remove ALL orphaned packages
+alias pacro='sudo pacman -Rsn $(pacman -Qtdq)'
+# [c]lean cache         - delete all not currently installed package files
+alias pacc='sudo pacman -Scc'
+# [l]ist [p]ackages     - list all explicitly installed packages
+alias paclp='pacman -Qe'
+# [l]ist [f]iles        - list all files installed (by a given package)
+alias paclf='pacman -Ql'
+# mark [expl]icit       - mark one or more packages as explicitly installed
+alias pacexpl='sudo pacman -D --asexp'
+# mark [impl]icity      - mark one or more packages as implicitly installed
+alias pacimpl='sudo pacman -D --asdep'
+# [c]lear cache
+alias pacc='sudo pacman -Sc'
+
+# pacaur aliases
+# default action        - install package(s)
+alias aur='pacaur -Sa'
+# [u]pdate              - update a(ll) AUR package(s) to the latest version
+alias auru='pacaur -yu'
+# [s]earch              - search for a package using one or more keywords
+alias aurs='pacaur -s'
+# [i]nfo                - show information about a package
+alias auri='pacaur -i'
+
+# other stuff
+shopt -s checkwinsize

@@ -1,0 +1,101 @@
+! Base16 Default Dark
+! Scheme: Chris Kempson (http://chriskempson.com)
+#define base00 #181818
+#define base01 #282828
+#define base02 #383838
+#define base03 #585858
+#define base04 #b8b8b8
+#define base05 #d8d8d8
+#define base06 #e8e8e8
+#define base07 #f8f8f8
+#define base08 #ab4642
+#define base09 #dc9656
+#define base0A #f7ca88
+#define base0B #a1b56c
+#define base0C #86c1b9
+#define base0D #7cafc2
+#define base0E #ba8baf
+#define base0F #a16946
+
+*foreground:        base05
+
+#ifdef background_opacity
+    *background:    [background_opacity]base00
+#else
+    *background:    base00
+#endif
+
+*cursorColor:       base05
+
+*color0:            base00
+*color8:            base03
+
+*color1:            base08
+*color9:            base08
+
+*color2:            base0B
+*color10:           base0B
+
+*color3:            base0A
+*color11:           base0A
+
+*color4:            base0D
+*color12:           base0D
+
+*color5:            base0E
+*color13:           base0E
+
+*color6:            base0C
+*color14:           base0C
+
+*color7:            base05
+*color15:           base07
+
+! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
+! use 'shell' template to set these if necessary
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06
+
+! Xorg settings
+Xcursor.size: 12
+
+! urxvt config
+URxvt.font: xft:Inconsolata:size=10,xft:Fontawesome:size=10
+URxvt.boldFont: xft:Inconsolata:bold:size=10,xft:Fontawesome:bold:size=10
+URxvt.scrollBar: false
+URxvt.cursorBlink: true
+URxvt.cursorUnderline: true
+URxvt.cursorColor: base03
+URxvt.pointerBlank: true
+URxvt.pointerBlankDelay: 300
+URxvt.secondaryScreen: 1
+URxvt.secondaryScroll: 0
+URxvt.tabbed.tabbar-bg: 0
+!URxvt.letterSpace: -1
+URxvt.perl-ext-common: default,matcher,url-select
+URxvt.match.button: 1
+URxvt.keysym.M-u: perl:url-select:select_next
+URxvt.url-select.launcher: /usr/bin/chromium
+URxvt.url-select.underline: false
+URxvt.colorUL: base0D
+
+! rofi config
+rofi.color-enabled: true
+rofi.color-window: argb:a6000000, argb:a6000000, argb:00000000
+rofi.color-normal: argb:00000000, base05, argb:00000000, base00, base07
+rofi.color-active: argb:00000000, base0B, argb:00000000, base00, base0B
+rofi.color-urgent: argb:00000000, base08, argb:00000000, base00, base08
+rofi.display-drun:
+rofi.display-run: run
+rofi.display-window: win
+rofi.font: Roboto Light 32
+rofi.fullscreen: true
+rofi.line-margin: 8
+rofi.monitor: primary
+rofi.padding: 256
+rofi.separator-style: none
+rofi.terminal: urxvt

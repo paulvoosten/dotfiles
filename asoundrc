@@ -1,0 +1,44 @@
+pcm.dsp {
+    type plug
+    slave.pcm "dmix"
+}
+
+pcm.dmixer {
+    type dmix
+    ipc_key 1024
+    slave {
+        pcm {
+            type hw
+            card PCH
+            rate 192000
+        }
+    }
+}
+
+pcm.dsnooper {
+    type dsnoop
+    ipc_key 1024
+    slave {
+        pcm {
+            type hw
+            card U0x46d0x825
+        }
+    }
+}
+
+pcm.!default {
+    type asym
+    playback.pcm {
+        type plug
+        slave.pcm "dmixer"
+    }
+    capture.pcm {
+        type plug
+        slave.pcm "dsnooper"
+    }
+}
+
+ctl.!default {
+    type hw
+    card PCH
+}

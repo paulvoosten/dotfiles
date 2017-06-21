@@ -1,0 +1,329 @@
+[colors]
+base00 = #181818
+base01 = #282828
+base02 = #383838
+base03 = #585858
+base04 = #b8b8b8
+base05 = #d8d8d8
+base06 = #e8e8e8
+base07 = #f8f8f8
+base08 = #ab4642
+base09 = #dc9656
+base0A = #f7ca88
+base0B = #a1b56c
+base0C = #86c1b9
+base0D = #7cafc2
+base0E = #ba8baf
+base0F = #a16946
+
+[monitors]
+primary = ${env:MONITOR:DP-0}
+secondary = ${env:MONITOR:DP-2}
+
+[global/wm]
+margin = 0
+
+[bar/primary]
+monitor = ${monitors.primary}
+width = 100%
+height = 24
+
+background = ${colors.base00}
+foreground = ${colors.base07}
+
+
+line-color = ${colors.base07}
+overline-size = 2
+underline-size = 1
+
+border-bottom-size = 2
+border-color = ${colors.base02}
+
+padding-left = 0
+padding-right = 1
+
+module-margin-left = 0
+module-margin-right = 2
+
+font-0 = Roboto Condensed:size=11;2
+font-1 = FontAwesome:size=10;2
+font-2 = FontAwesome:size=8;2
+
+modules-left = mpd
+modules-center = bspwm
+modules-right = memory cpu battery volume packages date compton redshift powermenu
+fixed-center = true
+
+tray-position = right
+tray-detached = true
+tray-offset-x = -420
+tray-padding = 0
+
+wm-restack = bspwm
+
+scroll-up = bspwm-deskprev
+scroll-down = bspwm-desknext
+
+[bar/secondary]
+inherit = bar/primary
+monitor = ${monitors.secondary}
+width = 2560
+
+modules-left =
+modules-center = bspwm
+modules-right =
+
+tray-position =
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 30
+
+[module/filesystem]
+type = internal/fs
+interval = 30
+
+mount-0 = /
+mount-1 = /home
+;mount-2 = /mnt/data
+;mount-3 = /mnt/stack
+
+label-mounted = %{F#65737e}%mountpoint%%{F-}: %free%
+label-unmounted = %{F#65737e}%mountpoint%%{F-}: 
+
+[module/bspwm]
+type = internal/bspwm
+
+enable-scroll = false
+
+;ws-icon-0 = home;
+;ws-icon-1 = term;
+;ws-icon-2 = code;
+;ws-icon-3 = docs;
+;ws-icon-4 = gaming;
+;ws-icon-5 = web;
+ws-icon-default = 
+
+inline-mode = true
+
+format = <label-state> <label-mode>
+
+;label-focused = %icon%
+label-focused = 
+label-focused-background = ${colors.base02}
+label-focused-foreground = ${colors.base07}
+label-focused-overline = ${colors.base07}
+label-focused-padding = 2
+
+;label-occupied = %icon%
+label-occupied = 
+label-occupied-foreground = ${colors.base07}
+label-occupied-padding = 2
+
+;label-urgent = %icon%
+label-urgent = %icon%
+label-urgent-background = ${colors.base08}
+label-urgent-foreground = ${colors.base07}
+label-urgent-padding = 2
+
+;label-empty = %icon%
+label-empty = 
+label-empty-padding = 2
+
+label-monocle = M
+;label-monocle-foreground = ${colors.base07}
+label-monocle-background = ${colors.base03}
+
+label-locked = 
+;label-locked-background = ${colors.base03}
+label-locked-foreground = ${colors.base07}
+
+label-private = 
+;label-private-background = ${colors.base03}
+label-private-foreground = ${colors.base07}
+
+label-sticky = 
+;label-sticky-background = ${colors.base03}
+label-sticky-foreground = ${colors.base07}
+
+[module/mpd]
+type = internal/mpd
+format-online = <label-time> <label-song> <icon-prev> <icon-stop> <toggle> <icon-next> <icon-repeat> <icon-random>
+format-offline = <label-offline>
+
+icon-prev = %{T3}%{T-}
+icon-stop = %{T3}%{T-}
+icon-play = %{T3}%{T-}
+icon-pause = %{T3}%{T-}
+icon-next = %{T3}%{T-}
+icon-random = %{T3}%{T-}
+icon-repeat = %{T3}%{T-}
+
+toggle-on-foreground = ${colors.base07}
+toggle-off-foreground = ${colors.base03}
+
+label-offline =
+label-offline-foreground = ${colors.base07}
+
+label-song = %title% - %artist%
+label-song-maxlen = 64
+label-song-ellipsis = true
+label-song-font = 1
+
+label-time = (%elapsed%/%total%)
+label-time-font = 1
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.base03}
+label = %percentage%%
+
+[module/memory]
+type = internal/memory
+interval = 1
+format-prefix = " "
+format-prefix-foreground = ${colors.base03}
+label = %gb_used%
+
+[module/wlan]
+type = internal/network
+interface = net1
+interval = 3.0
+
+format-connected = <ramp-signal> <label-connected>
+label-connected = %essid%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.base07}
+
+ramp-signal-0 = 
+ramp-signal-1 = 
+ramp-signal-2 = 
+ramp-signal-3 = 
+ramp-signal-4 = 
+ramp-signal-foreground = ${colors.base07}
+
+[module/eth]
+type = internal/network
+interface = enp3s0
+interval = 3.0
+
+format-connected-prefix =
+format-connected-prefix-foreground = ${colors.base07}
+label-connected = %local_ip%
+
+format-disconnected =
+;format-disconnected = <label-disconnected>
+;label-disconnected = %ifname% disconnected
+;label-disconnected-foreground = ${colors.base07}
+
+[module/date]
+type = internal/date
+interval = 1
+
+date =
+date-alt = " %A %d-%m-%Y"
+
+time = %H:%M:%S
+time-alt = %H:%M:%S
+
+format-prefix = 
+format-prefix-foreground = ${colors.base03}
+
+label = %date% %time%
+
+[module/volume]
+type = internal/volume
+
+format-volume = <ramp-volume> <label-volume>
+label-volume = %percentage%%
+label-volume-foreground = ${colors.base07}
+
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${colors.base03}
+
+format-muted = <label-muted>
+format-muted-prefix = " "
+format-muted-prefix-foreground = ${colors.base03}
+label-muted = muted
+format-muted-foreground = ${colors.base07}
+
+[module/battery]
+type = internal/battery
+full-at = 99
+
+battery = BAT0
+adapter = ADP1
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-1 = 
+ramp-capacity-2 = 
+ramp-capacity-3 = 
+ramp-capacity-4 = 
+ramp-capacity-foreground = ${colors.base03}
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-foreground = ${colors.base03}
+animation-charging-framerate = 750
+
+[module/powermenu]
+type = custom/menu
+
+label-open = 
+label-open-foreground = ${colors.base07}
+label-close = 
+label-close-foreground = ${colors.base07}
+
+label-separator = "  "
+
+menu-0-0 = 
+menu-0-0-exec = bspc quit
+;menu-0-1 =
+;menu-0-1-exec = systemctl suspend
+;menu-0-2 =
+;menu-0-2-exec = systemctl hibernate
+menu-0-1 = 
+menu-0-1-exec = systemctl reboot
+menu-0-2 = 
+menu-0-2-exec = systemctl poweroff
+
+[module/redshift]
+type = custom/script
+interval = 5
+exec = ~/.config/polybar/modules/redshift.sh
+
+[module/compton]
+type = custom/script
+interval = 5
+exec = ~/.config/polybar/modules/compton.sh
+click-left = ~/.config/polybar/modules/compton-toggle.sh
+
+[module/packages]
+type = custom/script
+interval = 600
+format = <label>
+label = "%output%"
+exec = ~/.config/polybar/modules/packages.sh
+;exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
