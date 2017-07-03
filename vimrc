@@ -7,6 +7,7 @@ Plugin 'php.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Yggdroot/indentline'
+Plugin 'airblade/vim-gitgutter'
 
 call vundle#end()
 filetype plugin indent on
@@ -54,10 +55,14 @@ let g:airline_symbols.linenr = ''
 let g:airline_symbols.notexists = ''
 let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.readonly = ''
-let g:airline_symbols.whitespace = 'Ξ'
+let g:airline_symbols.whitespace = ''
 "let g:airline_section_z =
 
 let g:indentLine_char = '▸'
+
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '*'
+let g:gitgutter_sign_removed = '-'
 
 "let g:netrw_banner = 0
 "let g:netrw_browse_split = 2

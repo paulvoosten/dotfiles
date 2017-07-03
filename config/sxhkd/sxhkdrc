@@ -20,7 +20,7 @@ super + Escape
 
 # reload bspwm config
 super + shift + r
-	/home/admin/.config/bspwm/bspwmrc
+	~/.config/bspwm/bspwmrc
 
 # quit bspwm normally
 super + alt + Escape
@@ -60,6 +60,7 @@ super + ctrl + {x,y,z}
 # focus/swap
 #
 
+
 # focus/swap the node in the given direction
 super + {_,shift + }{h,j,k,l}
     bspc node -{f,s} {west,south,north,east}
@@ -77,11 +78,9 @@ super + bracket{left,right}
     bspc desktop -f {prev,next}
 
 # focus the last node/desktop
-super + {grave,Tab}
-    bspc {node,desktop} -f last
-
-# focus the older or newer node in the focus history
-super + {o,i}
+#super + {w,Tab}
+#    bspc {node,desktop} -f last
+super + {_,shift + }Tab
     bspc wm -h off; \
     bspc node {older,newer} -f; \
     bspc wm -h on
@@ -125,3 +124,47 @@ super + alt + shift + {h,j,k,l}
 # move a floating window
 super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
+
+#
+# increase/decrease gapsize
+#
+super + equal
+    bspc config border_width 2; bspc config window_gap 10
+
+super + shift + g
+    bspc config border_width 0; bspc config window_gap 0
+
+super + plus
+    bspc config window_gap $((`bspc config window_gap` + 5 ))
+
+super + minus
+    bspc config window_gap $((`bspc config window_gap` - 5 ))
+
+#
+# multimedia
+#
+XF86AudioPlay
+    mpc toggle
+
+XF86AudioStop
+    mpc stop
+
+XF86AudioNext
+    mpc next
+
+XF86AudioPrev
+    mpc prev
+
+XF86AudioRaiseVolume
+    mpc volume +5
+
+XF86AudioLowerVolume
+    mpc volume -5
+
+#
+# other
+#
+
+# lock screen
+ctrl + alt + l
+    ~/.config/i3/lock.sh
