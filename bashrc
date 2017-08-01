@@ -6,6 +6,7 @@
 [[ $- != *i* ]] && return
 [[ -z "$TMUX" ]] && exec tmux
 source ~/.bash_prompt
+source ~/.aliases
 
 # other stuff
 shopt -s checkwinsize
