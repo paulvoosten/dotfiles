@@ -3,11 +3,11 @@ filetype off
 
 call vundle#begin()
 
-Plugin 'php.vim'
 Plugin 'chriskempson/base16-vim'
 Plugin 'editorconfig/editorconfig-vim'
 Plugin 'Yggdroot/indentline'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'jistr/vim-nerdtree-tabs'
 
 call vundle#end()
 filetype plugin indent on
@@ -69,5 +69,14 @@ let g:gitgutter_sign_removed = '-'
 "let g:netrw_winsize = 10
 "let g:netrw_altv = 1
 "let g:netrw_liststyle = 3
+
+" keybinds
+execute "set <m-\\>=\e\\"
+noremap <silent> <M-\> :NERDTreeTabsToggle<CR>
+inoremap <silent> <M-\> <ESC>:NERDTreeTabsToggle<CR>
+vnoremap <silent> <M-\> <ESC>:NERDTreeTabsToggle<CR>
+noremap <silent> <C-S> :w<CR>
+inoremap <silent> <C-S> <ESC>:w<CR>
+vnoremap <silent> <C-S> <ESC>:w<CR>
 
 colorscheme base16-default-dark
