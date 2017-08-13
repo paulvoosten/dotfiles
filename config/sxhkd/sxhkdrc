@@ -70,20 +70,12 @@ super + {pb,c,omma,period}
     bspc node -f @{parent,brother,first,second}
 
 # focus the next/previous node
-super + {_,shift + }n
+super + {_,shift + }Tab
     bspc node -f {next,prev}
 
 # focus the next/previous desktop
 super + bracket{left,right}
     bspc desktop -f {prev,next}
-
-# focus the last node/desktop
-#super + {w,Tab}
-#    bspc {node,desktop} -f last
-super + {_,shift + }Tab
-    bspc wm -h off; \
-    bspc node {older,newer} -f; \
-    bspc wm -h on
 
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
