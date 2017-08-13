@@ -1,7 +1,4 @@
-#
-# ~/.bashrc
-#
-
+#! env /bin/sh
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 #[[ -z "$TMUX" ]] && exec tmux
@@ -19,3 +16,4 @@ source ~/.aliases
 # Other stuff
 shopt -s checkwinsize
 stty -ixon
+

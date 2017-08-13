@@ -98,4 +98,4 @@ rofi.line-margin: 8
 rofi.monitor: primary
 rofi.padding: 256
 rofi.separator-style: none
-rofi.terminal: urxvt
+rofi.terminal: termite
