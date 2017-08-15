@@ -33,10 +33,10 @@ alias paci='pacman -Si'
 alias paclo='pacman -Qdtq'
 # [r]emove [o]rphans    - recursively remove ALL orphaned packages
 alias pacro='sudo pacman -Rsn $(pacman -Qtdq)'
-# [c]lean cache         - delete all not currently installed package files
-alias pacc='sudo pacman -Scc'
 # [l]ist [p]ackages     - list all explicitly installed packages
-alias paclp='pacman -Qe'
+alias paclp='pacman -Qs'
+# [l]ist [i]nstalled    - list all explicitly installed packages
+alias pacli='pacman -Qe'
 # [l]ist [f]iles        - list all files installed (by a given package)
 alias paclf='pacman -Ql'
 # mark [expl]icit       - mark one or more packages as explicitly installed
@@ -44,7 +44,7 @@ alias pacexpl='sudo pacman -D --asexp'
 # mark [impl]icity      - mark one or more packages as implicitly installed
 alias pacimpl='sudo pacman -D --asdep'
 # [c]lear cache
-alias pacc='sudo pacman -Sc'
+alias pacc='paccache -ru'
 
 # pacaur aliases
 # default action        - install package(s)
