@@ -181,14 +181,12 @@ label-time-font = 1
 
 [module/cpu]
 type = internal/cpu
-interval = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.base03}
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
-interval = 1
 format-prefix = " "
 format-prefix-foreground = ${colors.base03}
 label = %gb_used%
@@ -241,6 +239,10 @@ format-prefix = 
 format-prefix-foreground = ${colors.base03}
 
 label = %date% %time%
+
+[module/calendar]
+type = internal/menu
+
 
 [module/volume]
 type = internal/volume
