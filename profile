@@ -8,7 +8,7 @@ export BSPWM_STATE="${XDG_CACHE_HOME}/bspwm/state.json"
 export EDITOR="vim"
 
 # monitors
-case $HOSTNAME in
+case "${HOSTNAME}" in
     arch-home)
         PRIMARY_MONITOR="DP-0"
         SECONDARY_MONITOR="DP-2"
@@ -23,7 +23,7 @@ export PRIMARY_MONITOR
 export SECONDARY_MONITOR
 
 # colors
-case $THEME in
+case "${THEME}" in
     *)
         COLORS_BASE00="#181818"
         COLORS_BASE01="#282828"
