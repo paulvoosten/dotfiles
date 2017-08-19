@@ -215,7 +215,7 @@ bar-used-foreground-3 = ${colors.base08}
 bar-used-indicator = |
 bar-used-fill = |
 bar-used-empty = |
-bar-used-empty-foreground = ${colors.base02}
+bar-used-empty-foreground = ${colors.base03}
 
 [module/wlan]
 type = internal/network
