@@ -1,24 +1,24 @@
 [colors]
-base00 = #181818
-base01 = #282828
-base02 = #383838
-base03 = #585858
-base04 = #b8b8b8
-base05 = #d8d8d8
-base06 = #e8e8e8
-base07 = #f8f8f8
-base08 = #ab4642
-base09 = #dc9656
-base0A = #f7ca88
-base0B = #a1b56c
-base0C = #86c1b9
-base0D = #7cafc2
-base0E = #ba8baf
-base0F = #a16946
+base00 = ${env:COLORS_BASE00}
+base01 = ${env:COLORS_BASE01}
+base02 = ${env:COLORS_BASE02}
+base03 = ${env:COLORS_BASE03}
+base04 = ${env:COLORS_BASE04}
+base05 = ${env:COLORS_BASE05}
+base06 = ${env:COLORS_BASE06}
+base07 = ${env:COLORS_BASE07}
+base08 = ${env:COLORS_BASE08}
+base09 = ${env:COLORS_BASE09}
+base0A = ${env:COLORS_BASE0A}
+base0B = ${env:COLORS_BASE0B}
+base0C = ${env:COLORS_BASE0C}
+base0D = ${env:COLORS_BASE0D}
+base0E = ${env:COLORS_BASE0E}
+base0F = ${env:COLORS_BASE0F}
 
 [monitors]
-primary = ${env:MONITOR:DP-0}
-secondary = ${env:MONITOR:DP-2}
+primary = ${env:PRIMARY_MONITOR}
+secondary = ${env:SECONDARY_MONITOR}
 
 [settings]
 screenchange-reload = true
