@@ -4,5 +4,6 @@ compton -b &
 xautolock -time 15 -locker '~/.config/i3/lock.sh' &
 xsetroot -cursor_name left_ptr &
 setxkbmap -layout 'us(intl)' &
+caffeine-ng &
 redshift &
 sxhkd &

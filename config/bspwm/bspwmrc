@@ -1,6 +1,16 @@
 #! /bin/sh
-bspc monitor DP-0 -d 1 2 3 4 5
-bspc monitor DP-2 -d 6 7 8 9 10
+case $(hostname -s) in
+    arch-home)
+        bspc monitor DP-0 -d 1 2 3 4 5
+        bspc monitor DP-2 -d 6 7 8 9 10
+        ;;
+    arch-adcalls)
+        bspc monitor HDMI-1 -d 1 2 3 4 5
+        bspc monitor DVI-1 -d 6 7 8 9 10
+        ;;
+esac
+#bspc monitor DP-0 -d 1 2 3 4 5
+#bspc monitor DP-2 -d 6 7 8 9 10
 
 bspc config border_width 2
 bspc config window_gap 10
