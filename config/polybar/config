@@ -20,13 +20,24 @@ base0F = #a16946
 primary = ${env:MONITOR:DP-0}
 secondary = ${env:MONITOR:DP-2}
 
+[settings]
+screenchange-reload = true
+;compositing-background = xor
+;compositing-background = screen
+;compositing-foreground = source
+;compositing-border = over
+
 [global/wm]
-margin = 0
+margin-bottom = 0
+margin-top = 0
 
 [bar/primary]
 monitor = ${monitors.primary}
 width = 100%
 height = 24
+
+;offset-x = 1%
+;offset-y = 5
 
 background = ${colors.base00}
 foreground = ${colors.base07}
@@ -40,34 +51,34 @@ padding = 4
 module-margin = 2
 
 font-0 = Roboto Condensed:size=11;2
-font-1 = FontAwesome:size=10;3
+font-1 = FontAwesome:size=10;2
 font-2 = FontAwesome:size=8;2
+font-3 = Unifont:size=10;2
 
 modules-left = mpd
-modules-center = bspwm
-modules-right = memory cpu battery volume packages date compton redshift powermenu
+modules-center =
+modules-right = battery volume packages date compton redshift powermenu
 fixed-center = true
-
-tray-position = right
-tray-detached = true
-tray-offset-x = -420
-tray-padding = 0
 
 wm-restack = bspwm
 
-scroll-up = bspwm-deskprev
-scroll-down = bspwm-desknext
+tray-position =
+tray-detached = true
+tray-padding = 4
 
 [bar/secondary]
 inherit = bar/primary
-monitor = ${monitors.secondary}
-width = 2560
+
+bottom = true
+
+border-bottom-size = 0
+border-top-size = 2
 
 modules-left =
 modules-center = bspwm
-modules-right =
+modules-right = cpu memory
 
-tray-position =
+tray-position = left
 
 [module/xwindow]
 type = internal/xwindow
@@ -89,107 +100,122 @@ label-unmounted = %{F#585858}%mountpoint%%{F-} 
 [module/bspwm]
 type = internal/bspwm
 
-enable-scroll = false
-
-;ws-icon-0 = home;
-;ws-icon-1 = term;
-;ws-icon-2 = code;
-;ws-icon-3 = docs;
-;ws-icon-4 = gaming;
-;ws-icon-5 = web;
-;ws-icon-default = 
-ws-icon-default = 
-
+reverse-scroll = false
 inline-mode = true
+pin-workspaces = false
+
+;ws-icon-1 = 1;
+;ws-icon-2 = 2;
+;ws-icon-3 = 3;
+;ws-icon-4 = 4;
+;ws-icon-5 = 5;
+ws-icon-default = 
+;ws-icon-default = 
 
 format = <label-state> <label-mode>
 
 label-focused = %icon%
 ;label-focused = 
-label-focused-background = ${colors.base02}
-label-focused-foreground = ${colors.base07}
-label-focused-overline = ${colors.base07}
-label-focused-padding = 2
+label-focused-padding = 1
 
 label-occupied = %icon%
-;label-occupied = 
-label-occupied-foreground = ${colors.base07}
-label-occupied-padding = 2
+;label-occupied = 
+label-occupied-foreground = ${colors.base02}
+label-occupied-padding = 1
 
 label-urgent = %icon%
-;label-urgent = 
-label-urgent-background = ${colors.base08}
-label-urgent-foreground = ${colors.base07}
-label-urgent-padding = 2
+;label-urgent = 
+label-urgent-foreground = ${colors.base08}
+label-urgent-padding = 1
 
-;label-empty = %icon%
-label-empty = 
-label-empty-padding = 2
+label-empty = %icon%
+;label-empty = 
+label-empty-foreground = ${colors.base0B}
+label-empty-padding = 1
+
+label-dimmed-focused-foreground = ${colors.base04}
 
 label-monocle = M
-label-monocle-background = ${colors.base02}
-label-monocle-foreground = ${colors.base07}
-label-monocle-overline = ${colors.base07}
-label-monocle-padding-right = 1
-
 label-locked = 
-label-locked-background = ${colors.base02}
-label-locked-foreground = ${colors.base07}
-label-locked-overline = ${colors.base07}
-label-locked-padding-right = 1
-
 label-private = 
-label-private-background = ${colors.base02}
-label-private-foreground = ${colors.base07}
-label-private-overline = ${colors.base07}
-label-private-padding-right = 1
-
 label-sticky = 
-label-sticky-background = ${colors.base02}
-label-sticky-foreground = ${colors.base07}
-label-sticky-overline = ${colors.base07}
-label-sticky-padding-right = 1
 
 [module/mpd]
 type = internal/mpd
 format-online = <icon-prev> <icon-stop> <toggle> <icon-next> <icon-repeat> <icon-random> <label-time> <label-song>
-format-offline = <label-offline>
+format-online-spacing = 1
+format-offline =
 
-icon-prev = " %{T3}%{T-} "
-icon-seekb = " %{T3}%{T-} "
-icon-stop = " %{T3}%{T-} "
-icon-play = " %{T3}%{T-} "
-icon-pause = " %{T3}%{T-} "
-icon-seekf = " %{T3}%{T-} "
-icon-next = " %{T3}%{T-} "
-icon-random = " %{T3}%{T-} "
-icon-repeat = " %{T3}%{T-} "
+icon-prev = 
+icon-prev-font = 3
+icon-seekb = 
+icon-seekb-font = 3
+icon-stop = 
+icon-stop-font = 3
+icon-play = 
+icon-play-font = 3
+icon-pause = 
+icon-pause-font = 3
+icon-seekf = 
+icon-seekf-font = 3
+icon-next = 
+icon-next-font = 3
+icon-random = 
+icon-random-font = 3
+icon-repeat = 
+icon-repeat-font = 3
 
-toggle-on-foreground = ${colors.base07}
 toggle-off-foreground = ${colors.base03}
 
-label-offline =
-label-offline-foreground = ${colors.base07}
-
-label-song = %title% - %artist%
+label-song = %artist% => %title%
 label-song-maxlen = 64
 label-song-ellipsis = true
-label-song-font = 1
 
 label-time = %elapsed% / %total%
-label-time-font = 1
 
 [module/cpu]
 type = internal/cpu
-format-prefix = " "
-format-prefix-foreground = ${colors.base03}
-label = %percentage%%
+
+format = <label> <ramp-coreload>
+
+label = CPU
+label-foreground = ${colors.base03}
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-foreground = ${colors.base0B}
+ramp-coreload-1 = ▂
+ramp-coreload-1-foreground = ${colors.base0B}
+ramp-coreload-2 = ▃
+ramp-coreload-2-foreground = ${colors.base0A}
+ramp-coreload-3 = ▄
+ramp-coreload-3-foreground = ${colors.base0A}
+ramp-coreload-4 = ▅
+ramp-coreload-4-foreground = ${colors.base09}
+ramp-coreload-5 = ▆
+ramp-coreload-5-foreground = ${colors.base09}
+ramp-coreload-6 = ▇
+ramp-coreload-6-foreground = ${colors.base08}
+ramp-coreload-7 = █
+ramp-coreload-7-foreground = ${colors.base08}
 
 [module/memory]
 type = internal/memory
-format-prefix = " "
-format-prefix-foreground = ${colors.base03}
-label = %gb_used%
+
+format = <label> <bar-used>
+
+label = RAM
+label-foreground = ${colors.base03}
+
+bar-used-width = 50
+bar-used-gradient = true
+bar-used-foreground-0 = ${colors.base0B}
+bar-used-foreground-1 = ${colors.base0A}
+bar-used-foreground-2 = ${colors.base09}
+bar-used-foreground-3 = ${colors.base08}
+bar-used-indicator = |
+bar-used-fill = |
+bar-used-empty = |
+bar-used-empty-foreground = ${colors.base02}
 
 [module/wlan]
 type = internal/network
@@ -202,14 +228,12 @@ label-connected = %essid%
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.base07}
 
 ramp-signal-0 = 
 ramp-signal-1 = 
 ramp-signal-2 = 
 ramp-signal-3 = 
 ramp-signal-4 = 
-ramp-signal-foreground = ${colors.base07}
 
 [module/eth]
 type = internal/network
@@ -217,13 +241,11 @@ interface = enp3s0
 interval = 3.0
 
 format-connected-prefix =
-format-connected-prefix-foreground = ${colors.base07}
 label-connected = %local_ip%
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;label-disconnected = %ifname% disconnected
-;label-disconnected-foreground = ${colors.base07}
 
 [module/date]
 type = internal/date
@@ -240,16 +262,11 @@ format-prefix-foreground = ${colors.base03}
 
 label = %date% %time%
 
-[module/calendar]
-type = internal/menu
-
-
 [module/volume]
 type = internal/volume
 
 format-volume = <ramp-volume> <label-volume>
 label-volume = %percentage%%
-label-volume-foreground = ${colors.base07}
 
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -260,7 +277,6 @@ format-muted = <label-muted>
 format-muted-prefix = " "
 format-muted-prefix-foreground = ${colors.base03}
 label-muted = muted
-format-muted-foreground = ${colors.base07}
 
 [module/battery]
 type = internal/battery
@@ -292,11 +308,8 @@ animation-charging-framerate = 750
 type = custom/menu
 
 label-open = 
-label-open-foreground = ${colors.base07}
 label-close = 
-label-close-foreground = ${colors.base07}
-
-label-separator = "  "
+label-separator = " "
 
 menu-0-0 = 
 menu-0-0-exec = bspc quit
@@ -324,13 +337,8 @@ click-left = ~/.config/polybar/modules/compton-toggle.sh
 type = custom/script
 interval = 600
 format = <label>
-label = "%output%"
+format-prefix = " "
+format-prefix-foreground = ${colors.base03}
+label = %output%
 exec = ~/.config/polybar/modules/packages.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
-
-[settings]
-screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over

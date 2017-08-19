@@ -1,5 +1,4 @@
 #! /bin/sh
-
 wmname LG3D &
 compton -b &
 xautolock -time 15 -locker '~/.config/i3/lock.sh' &
