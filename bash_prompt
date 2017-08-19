@@ -78,37 +78,38 @@ git_prompt() {
     fi
 }
 
-# change color of username when root
-if [[ "$USER" == "root" ]]; then
-    user_color="${color9}"
-else
-    user_color="${color15}"
-fi;
+bash_prompt() {
+    # change color of username when root
+    if [[ "${USER}" == "root" ]]; then
+        user_color="${color9}"
+    else
+        user_color="${color15}"
+    fi;
 
-# change color if connected with SSH
-if [[ "${SSH_TTY}" ]]; then
-    host_color="${color9}"
-else
-    host_color="${color15}"
-fi
+    # change color if connected with SSH
+    if [[ "${SSH_TTY}" ]]; then
+        host_color="${color9}"
+    else
+        host_color="${color15}"
+    fi
 
-# todo fix status color so it changes based on last executed command (red == failed)
-if [[ $? == 0 ]]; then
-    status_color="${color10}"
-else
-    status_color="${color9}"
-fi
+    # todo fix status color so it changes based on last executed command (red == failed)
+    if [[ $? -eq 0 ]]; then
+        status_color="${color10}"
+    else
+        status_color="${color9}"
+    fi
 
-# status_color="\$(if [[ \$? == 0 ]]; then echo \"${color10}\"; else echo \"${color9}\"; fi)"
+    #status_color="\$(if [[ \$? == 0 ]];then echo \"${color10}\";else echo \"${color9}\";fi)"
 
-PS1="${user_color}\u"
-PS1+="${color10}@"
-PS1+="${host_color}\h:"
-PS1+="${color10} \w"
-PS1+="\$(git_prompt \"${color15}  ${color11}\" \"${color12}\")\n"
-PS1+="${status_color}$ ${reset}"
+    PS1="${user_color}\u"
+    PS1+="${color10}@"
+    PS1+="${host_color}\h:"
+    PS1+="${color10} \w"
+    PS1+="\$(git_prompt \"${color15}  ${color11}\" \"${color12}\")\n"
+    PS1+="${status_color}$ ${reset}"
 
-PS2="${status_color} ${reset}"
+    PS2="${status_color} ${reset}"
+}
 
-export PS1
-export PS2
+PROMPT_COMMAND=bash_prompt
