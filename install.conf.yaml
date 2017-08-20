@@ -1,0 +1,35 @@
+- defaults:
+    link:
+        create: true
+        force: true
+        relink: true
+
+- clean: ['~']
+
+- link:
+    ~/.aliases: 'aliases'
+    ~/.asoundrc: 'asoundrc'
+    ~/.bash_profile: 'bash_profile'
+    ~/.bash_prompt: 'bash_prompt'
+    ~/.bashrc: 'bashrc'
+    ~/.config/bspwm: 'config/bspwm'
+    ~/.config/compton.conf: 'config/compton.conf'
+    ~/.config/gtk-3.0: 'config/gtk-3.0'
+    ~/.config/i3: 'config/i3'
+    ~/.config/polybar: 'config/polybar'
+    ~/.config/redshift.conf: 'config/redshift.conf'
+    ~/.config/sxhkd: 'config/sxhkd'
+    ~/.config/termite: 'config/termite'
+    ~/.gtkrc-2.0: 'gtkrc-2.0'
+    ~/.icons: 'icons'
+    ~/.profile: 'profile'
+    ~/.themes: 'themes'
+    ~/.vimrc: 'vimrc'
+    ~/.xinitrc: 'xinitrc'
+    ~/.xprofile: 'xprofile'
+    ~/.Xresources: 'Xresources'
+    ~/.xserverrc: 'xserverrc'
+    ~/.xsession: 'xsession'
+
+- shell:
+    - [echo Testing shit > ~/test.txt, Creating test.txt]
