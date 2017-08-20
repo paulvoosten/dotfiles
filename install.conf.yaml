@@ -20,6 +20,7 @@
     ~/.config/redshift.conf: 'config/redshift.conf'
     ~/.config/sxhkd: 'config/sxhkd'
     ~/.config/termite: 'config/termite'
+    ~/.config/user-dirs.dirs: 'config/user-dirs.dirs'
     ~/.gtkrc-2.0: 'gtkrc-2.0'
     ~/.icons: 'icons'
     ~/.profile: 'profile'
@@ -32,4 +33,9 @@
     ~/.xsession: 'xsession'
 
 - shell:
-    - [echo Testing shit > ~/test.txt, Creating test.txt]
+    - [mkdir -p ~/desktop, Creating desktop folder]
+    - [mkdir -p ~/documents, Creating documents folder]
+    - [mkdir -p ~/downloads, Creating downloads folder]
+    - [mkdir -p ~/music, Creating music folder]
+    - [mkdir -p ~/pictures, Creating pictures folder]
+    - [mkdir -p ~/videos, Creating videos folder]
