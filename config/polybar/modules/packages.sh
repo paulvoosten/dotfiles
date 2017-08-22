@@ -5,4 +5,6 @@ check=$((pac + aur))
 
 if [[ "$check" != "0" ]]; then
     echo "$pac $aur"
+else
+    echo 'Up to date'
 fi
