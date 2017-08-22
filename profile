@@ -15,7 +15,7 @@ case "${HOSTNAME}" in
         ;;
     'arch-adcalls')
         PRIMARY_MONITOR='HDMI-1'
-        SECONDARY_MONITOR='DVI-1'
+        SECONDARY_MONITOR='VGA-1'
         ;;
 esac
 
