@@ -25,6 +25,7 @@
     ~/.icons: 'icons'
     ~/.profile: 'profile'
     ~/.themes: 'themes'
+    ~/.vim: 'vim'
     ~/.vimrc: 'vimrc'
     ~/.xinitrc: 'xinitrc'
     ~/.xprofile: 'xprofile'
@@ -39,3 +40,4 @@
     - [mkdir -p ~/music, Creating music folder]
     - [mkdir -p ~/pictures, Creating pictures folder]
     - [mkdir -p ~/videos, Creating videos folder]
+    - [git submodule update --init --recursive, Updating git submodules]

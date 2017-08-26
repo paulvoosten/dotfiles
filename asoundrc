@@ -7,11 +7,17 @@ pcm.dmixer {
     type dmix
     ipc_key 1024
     slave {
+#        pcm {
+#            type hw
+#            card PCH
+#            rate 192000
+#        }
         pcm {
             type hw
-            card PCH
-            rate 192000
+            card DAC
+            rate 96000
         }
+
     }
 }
 
@@ -40,5 +46,5 @@ pcm.!default {
 
 ctl.!default {
     type hw
-    card PCH
+    card DAC
 }

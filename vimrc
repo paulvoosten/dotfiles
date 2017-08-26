@@ -1,19 +1,13 @@
-set nocompatible
-filetype off
-
-call vundle#begin()
-
-Plugin 'chriskempson/base16-vim'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'Yggdroot/indentline'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'jistr/vim-nerdtree-tabs'
-
-call vundle#end()
-filetype plugin indent on
+if has('vim_starting')
+    runtime! bundle/pathogen/autoload/pathogen.vim
+    silent! execute pathogen#infect()
+endif
 
 syntax on
+filetype plugin indent on
 
+set nocompatible
+set sessionoptions-=options
 set clipboard=unnamed
 set path+=**
 set wmh=0
