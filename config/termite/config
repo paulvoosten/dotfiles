@@ -3,7 +3,7 @@ font = Fontawesome 10
 font = Inconsolata 10
 clickable_url = true
 cursor_blink = on
-cursor_shape = ibeam
+cursor_shape = underline
 
 [colors]
 foreground      = #d8d8d8
