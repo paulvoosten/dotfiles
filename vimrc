@@ -65,7 +65,9 @@ let g:gitgutter_sign_removed = '-'
 "let g:netrw_liststyle = 3
 
 " keybinds
-execute "set <M-\\>=\e\\"
+if !has('nvim')
+    execute "set <M-\\>=\e\\"
+endif
 noremap <silent> <M-\> :NERDTreeTabsToggle<CR>
 inoremap <silent> <M-\> <ESC>:NERDTreeTabsToggle<CR>
 vnoremap <silent> <M-\> <ESC>:NERDTreeTabsToggle<CR>

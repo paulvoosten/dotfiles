@@ -16,16 +16,18 @@
     ~/.config/compton.conf: 'config/compton.conf'
     ~/.config/gtk-3.0: 'config/gtk-3.0'
     ~/.config/i3: 'config/i3'
+    ~/.config/nvim: 'config/nvim'
     ~/.config/polybar: 'config/polybar'
     ~/.config/redshift.conf: 'config/redshift.conf'
     ~/.config/sxhkd: 'config/sxhkd'
     ~/.config/termite: 'config/termite'
     ~/.config/user-dirs.dirs: 'config/user-dirs.dirs'
+    ~/.fehbg: 'feh'
     ~/.gtkrc-2.0: 'gtkrc-2.0'
     ~/.icons: 'icons'
+    ~/pictures: 'pictures'
     ~/.profile: 'profile'
     ~/.themes: 'themes'
-    ~/.vim: 'vim'
     ~/.vimrc: 'vimrc'
     ~/.xinitrc: 'xinitrc'
     ~/.xprofile: 'xprofile'
@@ -38,6 +40,6 @@
     - [mkdir -p ~/documents, Creating documents folder]
     - [mkdir -p ~/downloads, Creating downloads folder]
     - [mkdir -p ~/music, Creating music folder]
-    - [mkdir -p ~/pictures, Creating pictures folder]
+    - [mkdir -p ~/pictures/screenshots, Creating screenshots folder]
     - [mkdir -p ~/videos, Creating videos folder]
     - [git submodule update --init --recursive, Updating git submodules]
