@@ -19,3 +19,9 @@
 [submodule "vim/bundle/gitgutter"]
 	path = vim/bundle/gitgutter
 	url = https://github.com/airblade/vim-gitgutter.git
+[submodule "vim/bundle/phpcd"]
+	path = vim/bundle/phpcd
+	url = https://github.com/lvht/phpcd.vim.git
+[submodule "vim/bundle/syntastic"]
+	path = vim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic.git

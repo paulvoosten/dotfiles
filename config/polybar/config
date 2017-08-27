@@ -43,7 +43,7 @@ background = ${colors.base00}
 foreground = ${colors.base07}
 
 border-bottom-size = 2
-border-color = ${colors.base02}
+border-color = ${colors.base03}
 
 line-size = 2
 
