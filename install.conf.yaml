@@ -29,6 +29,7 @@
     ~/pictures: 'pictures'
     ~/.profile: 'profile'
     ~/.themes: 'themes'
+    ~/.vim: 'vim'
     ~/.vimrc: 'vimrc'
     ~/.xinitrc: 'xinitrc'
     ~/.xprofile: 'xprofile'
