@@ -95,7 +95,7 @@ rofi.display-window: win
 rofi.font: Roboto Light 32
 rofi.fullscreen: true
 rofi.line-margin: 8
-!rofi.monitor: primary
+rofi.monitor: primary
 rofi.padding: 256
 rofi.separator-style: none
 rofi.terminal: termite
