@@ -31,7 +31,7 @@ screenchange-reload = true
 margin-bottom = 0
 margin-top = 0
 
-[bar/primary]
+[bar/top]
 monitor = ${monitors.primary}
 width = 100%
 height = 24
@@ -66,8 +66,8 @@ tray-position =
 tray-detached = true
 tray-padding = 4
 
-[bar/secondary]
-inherit = bar/primary
+[bar/bottom]
+inherit = bar/top
 
 bottom = true
 

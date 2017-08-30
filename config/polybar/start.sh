@@ -6,5 +6,5 @@ killall -q polybar
 while pgrep -x polybar >/dev/null; do sleep 1; done
 
 # launch bars
-polybar -r primary &
-polybar -r secondary &
+polybar -r top &
+polybar -r bottom &
