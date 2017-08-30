@@ -14,8 +14,8 @@ pcm.dmixer {
 #        }
         pcm {
             type hw
-            card DAC
-            rate 96000
+            card Generic
+            rate 192000
         }
 
     }
@@ -46,5 +46,5 @@ pcm.!default {
 
 ctl.!default {
     type hw
-    card DAC
+    card Generic
 }
