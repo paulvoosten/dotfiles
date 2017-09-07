@@ -10,17 +10,17 @@ export EDITOR='nvim'
 # monitors
 case "${HOSTNAME}" in
     'arch-home')
-        PRIMARY_MONITOR='DP-0'
-        SECONDARY_MONITOR='DP-2'
+        MONITORS_PRIMARY='DP-0'
+        MONITORS_SECONDARY='DP-2'
         ;;
     'arch-adcalls')
-        PRIMARY_MONITOR='HDMI-1'
-        SECONDARY_MONITOR='VGA-1'
+        MONITORS_PRIMARY='HDMI-1'
+        MONITORS_SECONDARY='VGA-1'
         ;;
 esac
 
-export PRIMARY_MONITOR
-export SECONDARY_MONITOR
+export MONITORS_PRIMARY
+export MONITORS_SECONDARY
 
 # colors
 case "${THEME}" in

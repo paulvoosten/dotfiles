@@ -17,8 +17,8 @@ base0E = ${env:COLORS_BASE0E}
 base0F = ${env:COLORS_BASE0F}
 
 [monitors]
-primary = ${env:PRIMARY_MONITOR}
-secondary = ${env:SECONDARY_MONITOR}
+primary = ${env:MONITORS_PRIMARY}
+secondary = ${env:MONITORS_SECONDARY}
 
 [settings]
 screenchange-reload = true
