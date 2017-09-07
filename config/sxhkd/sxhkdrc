@@ -25,7 +25,7 @@ super + Escape
 
 # reload bspwm config
 super + shift + r
-	~/.config/bspwm/bspwmrc
+    ~/.config/bspwm/bspwmrc
 
 # quit bspwm normally
 super + alt + Escape
@@ -52,7 +52,7 @@ super + g
 #
 
 # set the window state
-super + {s,f}
+super + {_,shift + }f
     state={floating,fullscreen}; \
     bspc query -N -n "focused.$\{state\}" && state=tiled; \
     bspc node -t "$state"

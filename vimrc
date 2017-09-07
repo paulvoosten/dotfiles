@@ -21,6 +21,9 @@ set ignorecase
 set noerrorbells
 set encoding=utf-8
 set t_Co=256
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 if exists('&relativenumber')
     set relativenumber
@@ -35,10 +38,12 @@ let g:base16colorspace = 256
 " airline configuration
 let g:airline_theme = 'base16_default'
 let g:airline_powerline_fonts = 1
-let g:airline_left_sep = ''
+let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
+"let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
+"let g:airline_right_alt_sep = ''
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
@@ -52,12 +57,20 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.whitespace = ''
 "let g:airline_section_z =
 
+" indentLine configuration
 let g:indentLine_char = '▸'
 
+" gitgutter configuration
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '*'
 let g:gitgutter_sign_removed = '-'
 
+" syntastic configuration
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" netrw configuration
 "let g:netrw_banner = 0
 "let g:netrw_browse_split = 2
 "let g:netrw_winsize = 10
@@ -68,11 +81,12 @@ let g:gitgutter_sign_removed = '-'
 if !has('nvim')
     execute "set <M-\\>=\e\\"
 endif
-noremap <silent> <M-\> :NERDTreeTabsToggle<CR>
+
+nnoremap <silent> <M-\> :NERDTreeTabsToggle<CR>
 inoremap <silent> <M-\> <ESC>:NERDTreeTabsToggle<CR>
 vnoremap <silent> <M-\> <ESC>:NERDTreeTabsToggle<CR>
-noremap <silent> <C-S> :w<CR>
-inoremap <silent> <C-S> <ESC>:w<CR>
-vnoremap <silent> <C-S> <ESC>:w<CR>
+nnoremap <silent> <C-s> :w<CR>
+inoremap <silent> <C-s> <ESC>:w<CR>
+vnoremap <silent> <C-s> <ESC>:w<CR>
 
 colorscheme base16-default-dark
