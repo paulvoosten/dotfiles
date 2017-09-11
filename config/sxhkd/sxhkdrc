@@ -58,8 +58,8 @@ super + {_,shift + }f
     bspc node -t "$state"
 
 # set the node flags
-super + ctrl + {x,y,z}
-    bspc node -g {locked,sticky,private}
+super + ctrl + {l,p,s}
+    bspc node -g {locked,private,sticky}
 
 #
 # focus/swap

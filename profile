@@ -24,6 +24,24 @@ export MONITORS_SECONDARY
 
 # colors
 case "${THEME}" in
+    'base16-ocean')
+        COLORS_BASE00='#2B303B'
+        COLORS_BASE01='#343D46'
+        COLORS_BASE02='#4F5B66'
+        COLORS_BASE03='#65737E'
+        COLORS_BASE04='#A7ADBA'
+        COLORS_BASE05='#C0C5CE'
+        COLORS_BASE06='#DFE1E8'
+        COLORS_BASE07='#EFF1F5'
+        COLORS_BASE08='#BF616A'
+        COLORS_BASE09='#D08770'
+        COLORS_BASE0A='#EBCB8B'
+        COLORS_BASE0B='#A3BE8C'
+        COLORS_BASE0C='#96B5B4'
+        COLORS_BASE0D='#8FA1B3'
+        COLORS_BASE0E='#B48EAD'
+        COLORS_BASE0F='#AB7967'
+        ;;
     *)
         COLORS_BASE00='#181818'
         COLORS_BASE01='#282828'
