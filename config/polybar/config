@@ -116,35 +116,33 @@ format = <label-state> <label-mode>
 
 label-focused = %icon%
 ;label-focused = 
-label-focused-background = ${colors.base02}
 label-focused-padding = 1
 
 label-occupied = %icon%
 ;label-occupied = 
+label-occupied-font = 3
 label-occupied-padding = 1
 
 label-urgent = %icon%
 ;label-urgent = 
+label-urgent-font = 3
 label-urgent-foreground = ${colors.base08}
 label-urgent-padding = 1
 
 ;label-empty = %icon%
 label-empty = 
+label-empty-font = 3
 label-empty-padding = 1
 
-label-dimmed-focused-background = ${colors.base00}
+label-dimmed-focused-font = 3
 
 label-monocle = M
-label-monocle-background = ${colors.base02}
 label-monocle-padding-right = 1
 label-locked = 
-label-locked-background = ${colors.base02}
 label-locked-padding-right = 1
 label-private = 
-label-private-background = ${colors.base02}
 label-private-padding-right = 1
 label-sticky = 
-label-sticky-background = ${colors.base02}
 label-sticky-padding-right = 1
 
 [module/mpd]
