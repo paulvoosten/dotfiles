@@ -86,7 +86,7 @@ URxvt.colorUL: BASE0D
 ! rofi config
 rofi.color-enabled: true
 rofi.display-drun: menu
-rofi.font: Roboto Light 16
+rofi.font: Roboto Condensed 16
 rofi.lines: 4
 rofi.width: 20
 rofi.monitor: primary
