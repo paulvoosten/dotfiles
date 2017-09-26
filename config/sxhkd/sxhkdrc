@@ -145,22 +145,28 @@ super + minus
 # multimedia
 #
 XF86AudioPlay
-    mpc toggle
+    playerctl play-pause
+#    mpc toggle
 
 XF86AudioStop
-    mpc stop
+    playerctl stop
+#    mpc stop
 
 XF86AudioNext
-    mpc next
+    playerctl next
+#    mpc next
 
 XF86AudioPrev
-    mpc prev
+    playerctl previous
+#    mpc prev
 
 XF86AudioRaiseVolume
-    mpc volume +5
+    playerctl volume 0.05+
+#    mpc volume +5
 
 XF86AudioLowerVolume
-    mpc volume -5
+    playerctl volume 0.05-
+#    mpc volume -5
 
 #
 # other

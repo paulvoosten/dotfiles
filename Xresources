@@ -63,34 +63,14 @@
 ! Xorg settings
 Xcursor.size: 12
 
-! urxvt config
-URxvt.font: xft:Inconsolata:size=10,xft:Fontawesome:size=10
-URxvt.boldFont: xft:Inconsolata:bold:size=10,xft:Fontawesome:bold:size=10
-URxvt.scrollBar: false
-URxvt.cursorBlink: true
-URxvt.cursorUnderline: true
-URxvt.cursorColor: BASE03
-URxvt.pointerBlank: true
-URxvt.pointerBlankDelay: 300
-URxvt.secondaryScreen: 1
-URxvt.secondaryScroll: 0
-URxvt.tabbed.tabbar-bg: 0
-!URxvt.letterSpace: -1
-URxvt.perl-ext-common: default,matcher,url-select
-URxvt.match.button: 1
-URxvt.keysym.M-u: perl:url-select:select_next
-URxvt.url-select.launcher: /usr/bin/chromium
-URxvt.url-select.underline: false
-URxvt.colorUL: BASE0D
-
 ! rofi config
-rofi.color-enabled: true
-rofi.display-drun: menu
-rofi.font: Roboto Condensed 16
-rofi.lines: 4
-rofi.width: 20
-rofi.monitor: primary
-rofi.padding: 0
-rofi.separator-style: solid
-rofi.hide-scrollbar: true
-rofi.terminal: termite
+rofi.color-enabled:     true
+rofi.display-drun:      menu
+rofi.font:              Roboto Condensed 16
+rofi.lines:             4
+rofi.width:             20
+rofi.monitor:           primary
+rofi.padding:           0
+rofi.separator-style:   solid
+rofi.hide-scrollbar:    true
+rofi.terminal:          termite
