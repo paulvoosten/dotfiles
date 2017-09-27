@@ -1,0 +1,13 @@
+#! /bin/sh
+case "${HOSTNAME}" in
+    'arch-home')
+        bspc monitor "${MONITORS_PRIMARY}" -d 1 2 3 4 5 6 7 8 9 10
+        #bspc monitor "${MONITORS_PRIMARY}" -d 1 2 3 4 5
+        #bspc monitor "${MONITORS_SECONDARY}" -d 6 7 8 9 10
+        ;;
+    'arch-adcalls')
+        bspc monitor "${MONITORS_PRIMARY}" -d 1 2 3
+        bspc monitor "${MONITORS_SECONDARY}" -d 4 5 6
+        bspc monitor "${MONITORS_TERTIARY}" -d 7 8 9
+        ;;
+esac
