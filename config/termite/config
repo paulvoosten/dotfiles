@@ -1,52 +1,54 @@
 [options]
 font = Fontawesome 10
-font = Inconsolata 10
+font = Inconsolata 12
 clickable_url = true
 cursor_blink = on
 cursor_shape = underline
+dynamic_title = true
 
 [colors]
-foreground      = #d8d8d8
-foreground_bold = #e8e8e8
-cursor          = #e8e8e8
+foreground      = #D8D8D8
+foreground_bold = #E8E8E8
+cursor          = #E8E8E8
 background      = #181818
+#background      = rgba(24, 24, 24, 0.8) # uncomment this for transparent background (requires composition manager)
 
 # 16 color space
 
 # Black, Gray, Silver, White
 color0  = #181818
 color8  = #585858
-color7  = #d8d8d8
-color15 = #f8f8f8
+color7  = #D8D8D8
+color15 = #F8F8F8
 
 # Red
-color1  = #ab4642
-color9  = #ab4642
+color1  = #AB4642
+color9  = #AB4642
 
 # Green
-color2  = #a1b56c
-color10 = #a1b56c
+color2  = #A1B56C
+color10 = #A1B56C
 
 # Yellow
-color3  = #f7ca88
-color11 = #f7ca88
+color3  = #f7CA88
+color11 = #f7CA88
 
 # Blue
-color4  = #7cafc2
-color12 = #7cafc2
+color4  = #7CAFC2
+color12 = #7CAFC2
 
 # Purple
-color5  = #ba8baf
-color13 = #ba8baf
+color5  = #BA8BAF
+color13 = #BA8BAF
 
 # Teal
-color6  = #86c1b9
-color14 = #86c1b9
+color6  = #86C1B9
+color14 = #86C1B9
 
 # Extra colors
-color16 = #dc9656
-color17 = #a16946
+color16 = #DC9656
+color17 = #A16946
 color18 = #282828
 color19 = #383838
-color20 = #b8b8b8
-color21 = #e8e8e8
+color20 = #B8B8B8
+color21 = #E8E8E8
