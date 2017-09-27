@@ -4,18 +4,18 @@
 #define BASE01 #282828
 #define BASE02 #383838
 #define BASE03 #585858
-#define BASE04 #b8b8b8
-#define BASE05 #d8d8d8
-#define BASE06 #e8e8e8
-#define BASE07 #f8f8f8
-#define BASE08 #ab4642
-#define BASE09 #dc9656
-#define BASE0A #f7ca88
-#define BASE0B #a1b56c
-#define BASE0C #86c1b9
-#define BASE0D #7cafc2
-#define BASE0E #ba8baf
-#define BASE0F #a16946
+#define BASE04 #B8B8B8
+#define BASE05 #D8D8D8
+#define BASE06 #E8E8E8
+#define BASE07 #F8F8F8
+#define BASE08 #AB4642
+#define BASE09 #DC9656
+#define BASE0A #F7CA88
+#define BASE0B #A1B56C
+#define BASE0C #86C1b9
+#define BASE0D #7CAFC2
+#define BASE0E #BA8BAF
+#define BASE0F #A16946
 
 *foreground:        BASE05
 
