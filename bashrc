@@ -10,8 +10,8 @@
 #fi
 
 # Source relevant files
-source ~/.bash_prompt
-source ~/.aliases
+. ~/.bash_prompt
+. ~/.aliases
 
 # Other stuff
 shopt -s checkwinsize
