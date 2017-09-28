@@ -1,6 +1,6 @@
 [options]
 font = Fontawesome 10
-font = Inconsolata 12
+font = Inconsolata 10
 clickable_url = true
 cursor_blink = on
 cursor_shape = underline
