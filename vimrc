@@ -5,9 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
-    if has('nvim')
-        Plug 'neomake/neomake'
-    endif
+    Plug 'neomake/neomake'
     Plug 'tpope/vim-fugitive'
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
