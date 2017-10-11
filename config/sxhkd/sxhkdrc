@@ -47,10 +47,6 @@ super + y
 super + g
     bspc node -s biggest
 
-#
-# state/flags
-#
-
 # set the window state
 super + {_,shift + }f
     state={floating,fullscreen}; \
@@ -58,13 +54,8 @@ super + {_,shift + }f
     bspc node -t "$state"
 
 # set the node flags
-super + ctrl + {l,p,s}
+super + ctrl + alt + {l,p,s}
     bspc node -g {locked,private,sticky}
-
-#
-# focus/swap
-#
-
 
 # focus/swap the node in the given direction
 super + {_,shift + }{h,j,k,l}
@@ -74,25 +65,21 @@ super + {_,shift + }{h,j,k,l}
 super + {pb,c,omma,period}
     bspc node -f @{parent,brother,first,second}
 
-# focus the next/previous node
-super + {_,shift + }Tab
-    bspc node -f {next,prev}
-
-# focus the next/previous node in the current desktop
-alt + {_,shift + }Tab
-    bspc node -f {next,prev}.local
-
 # focus the next/previous desktop
 super + bracket{left,right}
     bspc desktop -f {prev,next}
 
+# focus the next/previous node
+alt + bracket{left,right}
+    bspc node -f {prev,next}
+
+# focus the next/previous local node
+alt + shift + bracket{left,right}
+    bspc node -f {prev,next}.local
+
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} '^{1-9, 10}'
-
-#
-# preselect
-#
 
 # preselect the direction
 super + ctrl + {h,j,k,l}
@@ -110,10 +97,6 @@ super + ctrl + space
 super + ctrl + shift + space
     bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-#
-# move/resize
-#
-
 # expand a window by moving one of its side outward
 super + alt + {h,j,k,l}
     bspc node -z {left -20 0,bottom 0 20,top 0 -20,right 20 0}
@@ -126,24 +109,23 @@ super + alt + shift + {h,j,k,l}
 super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
-#
-# increase/decrease gapsize
-#
+# reset gap and border size
 super + equal
     bspc config border_width 2; bspc config window_gap 10
 
+# remove gap and border size
 super + shift + g
     bspc config border_width 0; bspc config window_gap 0
 
+# increase gap size by 5
 super + plus
     bspc config window_gap $((`bspc config window_gap` + 5 ))
 
+# decrease gap size by 5
 super + minus
     bspc config window_gap $((`bspc config window_gap` - 5 ))
 
-#
 # multimedia
-#
 XF86AudioPlay
     playerctl play-pause
 #    mpc toggle
@@ -167,10 +149,6 @@ XF86AudioRaiseVolume
 XF86AudioLowerVolume
     playerctl volume 0.05-
 #    mpc volume -5
-
-#
-# other
-#
 
 # lock screen
 ctrl + alt + l
