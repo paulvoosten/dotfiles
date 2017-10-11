@@ -1,10 +1,18 @@
-if has('vim_starting')
-    runtime! bundle/pathogen/autoload/pathogen.vim
-    silent! execute pathogen#infect()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-syntax on
-filetype plugin indent on
+call plug#begin('~/.vim/bundle')
+    if has('nvim')
+        Plug 'neomake/neomake'
+    endif
+    Plug 'tpope/vim-fugitive'
+    Plug 'vim-airline/vim-airline'
+    Plug 'vim-airline/vim-airline-themes'
+    Plug 'chriskempson/base16-vim'
+call plug#end()
 
 set nocompatible
 set sessionoptions-=options
