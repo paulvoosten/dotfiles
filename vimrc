@@ -10,7 +10,10 @@ call plug#begin('~/.vim/bundle')
     Plug 'vim-airline/vim-airline'
     Plug 'vim-airline/vim-airline-themes'
     Plug 'chriskempson/base16-vim'
+    Plug 'shawncplus/phpcomplete.vim'
 call plug#end()
+
+call neomake#configure#automake('nrw', 500)
 
 set nocompatible
 set sessionoptions-=options
@@ -89,10 +92,11 @@ if !has('nvim')
 endif
 
 nnoremap <silent> <M-\> :NERDTreeTabsToggle<CR>
-inoremap <silent> <M-\> <ESC>:NERDTreeTabsToggle<CR>
-vnoremap <silent> <M-\> <ESC>:NERDTreeTabsToggle<CR>
+inoremap <silent> <M-\> <Esc>:NERDTreeTabsToggle<CR>
+vnoremap <silent> <M-\> <Esc>:NERDTreeTabsToggle<CR>
 nnoremap <silent> <C-s> :w<CR>
-inoremap <silent> <C-s> <ESC>:w<CR>
-vnoremap <silent> <C-s> <ESC>:w<CR>
+inoremap <silent> <C-s> <Esc>:w<CR>
+vnoremap <silent> <C-s> <Esc>:w<CR>
+nnoremap <silent> <C-S-s> :wq<CR>
 
 colorscheme base16-default-dark
