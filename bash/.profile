@@ -7,6 +7,9 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 export BSPWM_STATE="${XDG_CACHE_HOME}/bspwm/state.json"
 export EDITOR='nvim'
 
+# QEMU
+export QEMU_AUDIO_DRV='alsa'
+
 # monitors
 case "${HOSTNAME}" in
     'arch-home')
