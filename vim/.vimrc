@@ -11,6 +11,7 @@ call plug#begin('~/.vim/bundle')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'chriskempson/base16-vim'
     Plug 'shawncplus/phpcomplete.vim'
+    Plug 'rust-lang/rust.vim'
 call plug#end()
 
 call neomake#configure#automake('nrw', 500)
