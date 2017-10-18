@@ -1,4 +1,25 @@
 #! /bin/sh
+# tty colors
+if [ "$TERM" = 'linux' ]; then
+    echo -en "\e]P0${COLORS_BASE00}" #black
+    echo -en "\e]P8${COLORS_BASE08}" #darkgrey
+    echo -en "\e]P1${COLORS_BASE01}" #darkred
+    echo -en "\e]P9${COLORS_BASE09}" #red
+    echo -en "\e]P2${COLORS_BASE02}" #darkgreen
+    echo -en "\e]PA${COLORS_BASE0A}" #green
+    echo -en "\e]P3${COLORS_BASE03}" #brown
+    echo -en "\e]PB${COLORS_BASE0B}" #yellow
+    echo -en "\e]P4${COLORS_BASE04}" #darkblue
+    echo -en "\e]PC${COLORS_BASE0C}" #blue
+    echo -en "\e]P5${COLORS_BASE05}" #darkmagenta
+    echo -en "\e]PD${COLORS_BASE0D}" #magenta
+    echo -en "\e]P6${COLORS_BASE06}" #darkcyan
+    echo -en "\e]PE${COLORS_BASE0E}" #cyan
+    echo -en "\e]P7${COLORS_BASE07}" #lightgrey
+    echo -en "\e]PF${COLORS_BASE0F}" #white
+    clear #for background artifacting
+fi
+
 # coloring variables
 reset='\[\e[0m\]'
 # black & gray
