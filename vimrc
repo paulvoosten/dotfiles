@@ -97,6 +97,5 @@ vnoremap <silent> <M-\> <Esc>:NERDTreeTabsToggle<CR>
 nnoremap <silent> <C-s> :w<CR>
 inoremap <silent> <C-s> <Esc>:w<CR>
 vnoremap <silent> <C-s> <Esc>:w<CR>
-nnoremap <silent> <C-S-s> :wq<CR>
 
 colorscheme base16-default-dark
