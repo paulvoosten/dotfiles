@@ -31,6 +31,7 @@ bspc rule -a Slack desktop=^4
 bspc rule -a Virt-manager desktop=^5
 bspc rule -a csgo_linux64 desktop=^5 state=fullscreen
 bspc rule -a Chromium desktop=^6
+bspc rule -a qutebrowser desktop=^6
 bspc rule -a Firefox desktop=^6
 bspc rule -a Waterfox desktop=^6
 bspc rule -a KeePass2 state=floating
