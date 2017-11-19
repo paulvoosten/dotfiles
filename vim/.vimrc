@@ -12,91 +12,87 @@ call plug#begin('~/.vim/bundle')
     Plug 'chriskempson/base16-vim'
     Plug 'shawncplus/phpcomplete.vim'
     Plug 'rust-lang/rust.vim'
+    Plug 'airblade/vim-gitgutter'
+    Plug 'scrooloose/nerdtree'
+    Plug 'ctrlpvim/ctrlp.vim'
 call plug#end()
 
 call neomake#configure#automake('nrw', 500)
 
 set nocompatible
-set sessionoptions-=options
-set clipboard=unnamed
-set path+=**
-set wmh=0
 set laststatus=2
-set et sw=4 ts=4 sta
-set number
-set linebreak
-set list lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:>,precedes:<
-set hlsearch
-set ignorecase
-set noerrorbells
-set encoding=utf-8
-set t_Co=256
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+set hid
+set et
+set sw=4
+set ts=4
+set sta
+set nu
+set rnu
+set lbr
+set bri
+set list
+set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:>,precedes:<
+set hls
+set ic
+set noeb
+set enc=utf-8
 
-if exists('&relativenumber')
-    set relativenumber
-    au BufReadPost * set relativenumber
-endif
-
-let &t_AB="\e[48;5;%dm"
-let &t_AF="\e[38;5;%dm"
-
-let g:base16colorspace = 256
+let mapleader = ','
+let NERDTreeMinimalUI = 1
 
 " airline configuration
+let g:airline_extensions = ['tabline']
+let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme = 'base16_default'
-let g:airline_powerline_fonts = 1
 let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-"let g:airline_left_alt_sep = ''
+let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-"let g:airline_right_alt_sep = ''
+let g:airline_right_alt_sep = ''
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}
 endif
 
-let g:airline_symbols.branch = ''
-let g:airline_symbols.linenr = ''
+let g:airline_symbols.crypt = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.notexists = ''
 let g:airline_symbols.paste = 'ρ'
-let g:airline_symbols.readonly = ''
+let g:airline_symbols.readonly = 'RO'
+let g:airline_symbols.spell = ''
 let g:airline_symbols.whitespace = ''
-"let g:airline_section_z =
-
-" indentLine configuration
-let g:indentLine_char = '▸'
 
 " gitgutter configuration
-let g:gitgutter_sign_added = '+'
-let g:gitgutter_sign_modified = '*'
-let g:gitgutter_sign_removed = '-'
+let g:gitgutter_sign_added = ''
+let g:gitgutter_sign_modified = ''
+let g:gitgutter_sign_modified_removed = ''
+let g:gitgutter_sign_removed = ''
+let g:gitgutter_sign_removed_first_line = ''
 
-" syntastic configuration
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-" netrw configuration
-"let g:netrw_banner = 0
-"let g:netrw_browse_split = 2
-"let g:netrw_winsize = 10
-"let g:netrw_altv = 1
-"let g:netrw_liststyle = 3
+" neomake configuration
+let g:neomake_open_list = 2
 
 " keybinds
 if !has('nvim')
     execute "set <M-\\>=\e\\"
 endif
-
-nnoremap <silent> <M-\> :NERDTreeTabsToggle<CR>
-inoremap <silent> <M-\> <Esc>:NERDTreeTabsToggle<CR>
-vnoremap <silent> <M-\> <Esc>:NERDTreeTabsToggle<CR>
-nnoremap <silent> <C-s> :w<CR>
-inoremap <silent> <C-s> <Esc>:w<CR>
-vnoremap <silent> <C-s> <Esc>:w<CR>
+" general
+nnoremap <silent> <Leader>w :w<CR>
+nnoremap <silent> <Leader>W :wq<CR>
+nnoremap <silent> <C-h> :wincmd h<CR>
+nnoremap <silent> <C-j> :wincmd j<CR>
+nnoremap <silent> <C-k> :wincmd k<CR>
+nnoremap <silent> <C-l> :wincmd l<CR>
+" NERDTree
+nnoremap <silent> <M-\> :NERDTreeToggle<CR>
+inoremap <silent> <M-\> <Esc>:NERDTreeToggle<CR>
+vnoremap <silent> <M-\> <Esc>:NERDTreeToggle<CR>
+" buffers
+nnoremap <silent> <Leader>bn :enew<CR>
+nnoremap <silent> <Leader>N :bp<CR>
+nnoremap <silent> <Leader>n :bn<CR>
+nnoremap <silent> <Leader>bq :bp<BAR>bd #<CR>
+nnoremap <silent> <Leader>bl :ls<CR>
 
 colorscheme base16-default-dark
