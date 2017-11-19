@@ -8,12 +8,7 @@ super + Return
 
 # program launcher
 super + e
-    rofi -modi "window,run,drun,ssh" \
-    -show drun \
-    -color-window "${COLORS_BASE00}, ${COLORS_BASE03}, ${COLORS_BASE03}" \
-    -color-normal "${COLORS_BASE00}, ${COLORS_BASE07}, ${COLORS_BASE00}, ${COLORS_BASE03}, ${COLORS_BASE07}" \
-    -color-urgent "${COLORS_BASE00}, ${COLORS_BASE08}, ${COLORS_BASE08}, ${COLORS_BASE03}, ${COLORS_BASE08}" \
-    -color-active "${COLORS_BASE00}, ${COLORS_BASE0B}, ${COLORS_BASE0B}, ${COLORS_BASE03}, ${COLORS_BASE0B}"
+    rofi -modi "window,run,drun,ssh" -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape

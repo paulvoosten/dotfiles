@@ -15,39 +15,38 @@ call plug#begin('~/.vim/bundle')
     Plug 'airblade/vim-gitgutter'
     Plug 'scrooloose/nerdtree'
     Plug 'ctrlpvim/ctrlp.vim'
+    Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 call neomake#configure#automake('nrw', 500)
 
 set nocompatible
-set laststatus=2
-set hid
-set et
-set sw=4
-set ts=4
-set sta
-set nu
-set rnu
-set lbr
-set bri
+set laststatus=1
+"set showtabline=0
+set hidden
+set expandtab
+set shiftwidth=4
+set tabstop=4
+set smarttab
+set number
+set relativenumber
+set linebreak
+set breakindent
 set list
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:>,precedes:<
-set hls
-set ic
-set noeb
-set enc=utf-8
+set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:>,precedes:<
+set hlsearch
+set ignorecase
+set noerrorbells
+set encoding=utf-8
 
 let mapleader = ','
 let NERDTreeMinimalUI = 1
 
 " airline configuration
+let g:airline_powerline_fonts = 1
 let g:airline_extensions = ['tabline']
 let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme = 'base16_default'
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
 
 if !exists('g:airline_symbols')
     let g:airline_symbols = {}

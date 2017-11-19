@@ -1,76 +1,80 @@
 ! Base16 Default Dark
 ! Scheme: Chris Kempson (http://chriskempson.com)
-#define BASE00 #181818
-#define BASE01 #282828
-#define BASE02 #383838
-#define BASE03 #585858
-#define BASE04 #B8B8B8
-#define BASE05 #D8D8D8
-#define BASE06 #E8E8E8
-#define BASE07 #F8F8F8
-#define BASE08 #AB4642
-#define BASE09 #DC9656
-#define BASE0A #F7CA88
-#define BASE0B #A1B56C
-#define BASE0C #86C1B9
-#define BASE0D #7CAFC2
-#define BASE0E #BA8BAF
-#define BASE0F #A16946
+#define base00 #181818
+#define base01 #282828
+#define base02 #383838
+#define base03 #585858
+#define base04 #b8b8b8
+#define base05 #d8d8d8
+#define base06 #e8e8e8
+#define base07 #f8f8f8
+#define base08 #ab4642
+#define base09 #dc9656
+#define base0A #f7ca88
+#define base0B #a1b56c
+#define base0C #86c1b9
+#define base0D #7CAFC2
+#define base0E #ba8baf
+#define base0F #a16946
 
-*foreground:        BASE05
+*foreground:        base05
 
 #ifdef background_opacity
-    *background:    [background_opacity]BASE00
+    *background:    [background_opacity]base00
 #else
-    *background:    BASE00
+    *background:    base00
 #endif
 
-*cursorColor:       BASE05
+*cursorColor:       base05
 
-*color0:            BASE00
-*color8:            BASE03
+*color0:            base00
+*color8:            base03
 
-*color1:            BASE08
-*color9:            BASE08
+*color1:            base08
+*color9:            base08
 
-*color2:            BASE0B
-*color10:           BASE0B
+*color2:            base0B
+*color10:           base0B
 
-*color3:            BASE0A
-*color11:           BASE0A
+*color3:            base0A
+*color11:           base0A
 
-*color4:            BASE0D
-*color12:           BASE0D
+*color4:            base0D
+*color12:           base0D
 
-*color5:            BASE0E
-*color13:           BASE0E
+*color5:            base0E
+*color13:           base0E
 
-*color6:            BASE0C
-*color14:           BASE0C
+*color6:            base0C
+*color14:           base0C
 
-*color7:            BASE05
-*color15:           BASE07
+*color7:            base05
+*color15:           base07
 
 ! Note: colors beyond 15 might not be loaded (e.g., xterm, urxvt),
 ! use 'shell' template to set these if necessary
-*color16:      BASE09
-*color17:      BASE0F
-*color18:      BASE01
-*color19:      BASE02
-*color20:      BASE04
-*color21:      BASE06
+*color16:      base09
+*color17:      base0F
+*color18:      base01
+*color19:      base02
+*color20:      base04
+*color21:      base06
 
 ! Xorg settings
 Xcursor.size: 12
 
 ! rofi config
 rofi.color-enabled:     true
+rofi.color-active:      base00, base0B, base0B, base03, base0B
+rofi.color-normal:      base00, base07, base00, base03, base07
+rofi.color-urgent:      base00, base08, base08, base03, base08
+rofi.color-window:      base00, base03, base03
 rofi.display-drun:      menu
 rofi.font:              Roboto Condensed 16
+rofi.hide-scrollbar:    true
 rofi.lines:             4
-rofi.width:             20
 rofi.monitor:           primary
 rofi.padding:           0
 rofi.separator-style:   solid
-rofi.hide-scrollbar:    true
 rofi.terminal:          termite
+rofi.width:             20
