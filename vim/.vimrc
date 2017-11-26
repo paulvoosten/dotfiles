@@ -40,6 +40,7 @@ set noerrorbells
 set encoding=utf-8
 
 let mapleader = ','
+let base16colorspace=256
 let NERDTreeMinimalUI = 1
 
 " airline configuration
@@ -74,19 +75,40 @@ let g:neomake_open_list = 2
 
 " keybinds
 if !has('nvim')
-    execute "set <M-\\>=\e\\"
+    execute "set <A-\\>=\e\\"
+    execute "set <A-h>=\eh"
+    execute "set <A-j>=\ej"
+    execute "set <A-k>=\ek"
+    execute "set <A-l>=\el"
+else
+    tnoremap <silent> <Leader><Leader> <C-\><C-n>
+    tnoremap <silent> <A-j> <C-\><C-n><C-w>j
+    tnoremap <silent> <A-k> <C-\><C-n><C-w>k
+    tnoremap <silent> <A-h> <C-\><C-n><C-w>h
+    tnoremap <silent> <A-l> <C-\><C-n><C-w>l
+    tnoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
 endif
 " general
 nnoremap <silent> <Leader>w :w<CR>
 nnoremap <silent> <Leader>W :wq<CR>
-nnoremap <silent> <C-h> :wincmd h<CR>
-nnoremap <silent> <C-j> :wincmd j<CR>
-nnoremap <silent> <C-k> :wincmd k<CR>
-nnoremap <silent> <C-l> :wincmd l<CR>
+inoremap <silent> <Leader><Leader> <C-\><C-n>
+vnoremap <silent> <Leader><Leader> <C-\><C-n>
+nnoremap <silent> <A-h> <C-w>h
+inoremap <silent> <A-h> <C-\><C-n><C-w>h
+vnoremap <silent> <A-h> <C-\><C-n><C-w>h
+nnoremap <silent> <A-j> <C-w>j
+inoremap <silent> <A-j> <C-\><C-n><C-w>j
+vnoremap <silent> <A-j> <C-\><C-n><C-w>j
+nnoremap <silent> <A-k> <C-w>k
+inoremap <silent> <A-k> <C-\><C-n><C-w>k
+vnoremap <silent> <A-k> <C-\><C-n><C-w>k
+nnoremap <silent> <A-l> <C-w>l
+inoremap <silent> <A-l> <C-\><C-n><C-w>l
+vnoremap <silent> <A-l> <C-\><C-n><C-w>l
 " NERDTree
-nnoremap <silent> <M-\> :NERDTreeToggle<CR>
-inoremap <silent> <M-\> <Esc>:NERDTreeToggle<CR>
-vnoremap <silent> <M-\> <Esc>:NERDTreeToggle<CR>
+inoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
+nnoremap <silent> <A-\> :NERDTreeToggle<CR>
+vnoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
 " buffers
 nnoremap <silent> <Leader>bn :enew<CR>
 nnoremap <silent> <Leader>N :bp<CR>
