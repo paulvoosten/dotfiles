@@ -1,9 +1,5 @@
 #! /bin/sh
-xrdb -load ~/.Xresources &
-wmname LG3D &
-. ~/.config/bspwm/monitors
-~/.fehbg &
-~/.config/polybar/start.sh &
+bspc monitor -d 1 2 3 4 5 6 7 8 9 10
 
 bspc config border_width 2
 bspc config window_gap 10
@@ -36,4 +32,4 @@ bspc rule -a Spotify desktop=^9
 bspc rule -a KeePass2 state=floating
 bspc rule -a scratchpad state=floating hidden=on sticky=on
 
-termite --class 'scratchpad' -e ~/.config/bspwm/scratch &
+termite --class 'scratchpad' -t 'scratchpad' -e ~/.config/bspwm/scratch &
