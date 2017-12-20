@@ -1,8 +1,0 @@
-#! /bin/sh
-case "${HOSTNAME}" in
-    'arch-home')
-        ;&
-    'arch-adcalls')
-        bspc monitor -d home term code docs chat I II III game music
-        ;;
-esac
