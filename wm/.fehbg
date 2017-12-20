@@ -1,3 +1,2 @@
 #!/bin/sh
-wallpaper=$(find "${HOME}/pictures/wallpapers/" -type f | sort -R | tail -1)
-feh --bg-fill --no-fehbg "${wallpaper}"
+feh --bg-fill --no-fehbg "${HOME}/.background"
