@@ -58,16 +58,16 @@ Xcursor.size: 12
 
 ! rofi config
 rofi.color-enabled:     true
-rofi.color-active:      base00, base0B, base0B, base03, base0B
+rofi.color-active:      base00, base0B, base00, base03, base0B
 rofi.color-normal:      base00, base07, base00, base03, base07
-rofi.color-urgent:      base00, base08, base08, base03, base08
+rofi.color-urgent:      base00, base08, base00, base03, base08
 rofi.color-window:      base00, base03, base03
 rofi.display-drun:      menu
-rofi.font:              Roboto Condensed 16
-rofi.hide-scrollbar:    true
-rofi.lines:             4
+rofi.font:              Roboto Condensed 14
+rofi.hide-scrollbar:    false
+rofi.lines:             8
 rofi.monitor:           primary
 rofi.padding:           0
 rofi.separator-style:   solid
 rofi.terminal:          termite
-rofi.width:             20
+rofi.width:             25
