@@ -24,6 +24,7 @@ bspc rule -a discord desktop=^1
 bspc rule -a Termite desktop=^2
 bspc rule -a Subl3 desktop=^3
 bspc rule -a jetbrains-phpstorm desktop=^3
+bspc rule -a DBeaver desktop=^4
 bspc rule -a Slack desktop=^5
 bspc rule -a Virt-manager desktop=^8
 bspc rule -a Steam desktop=^9
