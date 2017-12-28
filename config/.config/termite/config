@@ -1,5 +1,4 @@
 [options]
-font = Fontawesome 10
 font = Source Code Pro 10
 clickable_url = true
 cursor_blink = on
