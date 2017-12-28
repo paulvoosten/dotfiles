@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/bash
 icon=
 
 if pgrep -x "compton" > /dev/null

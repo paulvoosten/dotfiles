@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/usr/bin/bash
 icon=
 
 pgrep -x redshift &> /dev/null

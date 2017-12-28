@@ -1,2 +1,2 @@
-#!/bin/sh
+#!/usr/bin/bash
 feh --bg-fill --no-fehbg "${HOME}/.background"
