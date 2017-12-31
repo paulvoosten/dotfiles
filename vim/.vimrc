@@ -55,7 +55,7 @@ endif
 
 let g:airline_symbols.crypt = ''
 let g:airline_symbols.branch = ''
-let g:airline_symbols.linenr = '☰'
+let g:airline_symbols.linenr = ''
 let g:airline_symbols.maxlinenr = ''
 let g:airline_symbols.notexists = ''
 let g:airline_symbols.paste = 'ρ'
