@@ -6,13 +6,14 @@
 super + Return
     termite
 
+# dropdown terminal emulator
 super + shift + Return
     id=$(cat /tmp/scratchid);\
 	bspc node $id --flag hidden;bspc node -f $id
 
 # program launcher
 super + e
-    rofi -modi "window,run,drun,ssh" -show drun
+    rofi -modi 'window,run,drun,ssh' -show drun
 
 # make sxhkd reload its configuration files:
 super + Escape
@@ -49,8 +50,8 @@ super + g
 # set the window state
 super + {_,shift + }f
     state={floating,fullscreen}; \
-    bspc query -N -n "focused.$\{state\}" && state=tiled; \
-    bspc node -t "$state"
+    bspc query -N -n focused.$state && state=tiled; \
+    bspc node -t $state
 
 # set the node flags
 super + ctrl + alt + {l,p,s}
