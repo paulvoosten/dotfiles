@@ -1,2 +1,2 @@
-#!/usr/bin/bash
+#!/bin/bash
 bspc wm -d > "$BSPWM_STATE"

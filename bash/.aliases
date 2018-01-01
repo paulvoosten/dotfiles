@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 alias ls='ls --color=auto'
 
 # web development aliases

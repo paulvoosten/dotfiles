@@ -1,2 +1,2 @@
-#!/usr/bin/bash
+#!/bin/bash
 exec /usr/bin/X -nolisten tcp "$@" vt$XDG_VTNR

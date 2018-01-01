@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 image=/tmp/screen.png
 scrot $image
 convert $image -scale 10% -scale 1000% $image

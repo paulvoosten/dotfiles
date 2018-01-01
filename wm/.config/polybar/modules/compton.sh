@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 icon=
 color=$(xrdb -query|grep 'color8:'|cut -f2)
 

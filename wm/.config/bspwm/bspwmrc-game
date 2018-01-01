@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 bspc monitor "${MONITORS_PRIMARY}" -d 1
 
 bspc config border_width 0

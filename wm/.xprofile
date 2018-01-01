@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 case $HOSTNAME in
     arch-home) xrandr --output DP-0 --mode 1920x1080 --rate 144 --primary;;
     arch-adcalls) xrandr --output HDMI-1 --mode 1920x1080 --rate 60 --primary;;
