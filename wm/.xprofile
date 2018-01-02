@@ -1,7 +1,7 @@
 #!/bin/bash
 case $HOSTNAME in
     arch-home) xrandr --output DP-0 --mode 1920x1080 --rate 144 --primary;;
-    arch-adcalls) xrandr --output HDMI-1 --mode 1920x1080 --rate 60 --primary;;
+    arch-adcalls) xrandr --output HDMI-1 --mode 1920x1080 --rate 60 --primary --output VGA-1 --off;;
 esac
 export MONITOR=$(xrandr -q|grep primary|cut -d ' ' -f1)
 xautolock -time 15 -locker ~/.config/i3/lock.sh &
