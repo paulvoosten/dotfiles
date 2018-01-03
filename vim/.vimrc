@@ -22,7 +22,6 @@ call neomake#configure#automake('nrw', 500)
 
 set nocompatible
 set laststatus=1
-"set showtabline=0
 set hidden
 set expandtab
 set shiftwidth=4
@@ -37,6 +36,8 @@ set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:>,precedes:<
 set hlsearch
 set ignorecase
 set noerrorbells
+set mouse=a
+set clipboard=unnamedplus
 set encoding=utf-8
 
 let mapleader = ','
