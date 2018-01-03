@@ -17,4 +17,4 @@ elif [[ $temp -ge 4000 ]]; then
     color=$(xrdb -query|grep 'color3:'|cut -f2)
 fi
 
-echo "%{F$color}$icon"
+echo %{F$color}$icon
