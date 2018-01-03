@@ -138,6 +138,7 @@ menu-0-2-exec = systemctl poweroff
 type = custom/script
 interval = 5
 exec = ~/.config/polybar/modules/redshift.sh
+click-left = ~/.config/polybar/modules/redshift-toggle.sh
 
 [module/compton]
 type = custom/script

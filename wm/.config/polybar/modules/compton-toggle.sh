@@ -1,6 +1,6 @@
 #!/bin/bash
 if pgrep -x compton > /dev/null; then
-    killall compton
+    pkill -x compton
 else
     compton -b
 fi
