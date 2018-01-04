@@ -38,7 +38,7 @@ git_prompt() {
     local branch=''
 
     # check if current directory is a git repo
-    if [ $(git rev-parse --is-inside-work-tree &> /dev/null; echo "${?}") == '0' ]; then
+    if [ $(git rev-parse --is-inside-work-tree &> /dev/null; echo "$?") == '0' ]; then
         # check if current directory is in .git before running git checks
         if [ "$(git rev-parse --is-inside-git-dir 2> /dev/null)" == 'false' ]; then
             git update-index --realy-refresh -q &> /dev/null
@@ -52,27 +52,16 @@ git_prompt() {
             # check for untracked files
             [ -n "$(git ls-files --others --exclude-standard)" ] && prompt+='?'
 
-
             #check for stashed files
             $(git rev-parse --verify refs/stash &> /dev/null) && prompt+='$'
-
-            # check if pulling is needed
-            #if  then
-            #    prompt+=''
-            #fi
-
-            # check if pushing is needed
-            #if then
-            #    prompt+=''
-            #fi
         fi
 
         branch+="$(git symbolic-ref --quiet --short HEAD 2> /dev/null || \
             git rev-parse --short HEAD 2> /dev/null || \
             echo '(unknown)')"
-        [ -n "${prompt}" ] && prompt="[${prompt}]"
+        [ -n "$prompt" ] && prompt="[$prompt]"
 
-        echo -e "${1}${branch} ${2}${prompt}"
+        echo -e "$1$branch $2$prompt"
     else
         return
     fi
@@ -80,34 +69,34 @@ git_prompt() {
 
 bash_prompt() {
     # change color of username when root
-    if [[ "${USER}" == "root" ]]; then
-        user_color="${color9}"
+    if [[ "$USER" == "root" ]]; then
+        user_color="$color9"
     else
-        user_color="${color15}"
+        user_color="$color15"
     fi;
 
-    # change color if connected with SSH
-    if [[ "${SSH_TTY}" ]]; then
-        host_color="${color9}"
+    # change color if connected over SSH
+    if [[ "$SSH_TTY" ]]; then
+        host_color="$color9"
     else
-        host_color="${color15}"
+        host_color="$color15"
     fi
 
     # todo fix status color so it changes based on last executed command (red == failed)
     if [[ $? -eq 0 ]]; then
-        status_color="${color10}"
+        status_color="$color10"
     else
-        status_color="${color9}"
+        status_color="$color9"
     fi
 
-    PS1="${user_color}\u"
-    PS1+="${color10}@"
-    PS1+="${host_color}\h:"
-    PS1+="${color10} \w"
-    PS1+="\$(git_prompt \"${color15}  ${color11}\" \"${color12}\")\n"
-    PS1+="${status_color}$ ${reset}"
+    PS1="$user_color\u"
+    PS1+="$color10@"
+    PS1+="$host_color\h:"
+    PS1+="$color10 \w"
+    PS1+="\$(git_prompt \"$color15  $color11\" \"$color12\")\n"
+    PS1+="$status_color$ $reset"
 
-    PS2="${status_color} ${reset}"
+    PS2="$status_color $reset"
 }
 
 PROMPT_COMMAND=bash_prompt
