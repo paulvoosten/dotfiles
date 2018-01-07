@@ -1,5 +1,5 @@
 #!/bin/bash
-icon=
+icon=
 color=$(xrdb -query|grep 'color16:'|cut -f2)
 
 pgrep -x redshift &> /dev/null
