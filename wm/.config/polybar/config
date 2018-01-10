@@ -42,7 +42,7 @@ font-1 = Font Awesome 5 Free:style=Solid:size=10;2
 font-2 = Font Awesome 5 Brands:size=10;2
 modules-left = bspwm
 modules-center = xwindow
-modules-right = memory cpu volume packages date compton redshift powermenu
+modules-right = memory cpu volume packages date compton redshift tray powermenu
 fixed-center = true
 wm-restack = bspwm
 
@@ -155,3 +155,8 @@ format-prefix-foreground = ${colors.base03}
 label = %output%
 exec = ~/.config/polybar/modules/packages.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/tray]
+type = custom/text
+content = 
+click-left = ~/.config/polybar/modules/tray.sh
