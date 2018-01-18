@@ -18,7 +18,15 @@ call plug#begin('~/.vim/bundle')
     Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
-call neomake#configure#automake('nrw', 500)
+function! OnBattery()
+    return filereadable('/sys/class/power_supply/AC/online') && readfile('/sys/class/power_supply/AC/online') == ['0']
+endfunction
+
+if OnBattery()
+    call neomake#configure#automake('w', 500)
+else
+    call neomake#configure#automake('nrw', 250)
+endif
 
 set nocompatible
 set laststatus=1
