@@ -1,31 +1,31 @@
 if empty(glob('~/.vim/autoload/plug.vim'))
   silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
-    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
 call plug#begin('~/.vim/bundle')
-    Plug 'neomake/neomake'
-    Plug 'tpope/vim-fugitive'
-    Plug 'vim-airline/vim-airline'
-    Plug 'vim-airline/vim-airline-themes'
-    Plug 'chriskempson/base16-vim'
-    Plug 'shawncplus/phpcomplete.vim'
-    Plug 'rust-lang/rust.vim'
-    Plug 'airblade/vim-gitgutter'
-    Plug 'scrooloose/nerdtree'
-    Plug 'ctrlpvim/ctrlp.vim'
-    Plug 'ryanoasis/vim-devicons'
+  Plug 'neomake/neomake'
+  Plug 'tpope/vim-fugitive'
+  Plug 'vim-airline/vim-airline'
+  Plug 'vim-airline/vim-airline-themes'
+  Plug 'chriskempson/base16-vim'
+  Plug 'shawncplus/phpcomplete.vim'
+  Plug 'rust-lang/rust.vim'
+  Plug 'airblade/vim-gitgutter'
+  Plug 'scrooloose/nerdtree'
+  Plug 'ctrlpvim/ctrlp.vim'
+  Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 function! OnBattery()
-    return filereadable('/sys/class/power_supply/AC/online') && readfile('/sys/class/power_supply/AC/online') == ['0']
+  return filereadable('/sys/class/power_supply/AC/online') && readfile('/sys/class/power_supply/AC/online') == ['0']
 endfunction
 
 if OnBattery()
-    call neomake#configure#automake('w', 500)
+  call neomake#configure#automake('w', 500)
 else
-    call neomake#configure#automake('nrw', 250)
+  call neomake#configure#automake('nrw', 250)
 endif
 
 set nocompatible
@@ -59,7 +59,7 @@ let g:airline#extensions#tabline#fnamemod = ':t'
 let g:airline_theme = 'base16_default'
 
 if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
+  let g:airline_symbols = {}
 endif
 
 let g:airline_symbols.crypt = ''
@@ -84,18 +84,18 @@ let g:neomake_open_list = 2
 
 " keybinds
 if !has('nvim')
-    execute "set <A-\\>=\e\\"
-    execute "set <A-h>=\eh"
-    execute "set <A-j>=\ej"
-    execute "set <A-k>=\ek"
-    execute "set <A-l>=\el"
+  execute "set <A-\\>=\e\\"
+  execute "set <A-h>=\eh"
+  execute "set <A-j>=\ej"
+  execute "set <A-k>=\ek"
+  execute "set <A-l>=\el"
 else
-    tnoremap <silent> <Leader><Leader> <C-\><C-n>
-    tnoremap <silent> <A-j> <C-\><C-n><C-w>j
-    tnoremap <silent> <A-k> <C-\><C-n><C-w>k
-    tnoremap <silent> <A-h> <C-\><C-n><C-w>h
-    tnoremap <silent> <A-l> <C-\><C-n><C-w>l
-    tnoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
+  tnoremap <silent> <Leader><Leader> <C-\><C-n>
+  tnoremap <silent> <A-j> <C-\><C-n><C-w>j
+  tnoremap <silent> <A-k> <C-\><C-n><C-w>k
+  tnoremap <silent> <A-h> <C-\><C-n><C-w>h
+  tnoremap <silent> <A-l> <C-\><C-n><C-w>l
+  tnoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
 endif
 " general
 nnoremap <silent> <Leader>w :w<CR>
