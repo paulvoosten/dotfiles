@@ -124,5 +124,9 @@ nnoremap <silent> <Leader>N :bp<CR>
 nnoremap <silent> <Leader>n :bn<CR>
 nnoremap <silent> <Leader>bq :bp<BAR>bd #<CR>
 nnoremap <silent> <Leader>bl :ls<CR>
+" NeoMake
+inoremap <silent> <Leader>l :Neomake<CR>
+nnoremap <silent> <Leader>l :Neomake<CR>
+vnoremap <silent> <Leader>l :Neomake<CR>
 
 colorscheme base16-default-dark
