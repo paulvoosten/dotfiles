@@ -19,9 +19,12 @@ super + e
 super + Escape
     pkill -USR1 -x sxhkd
 
-# take screenshot
+# take screenshot of whole screen(s)
 Print
-    scrot "$HOME/pictures/screenshots/%Y-%m-%d %H:%M:%S.png"
+    scrot -m "$HOME/pictures/screenshots/%Y-%m-%d %H:%M:%S.png"
+# take screenshot of focused window
+shift + Print
+    scrot -u "$HOME/pictures/screenshots/%Y-%m-%d %H:%M:%S.png"
 
 #
 # bspwm hotkeys
