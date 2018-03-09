@@ -19,7 +19,8 @@ call plug#begin('~/.vim/bundle')
 call plug#end()
 
 function! OnBattery()
-  return filereadable('/sys/class/power_supply/AC/online') && readfile('/sys/class/power_supply/AC/online') == ['0']
+  return filereadable('/sys/class/power_supply/AC/online')
+    && readfile('/sys/class/power_supply/AC/online') == ['0']
 endfunction
 
 if OnBattery()
@@ -35,6 +36,7 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set smarttab
+set colorcolumn=80
 set number
 set relativenumber
 set linebreak
@@ -49,7 +51,7 @@ set clipboard=unnamedplus
 set encoding=utf-8
 
 let mapleader = ','
-let base16colorspace=256
+let base16colorspace = 256
 let NERDTreeMinimalUI = 1
 
 " airline configuration
