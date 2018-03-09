@@ -49,7 +49,6 @@ set noerrorbells
 set mouse=a
 set clipboard=unnamedplus
 set encoding=utf-8
-set colorcolumn=80
 
 let mapleader = ','
 let base16colorspace = 256
