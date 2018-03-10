@@ -100,7 +100,11 @@ else
 endif
 " general
 nnoremap <silent> <Leader>w :w<CR>
+inoremap <silent> <Leader>w <C-\><C-n>:w<CR>
+vnoremap <silent> <Leader>w <C-\><C-n>:w<CR>
 nnoremap <silent> <Leader>W :wq<CR>
+inoremap <silent> <Leader>W <C-\><C-n>:wq<CR>
+vnoremap <silent> <Leader>W <C-\><C-n>:wq<CR>
 inoremap <silent> <Leader><Leader> <C-\><C-n>
 vnoremap <silent> <Leader><Leader> <C-\><C-n>
 nnoremap <silent> <A-h> <C-w>h
@@ -116,18 +120,28 @@ nnoremap <silent> <A-l> <C-w>l
 inoremap <silent> <A-l> <C-\><C-n><C-w>l
 vnoremap <silent> <A-l> <C-\><C-n><C-w>l
 " NERDTree
-inoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
 nnoremap <silent> <A-\> :NERDTreeToggle<CR>
+inoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
 vnoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
 " buffers
 nnoremap <silent> <Leader>bn :enew<CR>
+inoremap <silent> <Leader>bn <C-\><C-n>:enew<CR>
+vnoremap <silent> <Leader>bn <C-\><C-n>:enew<CR>
 nnoremap <silent> <Leader>N :bp<CR>
+inoremap <silent> <Leader>N <C-\><C-n>:bp<CR>
+vnoremap <silent> <Leader>N <C-\><C-n>:bp<CR>
 nnoremap <silent> <Leader>n :bn<CR>
+inoremap <silent> <Leader>n <C-\><C-n>:bn<CR>
+vnoremap <silent> <Leader>n <C-\><C-n>:bn<CR>
 nnoremap <silent> <Leader>bq :bp<BAR>bd #<CR>
+inoremap <silent> <Leader>bq <C-\><C-n>:bp<BAR>bd #<CR>
+vnoremap <silent> <Leader>bq <C-\><C-n>:bp<BAR>bd #<CR>
 nnoremap <silent> <Leader>bl :ls<CR>
+inoremap <silent> <Leader>bl <C-\><C-n>:ls<CR>
+vnoremap <silent> <Leader>bl <C-\><C-n>:ls<CR>
 " NeoMake
-inoremap <silent> <Leader>l :Neomake<CR>
 nnoremap <silent> <Leader>l :Neomake<CR>
-vnoremap <silent> <Leader>l :Neomake<CR>
+inoremap <silent> <Leader>l <C-\><C-n>:Neomake<CR>
+vnoremap <silent> <Leader>l <C-\><C-n>:Neomake<CR>
 
 colorscheme base16-default-dark
