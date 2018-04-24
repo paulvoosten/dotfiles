@@ -69,11 +69,9 @@ rofi.display-window: Window
 rofi.font: Roboto Condensed 14
 rofi.hide-scrollbar: false
 rofi.lines: 8
-rofi.location: 8
 rofi.monitor: primary
 rofi.padding: 0
 rofi.separator-style: solid
 rofi.show-icons: true
 rofi.terminal: termite
-rofi.width: 25
-rofi.height: 100
+rofi.width: 20
