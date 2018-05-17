@@ -2,7 +2,7 @@
 font = Source Code Pro 10
 clickable_url = true
 cursor_blink = on
-cursor_shape = underline
+cursor_shape = ibeam
 dynamic_title = true
 
 [colors]
