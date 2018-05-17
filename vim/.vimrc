@@ -15,7 +15,6 @@ call plug#begin('~/.vim/bundle')
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdtree'
   Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 function! OnBattery()
@@ -36,7 +35,6 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set smarttab
-set colorcolumn=80
 set number
 set relativenumber
 set linebreak
@@ -91,13 +89,6 @@ if !has('nvim')
   execute "set <A-j>=\ej"
   execute "set <A-k>=\ek"
   execute "set <A-l>=\el"
-else
-  tnoremap <silent> <Leader><Leader> <C-\><C-n>
-  tnoremap <silent> <A-j> <C-\><C-n><C-w>j
-  tnoremap <silent> <A-k> <C-\><C-n><C-w>k
-  tnoremap <silent> <A-h> <C-\><C-n><C-w>h
-  tnoremap <silent> <A-l> <C-\><C-n><C-w>l
-  tnoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
 endif
 " general
 nnoremap <silent> <Leader>w :w<CR>
@@ -107,22 +98,28 @@ nnoremap <silent> <Leader>W :wq<CR>
 inoremap <silent> <Leader>W <C-\><C-n>:wq<CR>
 vnoremap <silent> <Leader>W <C-\><C-n>:wq<CR>
 inoremap <silent> <Leader><Leader> <C-\><C-n>
+tnoremap <silent> <Leader><Leader> <C-\><C-n>
 vnoremap <silent> <Leader><Leader> <C-\><C-n>
 nnoremap <silent> <A-h> <C-w>h
 inoremap <silent> <A-h> <C-\><C-n><C-w>h
+tnoremap <silent> <A-h> <C-\><C-n><C-w>h
 vnoremap <silent> <A-h> <C-\><C-n><C-w>h
 nnoremap <silent> <A-j> <C-w>j
 inoremap <silent> <A-j> <C-\><C-n><C-w>j
+tnoremap <silent> <A-j> <C-\><C-n><C-w>j
 vnoremap <silent> <A-j> <C-\><C-n><C-w>j
 nnoremap <silent> <A-k> <C-w>k
 inoremap <silent> <A-k> <C-\><C-n><C-w>k
+tnoremap <silent> <A-k> <C-\><C-n><C-w>k
 vnoremap <silent> <A-k> <C-\><C-n><C-w>k
 nnoremap <silent> <A-l> <C-w>l
 inoremap <silent> <A-l> <C-\><C-n><C-w>l
+tnoremap <silent> <A-l> <C-\><C-n><C-w>l
 vnoremap <silent> <A-l> <C-\><C-n><C-w>l
 " NERDTree
 nnoremap <silent> <A-\> :NERDTreeToggle<CR>
 inoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
+tnoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
 vnoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
 " buffers
 nnoremap <silent> <Leader>bn :enew<CR>
