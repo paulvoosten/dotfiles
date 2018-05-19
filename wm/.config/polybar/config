@@ -44,7 +44,7 @@ font-1 = Font Awesome 5 Free:style=Solid:size=10;2
 font-2 = Font Awesome 5 Brands:size=10;2
 modules-left = bspwm xwindow
 modules-center =
-modules-right = memory cpu volume packages date compton redshift powermenu
+modules-right = memory cpu volume packages compton redshift date powermenu
 tray-position = right
 tray-background = ${colors.base00}
 tray-padding = 2
@@ -88,11 +88,14 @@ label-private-padding-right = 1
 label-sticky = 
 label-sticky-background = ${colors.base00}
 label-sticky-padding-right = 1
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
+ws-icon-0 = web;
+ws-icon-1 = term;
+ws-icon-2 = code;
+ws-icon-3 = data;
+ws-icon-4 = chat;
+ws-icon-5 = music;
+ws-icon-6 = vm;
+ws-icon-7 = rand;
 ws-icon-default = 
 
 [module/cpu]
