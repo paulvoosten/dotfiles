@@ -62,6 +62,8 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 
+let g:airline_left_sep = ''
+let g:airline_right_sep = ''
 let g:airline_symbols.crypt = ''
 let g:airline_symbols.branch = ''
 let g:airline_symbols.linenr = ''
@@ -90,56 +92,58 @@ if !has('nvim')
   execute "set <A-k>=\ek"
   execute "set <A-l>=\el"
 endif
+" terminal
+tnoremap <silent> <Esc> <C-\><C-n>
 " general
 nnoremap <silent> <Leader>w :w<CR>
-inoremap <silent> <Leader>w <C-\><C-n>:w<CR>
-vnoremap <silent> <Leader>w <C-\><C-n>:w<CR>
+inoremap <silent> <Leader>w <Esc>:w<CR>
+vnoremap <silent> <Leader>w <Esc>:w<CR>
 nnoremap <silent> <Leader>W :wq<CR>
-inoremap <silent> <Leader>W <C-\><C-n>:wq<CR>
-vnoremap <silent> <Leader>W <C-\><C-n>:wq<CR>
-inoremap <silent> <Leader><Leader> <C-\><C-n>
-tnoremap <silent> <Leader><Leader> <C-\><C-n>
-vnoremap <silent> <Leader><Leader> <C-\><C-n>
+inoremap <silent> <Leader>W <Esc>:wq<CR>
+vnoremap <silent> <Leader>W <Esc>:wq<CR>
+inoremap <silent> <Leader><Leader> <Esc>
+tnoremap <silent> <Leader><Leader> <Esc>
+vnoremap <silent> <Leader><Leader> <Esc>
 nnoremap <silent> <A-h> <C-w>h
-inoremap <silent> <A-h> <C-\><C-n><C-w>h
-tnoremap <silent> <A-h> <C-\><C-n><C-w>h
-vnoremap <silent> <A-h> <C-\><C-n><C-w>h
+inoremap <silent> <A-h> <Esc><C-w>h
+tnoremap <silent> <A-h> <Esc><C-w>h
+vnoremap <silent> <A-h> <Esc><C-w>h
 nnoremap <silent> <A-j> <C-w>j
-inoremap <silent> <A-j> <C-\><C-n><C-w>j
-tnoremap <silent> <A-j> <C-\><C-n><C-w>j
-vnoremap <silent> <A-j> <C-\><C-n><C-w>j
+inoremap <silent> <A-j> <Esc><C-w>j
+tnoremap <silent> <A-j> <Esc><C-w>j
+vnoremap <silent> <A-j> <Esc><C-w>j
 nnoremap <silent> <A-k> <C-w>k
-inoremap <silent> <A-k> <C-\><C-n><C-w>k
-tnoremap <silent> <A-k> <C-\><C-n><C-w>k
-vnoremap <silent> <A-k> <C-\><C-n><C-w>k
+inoremap <silent> <A-k> <Esc><C-w>k
+tnoremap <silent> <A-k> <Esc><C-w>k
+vnoremap <silent> <A-k> <Esc><C-w>k
 nnoremap <silent> <A-l> <C-w>l
-inoremap <silent> <A-l> <C-\><C-n><C-w>l
-tnoremap <silent> <A-l> <C-\><C-n><C-w>l
-vnoremap <silent> <A-l> <C-\><C-n><C-w>l
+inoremap <silent> <A-l> <Esc><C-w>l
+tnoremap <silent> <A-l> <Esc><C-w>l
+vnoremap <silent> <A-l> <Esc><C-w>l
 " NERDTree
 nnoremap <silent> <A-\> :NERDTreeToggle<CR>
-inoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
-tnoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
-vnoremap <silent> <A-\> <C-\><C-n>:NERDTreeToggle<CR>
+inoremap <silent> <A-\> <Esc>:NERDTreeToggle<CR>
+tnoremap <silent> <A-\> <Esc>:NERDTreeToggle<CR>
+vnoremap <silent> <A-\> <Esc>:NERDTreeToggle<CR>
 " buffers
 nnoremap <silent> <Leader>bn :enew<CR>
-inoremap <silent> <Leader>bn <C-\><C-n>:enew<CR>
-vnoremap <silent> <Leader>bn <C-\><C-n>:enew<CR>
+inoremap <silent> <Leader>bn <Esc>:enew<CR>
+vnoremap <silent> <Leader>bn <Esc>:enew<CR>
 nnoremap <silent> <Leader>N :bp<CR>
-inoremap <silent> <Leader>N <C-\><C-n>:bp<CR>
-vnoremap <silent> <Leader>N <C-\><C-n>:bp<CR>
+inoremap <silent> <Leader>N <Esc>:bp<CR>
+vnoremap <silent> <Leader>N <Esc>:bp<CR>
 nnoremap <silent> <Leader>n :bn<CR>
-inoremap <silent> <Leader>n <C-\><C-n>:bn<CR>
-vnoremap <silent> <Leader>n <C-\><C-n>:bn<CR>
+inoremap <silent> <Leader>n <Esc>:bn<CR>
+vnoremap <silent> <Leader>n <Esc>:bn<CR>
 nnoremap <silent> <Leader>bq :bp<BAR>bd #<CR>
-inoremap <silent> <Leader>bq <C-\><C-n>:bp<BAR>bd #<CR>
-vnoremap <silent> <Leader>bq <C-\><C-n>:bp<BAR>bd #<CR>
+inoremap <silent> <Leader>bq <Esc>:bp<BAR>bd #<CR>
+vnoremap <silent> <Leader>bq <Esc>:bp<BAR>bd #<CR>
 nnoremap <silent> <Leader>bl :ls<CR>
-inoremap <silent> <Leader>bl <C-\><C-n>:ls<CR>
-vnoremap <silent> <Leader>bl <C-\><C-n>:ls<CR>
+inoremap <silent> <Leader>bl <Esc>:ls<CR>
+vnoremap <silent> <Leader>bl <Esc>:ls<CR>
 " NeoMake
 nnoremap <silent> <Leader>l :Neomake<CR>
-inoremap <silent> <Leader>l <C-\><C-n>:Neomake<CR>
-vnoremap <silent> <Leader>l <C-\><C-n>:Neomake<CR>
+inoremap <silent> <Leader>l <Esc>:Neomake<CR>
+vnoremap <silent> <Leader>l <Esc>:Neomake<CR>
 
 colorscheme base16-default-dark
