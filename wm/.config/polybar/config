@@ -44,8 +44,8 @@ font-1 = Font Awesome 5 Free:style=Solid:size=10;2
 font-2 = Font Awesome 5 Brands:size=10;2
 font-3 = Unifont:size=10;2
 modules-left = bspwm xwindow
-modules-center =
-modules-right = memory cpu volume packages compton redshift date powermenu
+modules-center = date
+modules-right = memory cpu volume packages compton redshift powermenu
 tray-position = right
 tray-background = ${colors.base00}
 tray-padding = 2
@@ -53,7 +53,6 @@ wm-restack = bspwm
 
 [module/xwindow]
 type = internal/xwindow
-format-padding = 0
 label = %title%
 label-maxlen = 30
 
@@ -102,10 +101,8 @@ ws-icon-default = 
 [module/cpu]
 type = internal/cpu
 format = <label> <ramp-coreload>
-
-label = 
+label = 
 label-foreground = ${colors.base03}
-
 ramp-coreload-0 = ▁
 ramp-coreload-0-foreground = ${colors.base0B}
 ramp-coreload-1 = ▂
@@ -125,20 +122,28 @@ ramp-coreload-7-foreground = ${colors.base08}
 
 [module/memory]
 type = internal/memory
-format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.base03}
-label = %percentage_used%%
+format = <label> <bar-used>
+label = 
+label-foreground = ${colors.base03}
+bar-used-width = 50
+bar-used-gradient = true
+bar-used-foreground-0 = ${colors.base0B}
+bar-used-foreground-1 = ${colors.base0A}
+bar-used-foreground-2 = ${colors.base09}
+bar-used-foreground-3 = ${colors.base08}
+bar-used-indicator =
+bar-used-fill = |
+bar-used-empty = |
+bar-used-empty-foreground = ${colors.base03}
 
 [module/date]
 type = internal/date
 interval = 1
-format-prefix = 
-;format-prefix-foreground = ${colors.base03}
 label = %date% %time%
-date =
-date-alt = " %d-%m"
-time = %H:%M:%S
+date = %a, %d %b %Y
+date-alt = %a, %d %b %Y
+time = %H:%M
+time-alt = %H:%M:%S
 
 [module/volume]
 type = internal/volume
@@ -185,7 +190,7 @@ click-left = ~/.config/polybar/modules/compton-toggle.sh
 type = custom/script
 interval = 600
 format = <label>
-format-prefix = " "
+format-prefix = 
 format-prefix-foreground = ${colors.base03}
 label = %output%
 exec = ~/.config/polybar/modules/packages.sh

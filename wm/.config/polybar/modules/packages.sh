@@ -4,7 +4,5 @@ aur=$(cower -u|wc -l)
 check=$((pac + aur))
 
 if [[ "$check" != "0" ]]; then
-    echo "$pac $aur"
-else
-    echo ''
+    echo " $pac $aur"
 fi
