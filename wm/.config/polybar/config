@@ -42,6 +42,7 @@ module-margin = 1
 font-0 = Roboto Condensed:size=12;2
 font-1 = Font Awesome 5 Free:style=Solid:size=10;2
 font-2 = Font Awesome 5 Brands:size=10;2
+font-3 = Unifont:size=10;2
 modules-left = bspwm xwindow
 modules-center =
 modules-right = memory cpu volume packages compton redshift date powermenu
@@ -100,10 +101,27 @@ ws-icon-default = 
 
 [module/cpu]
 type = internal/cpu
-format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.base03}
-label = %percentage%%
+format = <label> <ramp-coreload>
+
+label = 
+label-foreground = ${colors.base03}
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-foreground = ${colors.base0B}
+ramp-coreload-1 = ▂
+ramp-coreload-1-foreground = ${colors.base0B}
+ramp-coreload-2 = ▃
+ramp-coreload-2-foreground = ${colors.base0A}
+ramp-coreload-3 = ▄
+ramp-coreload-3-foreground = ${colors.base0A}
+ramp-coreload-4 = ▅
+ramp-coreload-4-foreground = ${colors.base09}
+ramp-coreload-5 = ▆
+ramp-coreload-5-foreground = ${colors.base09}
+ramp-coreload-6 = ▇
+ramp-coreload-6-foreground = ${colors.base08}
+ramp-coreload-7 = █
+ramp-coreload-7-foreground = ${colors.base08}
 
 [module/memory]
 type = internal/memory
