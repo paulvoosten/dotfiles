@@ -95,7 +95,8 @@ ws-icon-3 = data;
 ws-icon-4 = chat;
 ws-icon-5 = music;
 ws-icon-6 = vm;
-ws-icon-7 = rand;
+ws-icon-7 = game;
+ws-icon-8 = rand;
 ws-icon-default = 
 
 [module/cpu]
