@@ -1,5 +1,11 @@
 #!/bin/bash
-bspc monitor -d web term code data chat music game vm rand
+case "${HOSTNAME}" in
+    'arch-home') bspc monitor -d web term code data chat music game vm rand;;
+    'arch-adcalls')
+        bspc monitor VGA-1 -d web data chat music
+        bspc monitor HDMI-1 -d code term game vm rand
+        ;;
+esac
 
 bspc config border_width 2
 bspc config window_gap 10
