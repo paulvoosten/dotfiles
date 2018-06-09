@@ -45,7 +45,7 @@ font-2 = Font Awesome 5 Brands:size=10;2
 font-3 = Unifont:size=10;2
 modules-left = bspwm xwindow
 modules-center = date
-modules-right = memory cpu volume packages compton redshift powermenu
+modules-right = memory cpu volume compton redshift powermenu
 tray-position = right
 tray-background = ${colors.base00}
 tray-padding = 2
