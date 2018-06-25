@@ -44,7 +44,7 @@ alias pacexpl='sudo pacman -D --asexp'
 # mark [impl]icity      - mark one or more packages as implicitly installed
 alias pacimpl='sudo pacman -D --asdep'
 # [c]lear cache
-alias pacc='paccache -ru'
+alias pacc='sudo pacman -Sc'
 
 # pacaur aliases
 # default action        - install package(s)
