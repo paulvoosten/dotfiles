@@ -37,8 +37,8 @@ set tabstop=4
 set smarttab
 set number
 set relativenumber
-set linebreak
-set breakindent
+"set linebreak
+"set breakindent
 set list
 set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_,extends:>,precedes:<
 set hlsearch
