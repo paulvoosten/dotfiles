@@ -47,11 +47,11 @@ bspc rule -a KeePass2 state=floating
 bspc rule -a looking-glass-client state=floating rectangle=1920x1080+760+180
 bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+1140+360
 
-~/.config/polybar/launch.sh &
+feh --bg-fill --no-fehbg ~/.background &
 
 wmname LG3D &
 
-feh --bg-fill --no-fehbg ~/.background &
+~/.config/polybar/launch.sh &
 
 if ! pgrep -ax termite | grep '\-\-class scratchpad'; then
     termite --class scratchpad -t Scratchpad -e ~/.config/bspwm/scratch &
