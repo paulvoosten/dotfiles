@@ -4,12 +4,13 @@
 
 # terminal emulator
 super + Return
-    termite
+    termite -t Termite
 
 # dropdown terminal emulator
 super + shift + Return
+    [ ! -s /tmp/scratchid ] && exit;\
     id=$(cat /tmp/scratchid);\
-	bspc node $id --flag hidden;bspc node -f $id
+    bspc node $id --flag hidden;bspc node -f $id
 
 # program launcher
 super + e
@@ -64,12 +65,12 @@ super + {_,shift + }f
 super + ctrl + alt + {l,p,s}
     bspc node -g {locked,private,sticky}
 
-# focus/swap the node in the given direction
-super + {_,shift + }{h,j,k,l}
-    bspc node -{f,s} {west,south,north,east}
+# focus/preselect/swap the node in the given direction
+super + {_,ctrl + ,shift + }{h,j,k,l}
+    bspc node -{f,p,s} {west,south,north,east}
 
 # focus the node for the given path jump
-super + {pb,c,omma,period}
+super + {p,b,comma,period}
     bspc node -f @{parent,brother,first,second}
 
 # focus the previous/next desktop/node
@@ -83,10 +84,6 @@ alt + bracket{left,right}
 # focus or send to the given desktop
 super + {_,shift + }{1-9,0}
     bspc {desktop -f,node -d} '^{1-9, 10}'
-
-# preselect the direction
-super + ctrl + {h,j,k,l}
-    bspc node -p {west,south,north,east}
 
 # preselect the ratio
 super + ctrl + {1-9}
@@ -104,7 +101,7 @@ super + ctrl + shift + space
 super + alt + {h,j,k,l}
     bspc node -z {left -10 0,bottom 0 10,top 0 -10,right 10 0}
 
-# contract a window by moving one of its side inward
+# contract a window by moving one of its sides inward
 super + alt + shift + {h,j,k,l}
     bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
 

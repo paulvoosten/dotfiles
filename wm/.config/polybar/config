@@ -22,6 +22,7 @@ primary = ${env:MONITOR}
 
 [settings]
 screenchange-reload = true
+pseudo-transparency = true
 format-background = ${colors.base00}
 format-foreground = ${colors.base07}
 format-padding = 2
@@ -43,18 +44,43 @@ font-0 = Roboto Condensed:size=12;2
 font-1 = Font Awesome 5 Free:style=Solid:size=10;2
 font-2 = Font Awesome 5 Brands:size=10;2
 font-3 = Unifont:size=10;2
-modules-left = bspwm xwindow
-modules-center = date
-modules-right = memory cpu volume compton redshift powermenu
+modules-left = date battery cpu memory xwindow
+modules-center = bspwm
+modules-right = packages volume compton redshift xkeyboard powermenu
 tray-position = right
 tray-background = ${colors.base00}
 tray-padding = 2
 wm-restack = bspwm
 
-[module/xwindow]
-type = internal/xwindow
-label = %title%
-label-maxlen = 30
+[module/battery]
+type = internal/battery
+full-at 99
+time-format = %H:%M
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+label-charging = %percentage%% %time%
+label-discharging = %percentage%% %time%
+animation-charging-0 = 
+animation-charging-0-foreground = ${color.base03}
+animation-charging-1 = 
+animation-charging-1-foreground = ${color.base03}
+animation-charging-2 = 
+animation-charging-2-foreground = ${color.base03}
+animation-charging-3 = 
+animation-charging-3-foreground = ${color.base03}
+animation-charging-4 = 
+animation-charging-4-foreground = ${color.base03}
+animation-charging-framerate = 750
+ramp-capacity-0 = 
+ramn-charging-0-foreground = ${color.base03}
+ramn-charging-1 = 
+ramn-charging-1-foreground = ${color.base03}
+ramn-charging-2 = 
+ramn-charging-2-foreground = ${color.base03}
+ramn-charging-3 = 
+ramn-charging-3-foreground = ${color.base03}
+ramn-charging-4 = 
+ramn-charging-4-foreground = ${color.base03}
 
 [module/bspwm]
 type = internal/bspwm
@@ -64,30 +90,35 @@ pin-workspaces = false
 format = <label-state> <label-mode>
 format-padding = 0
 label-focused = %icon%
-label-focused-background = ${colors.base03}
-label-focused-padding = 2
+label-focused-background = ${colors.base00}
+label-focused-foreground = ${colors.base03}
+label-focused-padding = 1
 label-dimmed-focused-background = ${colors.base00}
-label-dimmed-focused-padding = 2
+label-dimmed-focused-padding = 1
 label-occupied = %icon%
 label-occupied-background = ${colors.base00}
-label-occupied-padding = 2
+label-occupied-foreground = ${colors.base0D}
+label-occupied-padding = 1
 label-urgent = %icon%
-label-urgent-background = ${colors.base08}
-label-urgent-padding = 2
-label-empty =
+label-urgent-background = ${colors.base00}
+label-urgent-foreground = ${colors.base08}
+label-urgent-padding = 1
+label-empty = %icon%
+label-empty-background = ${colors.base00}
+label-empty-padding = 1
 label-monocle = M
-label-monocle-background = ${colors.base03}
+label-monocle-background = ${colors.base00}
 label-monocle-padding-right = 1
 label-locked = 
-label-locked-background = ${colors.base03}
+label-locked-background = ${colors.base00}
 label-locked-padding-right = 1
 label-private = 
-label-private-background = ${colors.base03}
+label-private-background = ${colors.base00}
 label-private-padding-right = 1
 label-sticky = 
-label-sticky-background = ${colors.base03}
+label-sticky-background = ${colors.base00}
 label-sticky-padding-right = 1
-ws-icon-0 = web;
+ws-icon-0 = home;
 ws-icon-1 = term;
 ws-icon-2 = code;
 ws-icon-3 = data;
@@ -100,9 +131,11 @@ ws-icon-default = 
 
 [module/cpu]
 type = internal/cpu
-format = <label> <ramp-coreload>
-label = 
+format = <ramp-coreload>
+format-prefix = " "
+format-prefix-foreground = ${colors.base03}
 label-foreground = ${colors.base03}
+ramp-coreload-spacing = 0
 ramp-coreload-0 = ▁
 ramp-coreload-0-foreground = ${colors.base0B}
 ramp-coreload-1 = ▂
@@ -120,12 +153,25 @@ ramp-coreload-6-foreground = ${colors.base08}
 ramp-coreload-7 = █
 ramp-coreload-7-foreground = ${colors.base08}
 
+[module/date]
+type = internal/date
+interval = 1
+format = <label>
+format-prefix = " "
+format-prefix-foreground = ${colors.base03}
+label = %date%%time%
+date =
+date-alt = "%a, %d %b %Y "
+time = %H:%M
+time-alt = %H:%M:%S
+
 [module/memory]
 type = internal/memory
-format = <label> <bar-used>
-label = 
-label-foreground = ${colors.base03}
-bar-used-width = 50
+format = <bar-used>
+format-prefix = " "
+format-prefix-foreground = ${colors.base03}
+label = %percentage_used:3%%
+bar-used-width = 30
 bar-used-gradient = true
 bar-used-foreground-0 = ${colors.base0B}
 bar-used-foreground-1 = ${colors.base0A}
@@ -135,28 +181,6 @@ bar-used-indicator =
 bar-used-fill = |
 bar-used-empty = |
 bar-used-empty-foreground = ${colors.base03}
-
-[module/date]
-type = internal/date
-interval = 1
-label = %date% %time%
-date = %a, %d %b %Y
-date-alt = %a, %d %b %Y
-time = %H:%M
-time-alt = %H:%M:%S
-
-[module/volume]
-type = internal/volume
-format-volume = <ramp-volume> <label-volume>
-format-muted = <label-muted>
-format-muted-prefix = " "
-format-muted-prefix-foreground = ${colors.base03}
-label-muted = muted
-label-volume = %percentage%%
-ramp-volume-0 = 
-ramp-volume-1 = 
-ramp-volume-2 = 
-ramp-volume-foreground = ${colors.base03}
 
 [module/powermenu]
 type = custom/menu
@@ -174,6 +198,34 @@ menu-0-1-exec = systemctl reboot
 menu-0-2 = 
 menu-0-2-exec = systemctl poweroff
 
+[module/volume]
+type = internal/volume
+format-volume = <ramp-volume> <label-volume>
+format-muted = <label-muted>
+format-muted-prefix = " "
+format-muted-prefix-foreground = ${colors.base03}
+label-muted = muted
+label-volume = %percentage%%
+ramp-volume-0 = 
+ramp-volume-1 = 
+ramp-volume-2 = 
+ramp-volume-foreground = ${colors.base03}
+
+[module/xwindow]
+type = internal/xwindow
+label = %title%
+label-maxlen = 30
+label-empty = Insert window here
+
+[module/xkeyboard]
+type = internal/xkeyboard
+format = <label-layout>
+format-prefix = " "
+format-prefix-foreground = ${colors.base03}
+;label-indicator = 
+label-layout = %name%
+
+; custom modules
 [module/redshift]
 type = custom/script
 interval = 5
