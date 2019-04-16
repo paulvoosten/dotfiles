@@ -95,6 +95,7 @@ label-focused-foreground = ${colors.base03}
 label-focused-padding = 1
 label-dimmed-focused-background = ${colors.base00}
 label-dimmed-focused-padding = 1
+label-dimmed-occupied-foreground = ${colors.base0D}
 label-occupied = %icon%
 label-occupied-background = ${colors.base00}
 label-occupied-foreground = ${colors.base0D}
@@ -226,12 +227,6 @@ format-prefix-foreground = ${colors.base03}
 label-layout = %name%
 
 ; custom modules
-[module/redshift]
-type = custom/script
-interval = 5
-exec = ~/.config/polybar/modules/redshift.sh
-click-left = ~/.config/polybar/modules/redshift-toggle.sh
-
 [module/compton]
 type = custom/script
 interval = 5
@@ -247,3 +242,9 @@ format-prefix-foreground = ${colors.base03}
 label = %output%
 exec = ~/.config/polybar/modules/packages.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/redshift]
+type = custom/script
+interval = 5
+exec = ~/.config/polybar/modules/redshift.sh
+click-left = ~/.config/polybar/modules/redshift-toggle.sh
