@@ -160,9 +160,9 @@ interval = 1
 format = <label>
 format-prefix = " "
 format-prefix-foreground = ${colors.base03}
-label = %date%%time%
-date =
-date-alt = "%a, %d %b %Y "
+label = %date% %time%
+date = "%d-%m"
+date-alt = "%a, %d %b %Y"
 time = %H:%M
 time-alt = %H:%M:%S
 
