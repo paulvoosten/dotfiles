@@ -1,6 +1,6 @@
 #!/bin/bash
 case $HOSTNAME in
-    arch-home) xrandr --output DP-2 --mode 3840x2160 --rate 60 --scale 0.666666666667x0.666666666667 --primary --output DP-0 --mode 2560x1440 --rate 165 --pos 5120x0;;
+    arch-home) xrandr --output DP-4 --mode 3840x2160 --rate 60 --scale 0.666666666667x0.666666666667 --primary --output DP-2 --mode 2560x1440 --rate 165 --pos 5120x0;;
     arch-adcalls) xrandr --output VGA-1 --mode 1920x1080 --rate 60 --primary --output HDMI-1 --mode 1920x1080 --rate 60 --right-of VGA-1;;
 esac
 export MONITOR=$(xrandr -q|grep primary|cut -d ' ' -f1)

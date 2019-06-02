@@ -1,8 +1,8 @@
 #!/bin/bash
 case "${HOSTNAME}" in
     'arch-home')
-        bspc monitor DP-2 -d home term code data chat music vm rand
-        bspc monitor DP-0 -d game
+        bspc monitor DP-4 -d home term code data chat music vm rand
+        bspc monitor DP-2 -d game
         ;;
     'arch-adcalls')
         bspc monitor VGA-1 -d home data chat music
