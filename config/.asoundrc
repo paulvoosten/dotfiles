@@ -22,7 +22,7 @@ pcm.dsnooper {
     slave {
         pcm {
             type hw
-            card U0x46d0x825
+            card Generic
         }
     }
 }
