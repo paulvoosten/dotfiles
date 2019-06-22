@@ -46,8 +46,9 @@ bspc rule -a Virt-manager desktop='vm'
 bspc rule -a Galculator state=floating
 bspc rule -a feh state=floating
 bspc rule -a KeePass2 state=floating
-bspc rule -a looking-glass-client state=floating rectangle=1920x1080+760+180
-bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+1140+360
+bspc rule -a looking-glass-client state=floating rectangle=1920x1080+320+180
+bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+650+360
+bspc rule -a Pavucontrol state=floating rectangle=1260x720+650+360
 
 feh --bg-fill --no-fehbg ~/.background &
 
