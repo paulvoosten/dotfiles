@@ -2,8 +2,8 @@
 case "${HOSTNAME}" in
     'arch-home') bspc monitor -d home term code data chat music game vm rand;;
     'arch-adcalls')
-        bspc monitor VGA-1 -d home data chat music
-        bspc monitor HDMI-1 -d code term game vm rand
+        bspc monitor HDMI-1 -d home data chat music
+        bspc monitor VGA-1 -d code term game vm rand
         ;;
 esac
 
