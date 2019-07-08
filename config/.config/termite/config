@@ -10,7 +10,8 @@ foreground      = #d8d8d8
 foreground_bold = #e8e8e8
 cursor          = #e8e8e8
 background      = #181818
-#background      = rgba(24, 24, 24, 0.8) # uncomment this for transparent background (requires composition manager)
+# uncomment this for transparent background (requires composition manager)
+#background      = rgba(24, 24, 24, 0.8)
 
 # 16 color space
 

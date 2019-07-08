@@ -18,40 +18,30 @@ alias mongos='sudo systemctl start mongodb'
 alias mongor='sudo systemctl restart mongodb'
 alias mongoq='sudo systemctl stop mongodb'
 
-# pacman aliases
+# package management
 # default action        - install package(s)
-alias pac='sudo pacman -S'
+alias pac='yay -S'
 # [u]pdate              - update a(ll) package(s) to the latest version
-alias pacu='sudo pacman -Syu'
+alias pacu='yay -Syu'
 # [r]emove              - remove package(s)
-alias pacr='sudo pacman -Rns'
+alias pacr='yay -Rns'
 # [s]earch              - search for a package using one or more keywords
-alias pacs='pacman -Ss'
+alias pacs='yay -Ss'
 # [i]nfo                - show information about a package
-alias paci='pacman -Si'
+alias paci='yay -Si'
 # [l]ist [o]rphans      - list all packages which are orphaned
-alias paclo='pacman -Qdtq'
+alias paclo='yay -Qdtq'
 # [r]emove [o]rphans    - recursively remove ALL orphaned packages
-alias pacro='sudo pacman -Rsn $(pacman -Qtdq)'
+alias pacro='yay -Rsn $(yay -Qtdq)'
 # [l]ist [p]ackages     - list all explicitly installed packages
-alias paclp='pacman -Qs'
+alias paclp='yay -Qs'
 # [l]ist [i]nstalled    - list all explicitly installed packages
-alias pacli='pacman -Qe'
+alias pacli='yay -Qe'
 # [l]ist [f]iles        - list all files installed (by a given package)
-alias paclf='pacman -Ql'
+alias paclf='yay -Ql'
 # mark [expl]icit       - mark one or more packages as explicitly installed
-alias pacexpl='sudo pacman -D --asexp'
+alias pacexpl='yay -D --asexp'
 # mark [impl]icity      - mark one or more packages as implicitly installed
-alias pacimpl='sudo pacman -D --asdep'
+alias pacimpl='yay -D --asdep'
 # [c]lear cache
-alias pacc='sudo pacman -Sc'
-
-# pacaur aliases
-# default action        - install package(s)
-alias aur='pacaur -Sa'
-# [u]pdate              - update a(ll) AUR package(s) to the latest version
-alias auru='pacaur -yu'
-# [s]earch              - search for a package using one or more keywords
-alias aurs='pacaur -s'
-# [i]nfo                - show information about a package
-alias auri='pacaur -i'
+alias pacc='yay -Sc'

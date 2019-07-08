@@ -1,6 +1,9 @@
 #!/bin/bash
 case "${HOSTNAME}" in
-    'arch-home') bspc monitor -d home term code data chat music game vm rand;;
+    'arch-home')
+        bspc monitor DP-4 -d home term code data chat music vm rand
+        bspc monitor DP-2 -d game
+        ;;
     'arch-adcalls')
         bspc monitor HDMI-1 -d home data chat music
         bspc monitor VGA-1 -d code term game vm rand
@@ -43,8 +46,9 @@ bspc rule -a Virt-manager desktop='vm'
 bspc rule -a Galculator state=floating
 bspc rule -a feh state=floating
 bspc rule -a KeePass2 state=floating
-bspc rule -a looking-glass-client state=floating rectangle=1920x1080+760+180
-bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+1140+360
+bspc rule -a looking-glass-client state=floating rectangle=1920x1080+320+180
+bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+650+360
+bspc rule -a Pavucontrol state=floating rectangle=1260x720+650+360
 
 feh --bg-fill --no-fehbg ~/.background &
 
