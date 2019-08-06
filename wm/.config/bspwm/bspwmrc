@@ -46,9 +46,20 @@ bspc rule -a Virt-manager desktop='vm'
 bspc rule -a Galculator state=floating
 bspc rule -a feh state=floating
 bspc rule -a KeePass2 state=floating
-bspc rule -a looking-glass-client state=floating rectangle=1920x1080+320+180
-bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+650+360
-bspc rule -a Pavucontrol state=floating rectangle=1260x720+650+360
+case "${HOSTNAME}" in
+    'arch-home')
+        bspc rule -a looking-glass-client state=floating rectangle=1920x1080+320+180
+        bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+650+360
+        bspc rule -a Slack state=floating sticky=true rectangle=1260x720+650+360
+        bspc rule -a Pavucontrol state=floating rectangle=1260x720+650+360
+        ;;
+    'arch-adcalls')
+        bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+330+180
+        bspc rule -a Slack state=floating sticky=true rectangle=1260x720+330+180
+        bspc rule -a Pavucontrol state=floating rectangle=1260x720+330+180
+        ;;
+esac
+
 
 feh --bg-fill --no-fehbg ~/.background &
 
