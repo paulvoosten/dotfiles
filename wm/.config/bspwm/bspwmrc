@@ -6,7 +6,7 @@ case "${HOSTNAME}" in
         ;;
     'arch-adcalls')
         bspc monitor HDMI-1 -d home data chat music
-        bspc monitor VGA-1 -d code term game vm rand
+        bspc monitor DP-1 -d code term game vm rand
         ;;
 esac
 
