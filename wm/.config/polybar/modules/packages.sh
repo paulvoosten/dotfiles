@@ -1,5 +1,5 @@
 #!/bin/bash
-pac=$(pacman -Qu|wc -l)
+pac=$(checkupdates|wc -l)
 aur=$(yay -Qua|wc -l)
 check=$((pac + aur))
 
