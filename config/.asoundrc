@@ -22,7 +22,7 @@ pcm.dsnooper {
     slave {
         pcm {
             type hw
-            card Generic
+            card MICROPHONE
         }
     }
 }
