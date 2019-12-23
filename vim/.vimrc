@@ -16,13 +16,8 @@ call plug#begin('~/.vim/bundle')
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdtree'
   Plug 'ctrlpvim/ctrlp.vim'
-  if has('nvim')
-    Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-  else
-    Plug 'Shougo/deoplete.nvim'
-    Plug 'roxma/nvim-yarp'
-    Plug 'roxma/vim-hug-neovim-rpc'
-  endif
+  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
+  Plug 'joshdick/onedark.vim'
 call plug#end()
 
 function! OnBattery()
@@ -84,9 +79,6 @@ let g:airline_symbols.paste = 'ρ'
 let g:airline_symbols.readonly = 'RO'
 let g:airline_symbols.spell = ''
 let g:airline_symbols.whitespace = ''
-
-" deoplete configuration
-let g:deoplete#enable_at_startup = 1
 
 " gitgutter configuration
 let g:gitgutter_sign_added = ''
