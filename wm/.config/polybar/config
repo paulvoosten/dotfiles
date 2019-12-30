@@ -44,7 +44,7 @@ font-0 = Roboto Condensed:size=12;2
 font-1 = Font Awesome 5 Free:style=Solid:size=10;2
 font-2 = Font Awesome 5 Brands:size=10;2
 font-3 = Unifont:size=10;2
-modules-left = date battery cpu memory xwindow
+modules-left = menu date battery cpu memory xwindow
 modules-center = bspwm
 modules-right = packages volume compton redshift xkeyboard powermenu
 tray-position = right
@@ -223,7 +223,6 @@ type = internal/xkeyboard
 format = <label-layout>
 format-prefix = " "
 format-prefix-foreground = ${colors.base03}
-;label-indicator = 
 label-layout = %name%
 
 ; custom modules
@@ -232,6 +231,13 @@ type = custom/script
 interval = 5
 exec = ~/.config/polybar/modules/compton.sh
 click-left = ~/.config/polybar/modules/compton-toggle.sh
+
+[module/menu]
+type = custom/script
+interval = 120
+exec = echo ""
+click-left = "jgmenu_run >/dev/null 2>&1 &"
+format-foreground = ${colors.base03}
 
 [module/packages]
 type = custom/script
