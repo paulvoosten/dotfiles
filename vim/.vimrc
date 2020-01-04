@@ -5,7 +5,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 
 call plug#begin('~/.vim/bundle')
-  Plug 'neomake/neomake'
+  Plug 'dense-analysis/ale'
   Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
@@ -16,20 +16,8 @@ call plug#begin('~/.vim/bundle')
   Plug 'airblade/vim-gitgutter'
   Plug 'scrooloose/nerdtree'
   Plug 'ctrlpvim/ctrlp.vim'
-  Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-  Plug 'joshdick/onedark.vim'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
-
-function! OnBattery()
-  return filereadable('/sys/class/power_supply/AC/online')
-    && readfile('/sys/class/power_supply/AC/online') == ['0']
-endfunction
-
-if OnBattery()
-  call neomake#configure#automake('w', 500)
-else
-  call neomake#configure#automake('inrw', 250)
-endif
 
 set nocompatible
 set laststatus=1
@@ -51,9 +39,13 @@ set mouse=a
 set clipboard=unnamedplus
 set encoding=utf-8
 
-let mapleader = ','
+let mapleader = ';'
+
+" base16
 let base16colorspace = 256
-let NERDTreeMinimalUI = 1
+
+" ALE configuration
+let g:ale_rust_cargo_include_features = "vulkan"
 
 " airline configuration
 let g:airline_powerline_fonts = 1
@@ -87,21 +79,13 @@ let g:gitgutter_sign_modified_removed = ''
 let g:gitgutter_sign_removed = ''
 let g:gitgutter_sign_removed_first_line = ''
 
-" neomake configuration
-let g:neomake_open_list = 2
-
 " NERDTree
+let NERDTreeMinimalUI = 1
 let NERDTreeShowHidden = 1
 
 " keybinds
 " terminal
 tnoremap <silent> <Esc> <C-\><C-n>
-" general
-nnoremap <silent> <Leader>w :w<CR>
-nnoremap <silent> <Leader>W :wq<CR>
-inoremap <silent> <Leader><Leader> <Esc>
-tnoremap <silent> <Leader><Leader> <Esc>
-vnoremap <silent> <Leader><Leader> <Esc>
 " NERDTree
 nnoremap <silent> <C-\> :NERDTreeFocus<CR>
 " buffers
@@ -110,11 +94,9 @@ nnoremap <silent> <Leader>N :bp<CR>
 nnoremap <silent> <Leader>n :bn<CR>
 nnoremap <silent> <Leader>bq :bp<BAR>bd #<CR>
 nnoremap <silent> <Leader>bl :ls<CR>
-" NeoMake
-nnoremap <silent> <Leader>l :Neomake<CR>
-" Deoplete
-inoremap <silent> <S-Tab> <C-x><C-o>
+" ALE
+nnoremap <silent> <Leader>l :ALELint<CR>
 " Rust racer
 au FileType rust nmap <C-]> <Plug>(rust-def)
 
-colorscheme base16-default-dark
+colorscheme base16-black-metal
