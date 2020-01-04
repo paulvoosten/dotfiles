@@ -15,6 +15,7 @@ base0C = ${xrdb:color6}
 base0D = ${xrdb:color4}
 base0E = ${xrdb:color5}
 base0F = ${xrdb:color17}
+label       = ${colors.base0D}
 transparent = #00000000
 
 [monitors]
@@ -23,7 +24,7 @@ primary = ${env:MONITOR}
 [settings]
 screenchange-reload = true
 pseudo-transparency = true
-format-background = ${colors.base00}
+format-background = ${colors.transparent}
 format-foreground = ${colors.base07}
 format-padding = 2
 
@@ -48,7 +49,6 @@ modules-left = menu date battery cpu memory xwindow
 modules-center = bspwm
 modules-right = packages volume compton redshift xkeyboard powermenu
 tray-position = right
-tray-background = ${colors.base00}
 tray-padding = 2
 wm-restack = bspwm
 
@@ -61,26 +61,26 @@ format-discharging = <ramp-capacity> <label-discharging>
 label-charging = %percentage%% %time%
 label-discharging = %percentage%% %time%
 animation-charging-0 = 
-animation-charging-0-foreground = ${color.base03}
+animation-charging-0-foreground = ${color.label}
 animation-charging-1 = 
-animation-charging-1-foreground = ${color.base03}
+animation-charging-1-foreground = ${color.label}
 animation-charging-2 = 
-animation-charging-2-foreground = ${color.base03}
+animation-charging-2-foreground = ${color.label}
 animation-charging-3 = 
-animation-charging-3-foreground = ${color.base03}
+animation-charging-3-foreground = ${color.label}
 animation-charging-4 = 
-animation-charging-4-foreground = ${color.base03}
+animation-charging-4-foreground = ${color.label}
 animation-charging-framerate = 750
 ramp-capacity-0 = 
-ramn-charging-0-foreground = ${color.base03}
-ramn-charging-1 = 
-ramn-charging-1-foreground = ${color.base03}
-ramn-charging-2 = 
-ramn-charging-2-foreground = ${color.base03}
-ramn-charging-3 = 
-ramn-charging-3-foreground = ${color.base03}
-ramn-charging-4 = 
-ramn-charging-4-foreground = ${color.base03}
+ramp-charging-0-foreground = ${color.label}
+ramp-charging-1 = 
+ramp-charging-1-foreground = ${color.label}
+ramp-charging-2 = 
+ramp-charging-2-foreground = ${color.label}
+ramp-charging-3 = 
+ramp-charging-3-foreground = ${color.label}
+ramp-charging-4 = 
+ramp-charging-4-foreground = ${color.label}
 
 [module/bspwm]
 type = internal/bspwm
@@ -90,34 +90,30 @@ pin-workspaces = false
 format = <label-state> <label-mode>
 format-padding = 0
 label-focused = %icon%
-label-focused-background = ${colors.base00}
-label-focused-foreground = ${colors.base03}
 label-focused-padding = 1
-label-dimmed-focused-background = ${colors.base00}
+label-focused-foreground = ${colors.label}
 label-dimmed-focused-padding = 1
-label-dimmed-occupied-foreground = ${colors.base0D}
+label-dimmed-occupied-foreground = ${colors.base05}
 label-occupied = %icon%
-label-occupied-background = ${colors.base00}
-label-occupied-foreground = ${colors.base0D}
+label-occupied-foreground = ${colors.base05}
 label-occupied-padding = 1
 label-urgent = %icon%
-label-urgent-background = ${colors.base00}
 label-urgent-foreground = ${colors.base08}
 label-urgent-padding = 1
 label-empty = %icon%
-label-empty-background = ${colors.base00}
+label-empty-foreground = ${colors.base03}
 label-empty-padding = 1
-label-monocle = M
-label-monocle-background = ${colors.base00}
+label-monocle = 
+label-monocle-foreground = ${colors.label}
 label-monocle-padding-right = 1
 label-locked = 
-label-locked-background = ${colors.base00}
+label-locked-foreground = ${colors.label}
 label-locked-padding-right = 1
 label-private = 
-label-private-background = ${colors.base00}
+label-private-foreground = ${colors.label}
 label-private-padding-right = 1
 label-sticky = 
-label-sticky-background = ${colors.base00}
+label-sticky-foreground = ${colors.label}
 label-sticky-padding-right = 1
 ws-icon-0 = home;
 ws-icon-1 = term;
@@ -132,10 +128,9 @@ ws-icon-default = 
 
 [module/cpu]
 type = internal/cpu
-format = <ramp-coreload>
-format-prefix = " "
-format-prefix-foreground = ${colors.base03}
-label-foreground = ${colors.base03}
+format = <label> <ramp-coreload>
+label = 
+label-foreground = ${colors.label}
 ramp-coreload-spacing = 0
 ramp-coreload-0 = ▁
 ramp-coreload-0-foreground = ${colors.base0B}
@@ -159,7 +154,7 @@ type = internal/date
 interval = 1
 format = <label>
 format-prefix = " "
-format-prefix-foreground = ${colors.base03}
+format-prefix-foreground = ${colors.label}
 label = %date% %time%
 date = "%d-%m"
 date-alt = "%a, %d %b %Y"
@@ -168,10 +163,9 @@ time-alt = %H:%M:%S
 
 [module/memory]
 type = internal/memory
-format = <bar-used>
-format-prefix = " "
-format-prefix-foreground = ${colors.base03}
-label = %percentage_used:3%%
+format = <label> <bar-used>
+label = 
+label-foreground = ${colors.label}
 bar-used-width = 30
 bar-used-gradient = true
 bar-used-foreground-0 = ${colors.base0B}
@@ -185,6 +179,8 @@ bar-used-empty-foreground = ${colors.base03}
 
 [module/powermenu]
 type = custom/menu
+expand-right = false
+format-foreground = ${colors.label}
 label-open = 
 label-close = 
 label-separator = " "
@@ -200,32 +196,33 @@ menu-0-2 = 
 menu-0-2-exec = systemctl poweroff
 
 [module/volume]
-type = internal/volume
+type = internal/pulseaudio
+sink = alsa_output.pci-0000_0c_00.3.iec958-stereo
 format-volume = <ramp-volume> <label-volume>
 format-muted = <label-muted>
-format-muted-prefix = " "
-format-muted-prefix-foreground = ${colors.base03}
+format-muted-prefix = " "
+format-muted-prefix-foreground = ${colors.label}
 label-muted = muted
 label-volume = %percentage%%
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
-ramp-volume-foreground = ${colors.base03}
+ramp-volume-foreground = ${colors.label}
 
 [module/xwindow]
 type = internal/xwindow
 label = %title%
 label-maxlen = 30
-label-empty = Insert window here
 
 [module/xkeyboard]
 type = internal/xkeyboard
 format = <label-layout>
 format-prefix = " "
-format-prefix-foreground = ${colors.base03}
-label-layout = %name%
+format-prefix-foreground = ${colors.label}
+label-layout = %name% %icon%
 
 ; custom modules
+
 [module/compton]
 type = custom/script
 interval = 5
@@ -233,19 +230,16 @@ exec = ~/.config/polybar/modules/compton.sh
 click-left = ~/.config/polybar/modules/compton-toggle.sh
 
 [module/menu]
-type = custom/script
-interval = 120
-exec = echo ""
+type = custom/text
+content = 
+content-foreground = ${colors.label}
 click-left = "jgmenu_run >/dev/null 2>&1 &"
-format-foreground = ${colors.base03}
 
 [module/packages]
 type = custom/script
 interval = 600
-format = <label>
-format-prefix = 
-format-prefix-foreground = ${colors.base03}
-label = %output%
+format-prefix = " "
+format-prefix-foreground = ${colors.label}
 exec = ~/.config/polybar/modules/packages.sh
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
