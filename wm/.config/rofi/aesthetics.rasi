@@ -1,13 +1,14 @@
 configuration {
-  columns:        3;
-  display-combi:  "";
-  display-run:    "Execute";
-  display-ssh:    "SSH";
-  display-window: "Window";
-  font:           "Roboto Condensed 14";
-  monitor:        "primary";
-  show-icons:     true;
-  terminal:       "termite";
+  columns:         4;
+  display-drun:    "Menu";
+  display-run:     "Execute";
+  display-ssh:     "SSH";
+  display-window:  "Window";
+  font:            "Roboto Condensed 14";
+  monitor:         "primary";
+  show-icons:      true;
+  disable-history: true;
+  terminal:        "termite";
 }
 
 * {
