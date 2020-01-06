@@ -99,4 +99,4 @@ nnoremap <silent> <Leader>l :ALELint<CR>
 " Rust racer
 au FileType rust nmap <C-]> <Plug>(rust-def)
 
-colorscheme base16-black-metal
+colorscheme base16-default-dark
