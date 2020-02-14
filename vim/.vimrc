@@ -45,7 +45,7 @@ let mapleader = ';'
 let base16colorspace = 256
 
 " ALE configuration
-let g:ale_rust_cargo_include_features = "vulkan"
+let g:ale_rust_cargo_include_features = "vulkan gltf"
 
 " airline configuration
 let g:airline_powerline_fonts = 1
@@ -100,3 +100,5 @@ nnoremap <silent> <Leader>l :ALELint<CR>
 au FileType rust nmap <C-]> <Plug>(rust-def)
 
 colorscheme base16-default-dark
+highlight Normal guibg=none ctermbg=none
+highlight NonText guibg=none ctermbg=none
