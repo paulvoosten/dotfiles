@@ -154,5 +154,5 @@ XF86AudioLowerVolume
 #    mpc volume -5
 
 # lock screen
-ctrl + alt + l
-    ~/.config/i3/lock.sh
+super + x
+    pgrep -x oblogout || oblogout
