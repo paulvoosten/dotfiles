@@ -46,6 +46,7 @@ bspc rule -a Virt-manager desktop='vm'
 bspc rule -a Galculator state=floating
 bspc rule -a feh state=floating
 bspc rule -a KeePass2 state=floating
+bspc rule -a Oblogout state=fullscreen sticky=true monitor=primary
 case "${HOSTNAME}" in
     'arch-home')
         bspc rule -a looking-glass-client state=floating rectangle=1920x1080+320+180
