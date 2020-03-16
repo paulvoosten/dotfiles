@@ -47,7 +47,7 @@ font-2 = Font Awesome 5 Brands:size=10;2
 font-3 = Unifont:size=10;2
 modules-left = menu date battery cpu memory xwindow
 modules-center = bspwm
-modules-right = packages volume compton redshift xkeyboard powermenu
+modules-right = packages volume picom redshift xkeyboard powermenu
 tray-position = right
 tray-padding = 2
 wm-restack = bspwm
@@ -223,11 +223,11 @@ label-layout = %name% %icon%
 
 ; custom modules
 
-[module/compton]
+[module/picom]
 type = custom/script
 interval = 5
-exec = ~/.config/polybar/modules/compton.sh
-click-left = ~/.config/polybar/modules/compton-toggle.sh
+exec = ~/.config/polybar/modules/picom
+click-left = ~/.config/polybar/modules/picom-toggle
 
 [module/menu]
 type = custom/text
@@ -240,11 +240,11 @@ type = custom/script
 interval = 600
 format-prefix = " "
 format-prefix-foreground = ${colors.label}
-exec = ~/.config/polybar/modules/packages.sh
+exec = ~/.config/polybar/modules/packages
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
 
 [module/redshift]
 type = custom/script
 interval = 5
-exec = ~/.config/polybar/modules/redshift.sh
-click-left = ~/.config/polybar/modules/redshift-toggle.sh
+exec = ~/.config/polybar/modules/redshift
+click-left = ~/.config/polybar/modules/redshift-toggle
