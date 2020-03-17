@@ -177,24 +177,6 @@ bar-used-fill = |
 bar-used-empty = |
 bar-used-empty-foreground = ${colors.base03}
 
-[module/powermenu]
-type = custom/menu
-expand-right = false
-format-foreground = ${colors.label}
-label-open = 
-label-close = 
-label-separator = " "
-menu-0-0 = 
-menu-0-0-exec = bspc quit
-;menu-0-1 =
-;menu-0-1-exec = systemctl suspend
-;menu-0-2 =
-;menu-0-2-exec = systemctl hibernate
-menu-0-1 = 
-menu-0-1-exec = systemctl reboot
-menu-0-2 = 
-menu-0-2-exec = systemctl poweroff
-
 [module/volume]
 type = internal/pulseaudio
 sink = alsa_output.pci-0000_0c_00.3.iec958-stereo
@@ -223,12 +205,6 @@ label-layout = %name% %icon%
 
 ; custom modules
 
-[module/picom]
-type = custom/script
-interval = 5
-exec = ~/.config/polybar/modules/picom
-click-left = ~/.config/polybar/modules/picom-toggle
-
 [module/menu]
 type = custom/text
 content = 
@@ -242,6 +218,18 @@ format-prefix = " "
 format-prefix-foreground = ${colors.label}
 exec = ~/.config/polybar/modules/packages
 exec-if = "ping -q -w 2 -c 1 176.34.135.167 > /dev/null"
+
+[module/picom]
+type = custom/script
+interval = 5
+exec = ~/.config/polybar/modules/picom
+click-left = ~/.config/polybar/modules/picom-toggle
+
+[module/powermenu]
+type = custom/text
+content = 
+content-foreground = ${colors.label}
+click-left = oblogout
 
 [module/redshift]
 type = custom/script
