@@ -1,12 +1,23 @@
 #!/bin/bash
 case "${HOSTNAME}" in
     'arch-home')
+        # Monitors
         bspc monitor DP-4 -d home term code data chat music vm rand
         bspc monitor DP-2 -d game
+        # Rules
+        bspc rule -a looking-glass-client state=floating rectangle=1920x1080+320+180
+        bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+650+360
+        bspc rule -a Slack state=floating sticky=true rectangle=1260x720+650+360
+        bspc rule -a Pavucontrol state=floating rectangle=1260x720+650+360
         ;;
     'arch-adcalls')
+        # Monitors
         bspc monitor HDMI-1 -d home data chat music
         bspc monitor DVI-D-1 -d code term game vm rand
+        # Rules
+        bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+330+180
+        bspc rule -a Slack state=floating sticky=true rectangle=1260x720+330+180
+        bspc rule -a Pavucontrol state=floating rectangle=1260x720+330+180
         ;;
 esac
 
@@ -28,7 +39,6 @@ bspc config swallow_first_click true
 bspc config split_ratio 0.5
 
 bspc rule -a Chromium desktop='home'
-bspc rule -a qutebrowser desktop='home'
 bspc rule -a firefox desktop='home'
 bspc rule -a discord desktop='home'
 bspc rule -a Termite desktop='term'
@@ -43,23 +53,9 @@ bspc rule -a Spotify desktop='music'
 bspc rule -a Steam desktop='game'
 bspc rule -a csgo_linux64 desktop='game' state=fullscreen
 bspc rule -a Virt-manager desktop='vm'
-bspc rule -a Galculator state=floating
 bspc rule -a feh state=floating
 bspc rule -a KeePass2 state=floating
 bspc rule -a Oblogout state=fullscreen sticky=true monitor=primary
-case "${HOSTNAME}" in
-    'arch-home')
-        bspc rule -a looking-glass-client state=floating rectangle=1920x1080+320+180
-        bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+650+360
-        bspc rule -a Slack state=floating sticky=true rectangle=1260x720+650+360
-        bspc rule -a Pavucontrol state=floating rectangle=1260x720+650+360
-        ;;
-    'arch-adcalls')
-        bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+330+180
-        bspc rule -a Slack state=floating sticky=true rectangle=1260x720+330+180
-        bspc rule -a Pavucontrol state=floating rectangle=1260x720+330+180
-        ;;
-esac
 
 feh --bg-fill --no-fehbg ~/.background &
 
