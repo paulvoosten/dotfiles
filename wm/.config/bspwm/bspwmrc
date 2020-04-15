@@ -61,13 +61,13 @@ case "${HOSTNAME}" in
         ;;
 esac
 
-
 feh --bg-fill --no-fehbg ~/.background &
 
 wmname LG3D &
 
-~/.config/polybar/launch.sh &
+~/.config/polybar/launch &
 
 if ! pgrep -ax termite | grep '\-\-class scratchpad'; then
     termite --class scratchpad -t Scratchpad -e ~/.config/bspwm/scratch &
 fi
+
