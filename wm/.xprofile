@@ -9,4 +9,4 @@ xsetroot -cursor_name left_ptr &
 setxkbmap -layout 'us(intl),us' &
 picom -b &
 dex -a &
-sxhkd &
+sxhkd -c ~/.config/sxhkd/sxhkdrc{,_bspwm} &
