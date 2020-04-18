@@ -2,8 +2,8 @@
 case "${HOSTNAME}" in
     'arch-home')
         # Monitors
-        bspc monitor DP-4 -d home term code data chat music vm rand
-        bspc monitor DP-2 -d game
+        bspc monitor DP-0 -d home term code data chat music vm rand
+        bspc monitor HDMI-0 -d game
         # Rules
         bspc rule -a looking-glass-client state=floating rectangle=1920x1080+320+180
         bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+650+360
