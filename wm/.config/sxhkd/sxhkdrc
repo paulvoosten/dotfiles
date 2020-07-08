@@ -16,6 +16,9 @@ super + shift + Return
 super + e
     rofi -modi 'window,run,drun,ssh' -show drun
 
+alt + Tab
+    rofi -modi 'window' -show window -theme windows
+
 super + s
     jgmenu_run >/dev/null 2>&1 &
 
@@ -32,6 +35,10 @@ XF86Audio{Play,Stop,Next,Prev,RaiseVolume,LowerVolume}
     playerctl {play-pause,stop,next,previous,volume 0.05+,volume 0.05-}
 #    mpc {toggle,stop,next,prev,volume +5,volume -5}
 
-# Lock screen
+# Session menu
 super + x
     pgrep -x oblogout || oblogout
+
+# Lock screen
+super + alt + x
+   betterlockscreen -l
