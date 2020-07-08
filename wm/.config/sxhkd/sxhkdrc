@@ -39,6 +39,3 @@ XF86Audio{Play,Stop,Next,Prev,RaiseVolume,LowerVolume}
 super + x
     pgrep -x oblogout || oblogout
 
-# Lock screen
-super + alt + x
-   betterlockscreen -l
