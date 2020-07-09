@@ -1,3 +1,7 @@
+# Dropdown terminal emulator
+super + shift + Return
+    ~/.config/bspwm/toggle-visibility scratchpad "termite --class scratchpad -t Scratchpad"
+
 # Rotate (counter) clockwise while preserving layout
 super + {_,shift + }r
     bspc node @/ -C {forward,backward}

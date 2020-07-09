@@ -1,16 +1,6 @@
-#
-# WM independent hotkeys
-#
-
 # Terminal emulator
 super + Return
     termite -t Termite
-
-# Dropdown terminal emulator
-super + shift + Return
-    [ ! -s /tmp/scratchid ] && exit;\
-    id=$(cat /tmp/scratchid);\
-    bspc node $id --flag hidden;bspc node -f $id
 
 # Program launcher
 super + e

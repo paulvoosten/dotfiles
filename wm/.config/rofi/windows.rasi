@@ -1,0 +1,67 @@
+configuration {
+  columns:         1;
+  display-window:  "Window";
+  font:            "Roboto Condensed 14";
+  monitor:         "-1";
+  show-icons:      true;
+  disable-history: true;
+  terminal:        "termite";
+  //window-format:   "{n}\t{t}\t{w}";
+}
+
+* {
+    dark:       rgba(18, 18, 18, 0.75);
+    green:      #a1b56c;
+    blue:       #7cafc2;
+    text-color: #f8f8f8;
+}
+
+#window {
+  anchor:           center;
+  location:         center;
+  width:            720;
+  height:           480;
+  background-color: @dark;
+}
+
+#mainbox {
+  background-color: transparent;
+  padding:          0;
+}
+
+#inputbar {
+  background-color: transparent;
+  padding:          10;
+  display: "none";
+}
+
+#prompt {
+  background-color: transparent;
+}
+
+#entry {
+  background-color: transparent;
+  padding:          0 10;
+}
+
+#case-indicator {
+  background-color: transparent;
+}
+
+#listview {
+  background-color: transparent;
+  padding:          10 0;
+}
+
+#element {
+  background-color: transparent;
+  padding:          16 10;
+}
+
+#element selected {
+  text-color: @blue;
+}
+
+#element active {
+  text-color: @green;
+}

@@ -1,23 +1,14 @@
 #!/bin/bash
 case "${HOSTNAME}" in
     'arch-home')
-        # Monitors
-        bspc monitor DP-0 -d home term code data chat music vm rand
-        bspc monitor HDMI-0 -d game
-        # Rules
-        bspc rule -a looking-glass-client state=floating rectangle=1920x1080+320+180
-        bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+650+360
-        bspc rule -a Slack state=floating sticky=true rectangle=1260x720+650+360
-        bspc rule -a Pavucontrol state=floating rectangle=1260x720+650+360
+        bspc monitor DP-0 -d home data chat music vm
+        bspc monitor HDMI-0 -d code term game rand
+        RECT="1260x720+650+360"
         ;;
     'arch-adcalls')
-        # Monitors
         bspc monitor HDMI-1 -d home data chat music
         bspc monitor DVI-D-1 -d code term game vm rand
-        # Rules
-        bspc rule -a scratchpad state=floating hidden=true sticky=true rectangle=1260x720+330+180
-        bspc rule -a Slack state=floating sticky=true rectangle=1260x720+330+180
-        bspc rule -a Pavucontrol state=floating rectangle=1260x720+330+180
+        RECT="1260x720+330:180"
         ;;
 esac
 
@@ -48,22 +39,25 @@ bspc rule -a jetbrains-phpstorm desktop='code'
 bspc rule -a DBeaver desktop='data'
 bspc rule -a Postman desktop='data'
 bspc rule -a discord desktop='chat'
-bspc rule -a Slack desktop='chat'
+bspc rule -a Slack desktop='chat' state=floating rectangle=${RECT}
 bspc rule -a Spotify desktop='music'
 bspc rule -a Steam desktop='game'
 bspc rule -a csgo_linux64 desktop='game' state=fullscreen
 bspc rule -a Virt-manager desktop='vm'
 bspc rule -a feh state=floating
 bspc rule -a KeePass2 state=floating
-bspc rule -a Oblogout state=fullscreen sticky=true monitor=primary
+bspc rule -a Oblogout state=fullscreen monitor=primary
+bspc rule -a Pavucontrol state=floating rectangle=${RECT}
+bspc rule -a scratchpad state=floating rectangle=${RECT}
+
+for event in ~/.config/bspwm/events/*
+do
+    "${event}" &
+done
 
 feh --bg-fill --no-fehbg ~/.background &
 
 wmname LG3D &
 
 ~/.config/polybar/launch &
-
-if ! pgrep -ax termite | grep '\-\-class scratchpad'; then
-    termite --class scratchpad -t Scratchpad -e ~/.config/bspwm/scratch &
-fi
 
