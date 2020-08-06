@@ -46,7 +46,8 @@ bspc rule -a csgo_linux64 desktop='game' state=fullscreen
 bspc rule -a Virt-manager desktop='vm'
 bspc rule -a feh state=floating
 bspc rule -a KeePass2 state=floating
-bspc rule -a Oblogout state=fullscreen monitor=primary
+bspc rule -a mpv state=floating rectangle=${RECT}
+bspc rule -a Oblogout state=fullscreen follow=on monitor=primary
 bspc rule -a Pavucontrol state=floating rectangle=${RECT}
 bspc rule -a scratchpad state=floating rectangle=${RECT}
 
