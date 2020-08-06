@@ -37,7 +37,7 @@ font-0 = Roboto Condensed:size=16;2
 font-1 = Font Awesome 5 Free:style=Solid:size=16;2
 font-2 = Font Awesome 5 Brands:size=16;2
 font-3 = Unifont:size=16;2
-modules-left = menu date battery cpu memory xwindow
+modules-left = menu date battery cpu memory
 modules-center = desktop
 modules-right = packages volume picom redshift xkeyboard powermenu
 tray-maxsize = 24
@@ -182,11 +182,6 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-foreground = ${colors.label}
-
-[module/xwindow]
-type = internal/xwindow
-label = %title%
-label-maxlen = 30
 
 [module/xkeyboard]
 type = internal/xkeyboard
