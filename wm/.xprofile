@@ -1,6 +1,6 @@
 #!/bin/bash
 case $HOSTNAME in
-    arch-home) xrandr --output DP-0 --mode 3840x2160 --rate 60 --scale 0.666666666667x0.666666666667 --pos 0x0 --primary --output HDMI-0 --mode 2560x1440 --rate 60 --pos 2560x0;;
+    arch-home) xrandr --output DP-0 --mode 2560x1440 --rate 165 --output DP-2 --mode 3840x2160 --rate 60 --scale 0.666666666667x0.666666666667 --right-of DP-0 --primary;;
     arch-adcalls) xrandr --output HDMI-1 --mode 1920x1080 --rate 60 --primary --output DVI-D-1 --mode 1920x1080 --rate 60 --right-of HDMI-1;;
 esac
 xidlehook --not-when-audio --not-when-fullscreen --timer 900 'betterlockscreen -l dimblur' '' &
