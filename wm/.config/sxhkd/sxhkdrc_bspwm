@@ -44,7 +44,7 @@ super + {p,b,comma,period}
 
 # Focus the previous/next local node
 alt + bracket{left,right}
-    bspc node -f {prev,next}.local
+    bspc node -f {prev,next}.local.!hidden.window
 
 # Focus or send to the given desktop
 super + {_,shift + }{1-9,0}
