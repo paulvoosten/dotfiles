@@ -2,6 +2,10 @@
 super + shift + Return
     ~/.config/bspwm/toggle-visibility scratchpad "termite --class scratchpad -t Scratchpad"
 
+# System monitor (htop)
+ctrl + shift + Escape
+    ~/.config/bspwm/toggle-visibility htop "termite --class htop -t htop -e htop"
+
 # Rotate (counter) clockwise while preserving layout
 super + {_,shift + }r
     bspc node @/ -C {forward,backward}

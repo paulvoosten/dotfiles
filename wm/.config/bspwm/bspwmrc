@@ -51,6 +51,7 @@ bspc rule -a KeePass2 state=floating
 bspc rule -a mpv state=floating rectangle=${RECT}
 bspc rule -a Oblogout state=fullscreen follow=on monitor=primary
 bspc rule -a Pavucontrol state=floating rectangle=${RECT}
+bspc rule -a htop state=floating rectangle=${RECT}
 bspc rule -a scratchpad state=floating rectangle=${RECT}
 
 for event in ~/.config/bspwm/events/*
