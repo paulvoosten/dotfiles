@@ -38,7 +38,7 @@ font-1 = Font Awesome 5 Free:style=Solid:size=16;2
 font-2 = Font Awesome 5 Brands:size=16;2
 font-3 = Unifont:size=16;2
 modules-left = menu desktop battery cpu memory
-modules-right = packages volume picom redshift date powermenu
+modules-right = packages picom redshift volume date powermenu
 tray-maxsize = 24
 tray-position = right
 wm-restack = bspwm
