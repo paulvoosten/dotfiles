@@ -196,7 +196,7 @@ label-layout = %name% %icon%
 type = custom/text
 content = 
 content-foreground = ${colors.label}
-click-left = "jgmenu_run >/dev/null 2>&1 &"
+click-left = "rofi -modi 'window,run,drun,ssh' -show drun"
 
 [module/packages]
 type = custom/script
