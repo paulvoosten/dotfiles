@@ -20,9 +20,4 @@ super + Escape
 # Multimedia
 XF86Audio{Play,Stop,Next,Prev,RaiseVolume,LowerVolume}
     playerctl {play-pause,stop,next,previous,volume 0.05+,volume 0.05-}
-#    mpc {toggle,stop,next,prev,volume +5,volume -5}
-
-# Session menu
-super + x
-    pgrep -x oblogout || oblogout
 
