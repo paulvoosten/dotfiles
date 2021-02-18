@@ -7,5 +7,6 @@ xidlehook --not-when-audio --not-when-fullscreen --timer 900 'betterlockscreen -
 xsetroot -cursor_name left_ptr &
 setxkbmap -layout 'us(intl),us' &
 picom -b &
+wal -R &
 dex -a &
 sxhkd -c ~/.config/sxhkd/sxhkdrc{,_bspwm} &
