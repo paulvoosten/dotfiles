@@ -18,6 +18,10 @@ super + alt + Escape
 super + {_,shift + }q
     bspc node -{c,k}
 
+# Toggle tray
+super + t
+    ~/.config/polybar/modules/tray-toggle
+
 # Alternate between the tiled and monocle layout
 super + m
     bspc desktop -l next

@@ -29,9 +29,7 @@ font-1 = Font Awesome 5 Free:style=Solid:size=16;2
 font-2 = Font Awesome 5 Brands:size=16;2
 font-3 = Unifont:size=16;2
 modules-left = menu desktop battery cpu memory
-modules-right = packages picom volume date powermenu
-tray-maxsize = 24
-tray-position = right
+modules-right = packages picom volume tray date powermenu
 wm-restack = bspwm
 
 [module/battery]
@@ -214,3 +212,9 @@ menu-0-1 = 
 menu-0-1-exec = bspc quit
 menu-0-0 = 
 menu-0-0-exec = betterlockscreen -l dimblur
+
+[module/tray]
+type = custom/text
+content = 
+content-foreground = ${colors.label}
+click-left = ~/.config/polybar/modules/tray-toggle
