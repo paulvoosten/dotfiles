@@ -13,3 +13,6 @@ export DXVK_FAKE_DX10_SUPPORT=1
 
 # Vulkan
 export VK_ICD_FILENAMES='/usr/share/vulkan/icd.d/nvidia_icd.json'
+
+# Java
+export _JAVA_AWT_WM_NONREPARENTING=1
