@@ -1,0 +1,13 @@
+configuration {
+	columns: 4;
+	font: "Roboto Condensed 14";
+	show-icons: true;
+	terminal: "termite";
+	disable-history: true;
+	theme: "aesthetics";
+    //monitor:         "primary";
+	display-window: "Window";
+	display-run: "Execute";
+	display-ssh: "SSH";
+	display-drun: "Menu";
+}

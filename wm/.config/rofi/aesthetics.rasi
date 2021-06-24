@@ -1,16 +1,3 @@
-configuration {
-  columns:         4;
-  display-drun:    "Menu";
-  display-run:     "Execute";
-  display-ssh:     "SSH";
-  display-window:  "Window";
-  font:            "Roboto Condensed 14";
-  monitor:         "primary";
-  show-icons:      true;
-  disable-history: true;
-  terminal:        "termite";
-}
-
 * {
     dark:       rgba(18, 18, 18, 0.75);
     green:      #a1b56c;
@@ -19,51 +6,51 @@ configuration {
 }
 
 #window {
-  anchor:           center;
-  location:         center;
-  width:            100%;
-  height:           100%;
-  padding:          200;
-  background-color: @dark;
+    anchor:           center;
+    location:         center;
+    width:            100%;
+    height:           100%;
+    padding:          200;
+    background-color: @dark;
 }
 
 #mainbox {
-  background-color: transparent;
-  padding:          0;
+    background-color: transparent;
+    padding:          0;
 }
 
 #inputbar {
-  background-color: transparent;
-  padding:          10;
+    background-color: transparent;
+    padding:          10;
 }
 
 #prompt {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 #entry {
-  background-color: transparent;
-  padding:          0 10;
+    background-color: transparent;
+    padding:          0 10;
 }
 
 #case-indicator {
-  background-color: transparent;
+    background-color: transparent;
 }
 
 #listview {
-  background-color: transparent;
-  padding:          10 0;
+    background-color: transparent;
+    padding:          10 0;
 }
 
 #element {
-  background-color: transparent;
-  padding:          16 10;
+    background-color: transparent;
+    padding:          16 10;
 }
 
 #element selected {
-  text-color: @blue;
+    text-color: @blue;
 }
 
 #element active {
-  text-color: @green;
+    text-color: @green;
 }
