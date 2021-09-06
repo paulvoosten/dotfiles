@@ -1,27 +1,18 @@
 [colors]
-base00      = ${xrdb:color0}
-base01      = ${xrdb:color18}
-base02      = ${xrdb:color19}
-base03      = ${xrdb:color8}
-base04      = ${xrdb:color20}
-base05      = ${xrdb:color7}
-base06      = ${xrdb:color21}
-base07      = ${xrdb:color15}
-base08      = ${xrdb:color1}
-base09      = ${xrdb:color16}
-base0A      = ${xrdb:color3}
-base0B      = ${xrdb:color2}
-base0C      = ${xrdb:color6}
-base0D      = ${xrdb:color4}
-base0E      = ${xrdb:color5}
-base0F      = ${xrdb:color17}
-label       = ${colors.base0D}
+background  = ${xrdb:color0}
+critical    = ${xrdb:color1}
+empty       = ${xrdb:color8}
+foreground  = ${xrdb:color15}
+label       = ${xrdb:color4}
+occupied    = ${xrdb:color7}
+stable      = ${xrdb:color2}
 transparent = #00000000
+urgent      = ${xrdb:color3}
 
 [settings]
 screenchange-reload = true
 pseudo-transparency = true
-format-foreground = ${colors.base07}
+format-foreground = ${colors.foreground}
 format-padding = 1
 
 [global/wm]
@@ -31,17 +22,14 @@ margin-top = 0
 [bar/top]
 width = 100%
 height = 34
-background = ${colors.base01}
+background = ${colors.background}
 module-margin = 1
 font-0 = Roboto Condensed:size=16;2
 font-1 = Font Awesome 5 Free:style=Solid:size=16;2
 font-2 = Font Awesome 5 Brands:size=16;2
 font-3 = Unifont:size=16;2
-modules-left = menu date battery cpu memory
-modules-center = desktop
-modules-right = packages volume picom redshift xkeyboard powermenu
-tray-maxsize = 24
-tray-position = right
+modules-left = menu desktop battery cpu memory
+modules-right = packages picom volume tray date powermenu
 wm-restack = bspwm
 
 [module/battery]
@@ -74,6 +62,39 @@ ramp-charging-3-foreground = ${color.label}
 ramp-charging-4 = 
 ramp-charging-4-foreground = ${color.label}
 
+[module/cpu]
+type = internal/cpu
+format = <label> <ramp-coreload>
+label = 
+label-foreground = ${colors.label}
+ramp-coreload-spacing = 0
+ramp-coreload-0 = ▁
+ramp-coreload-0-foreground = ${colors.stable}
+ramp-coreload-1 = ▂
+ramp-coreload-1-foreground = ${colors.stable}
+ramp-coreload-2 = ▃
+ramp-coreload-2-foreground = ${colors.stable}
+ramp-coreload-3 = ▄
+ramp-coreload-3-foreground = ${colors.urgent}
+ramp-coreload-4 = ▅
+ramp-coreload-4-foreground = ${colors.urgent}
+ramp-coreload-5 = ▆
+ramp-coreload-5-foreground = ${colors.urgent}
+ramp-coreload-6 = ▇
+ramp-coreload-6-foreground = ${colors.critical}
+ramp-coreload-7 = █
+ramp-coreload-7-foreground = ${colors.critical}
+
+[module/date]
+type = internal/date
+interval = 1
+format = <label>
+label = %date%%time%
+date = ""
+date-alt = "%a, %d %b %Y | "
+time = %H:%M
+time-alt = %H:%M:%S
+
 [module/desktop]
 type = internal/bspwm
 enable-scroll = false
@@ -85,15 +106,15 @@ label-focused = %icon%
 label-focused-padding = 1
 label-focused-foreground = ${colors.label}
 label-dimmed-focused-padding = 1
-label-dimmed-occupied-foreground = ${colors.base05}
+label-dimmed-occupied-foreground = ${colors.occupied}
 label-occupied = %icon%
-label-occupied-foreground = ${colors.base05}
+label-occupied-foreground = ${colors.occupied}
 label-occupied-padding = 1
 label-urgent = %icon%
-label-urgent-foreground = ${colors.base08}
+label-urgent-foreground = ${colors.critical}
 label-urgent-padding = 1
 label-empty = %icon%
-label-empty-foreground = ${colors.base03}
+label-empty-foreground = ${colors.empty}
 label-empty-padding = 1
 label-monocle = 
 label-monocle-foreground = ${colors.label}
@@ -118,41 +139,6 @@ ws-icon-7 = game;
 ws-icon-8 = rand;
 ws-icon-default = 
 
-[module/cpu]
-type = internal/cpu
-format = <label> <ramp-coreload>
-label = 
-label-foreground = ${colors.label}
-ramp-coreload-spacing = 0
-ramp-coreload-0 = ▁
-ramp-coreload-0-foreground = ${colors.base0B}
-ramp-coreload-1 = ▂
-ramp-coreload-1-foreground = ${colors.base0B}
-ramp-coreload-2 = ▃
-ramp-coreload-2-foreground = ${colors.base0A}
-ramp-coreload-3 = ▄
-ramp-coreload-3-foreground = ${colors.base0A}
-ramp-coreload-4 = ▅
-ramp-coreload-4-foreground = ${colors.base09}
-ramp-coreload-5 = ▆
-ramp-coreload-5-foreground = ${colors.base09}
-ramp-coreload-6 = ▇
-ramp-coreload-6-foreground = ${colors.base08}
-ramp-coreload-7 = █
-ramp-coreload-7-foreground = ${colors.base08}
-
-[module/date]
-type = internal/date
-interval = 1
-format = <label>
-format-prefix = " "
-format-prefix-foreground = ${colors.label}
-label = %date% %time%
-date = "%d-%m"
-date-alt = "%a, %d %b %Y"
-time = %H:%M
-time-alt = %H:%M:%S
-
 [module/memory]
 type = internal/memory
 format = <label> <bar-used>
@@ -160,24 +146,24 @@ label = 
 label-foreground = ${colors.label}
 bar-used-width = 30
 bar-used-gradient = true
-bar-used-foreground-0 = ${colors.base0B}
-bar-used-foreground-1 = ${colors.base0A}
-bar-used-foreground-2 = ${colors.base09}
-bar-used-foreground-3 = ${colors.base08}
+bar-used-foreground-0 = ${colors.stable}
+bar-used-foreground-1 = ${colors.urgent}
+;bar-used-foreground-2 = ${colors.urgent}
+bar-used-foreground-2 = ${colors.critical}
 bar-used-indicator =
 bar-used-fill = |
 bar-used-empty = |
-bar-used-empty-foreground = ${colors.base03}
+bar-used-empty-foreground = ${colors.empty}
 
 [module/volume]
 type = internal/pulseaudio
-sink = alsa_output.pci-0000_0c_00.3.iec958-stereo
+sink = alsa_output.usb-Logitech_PRO_X_Wireless_Gaming_Headset-00.analog-stereo
 format-volume = <ramp-volume> <label-volume>
 format-muted = <label-muted>
 format-muted-prefix = " "
 format-muted-prefix-foreground = ${colors.label}
 label-muted = muted
-label-volume = %percentage%%
+label-volume = %percentage%
 ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
@@ -196,7 +182,7 @@ label-layout = %name% %icon%
 type = custom/text
 content = 
 content-foreground = ${colors.label}
-click-left = "jgmenu_run >/dev/null 2>&1 &"
+click-left = "rofi -modi 'window,run,drun,ssh' -show drun"
 
 [module/packages]
 type = custom/script
@@ -213,13 +199,22 @@ exec = ~/.config/polybar/modules/picom
 click-left = ~/.config/polybar/modules/picom-toggle
 
 [module/powermenu]
-type = custom/text
-content = 
-content-foreground = ${colors.label}
-click-left = oblogout
+type = custom/menu
+expand-right = false
+label-open = 
+label-close = 
+label-separator = " "
+menu-0-3 = 
+menu-0-3-exec = systemctl poweroff
+menu-0-2 = 
+menu-0-2-exec = systemctl reboot
+menu-0-1 = 
+menu-0-1-exec = bspc quit
+menu-0-0 = 
+menu-0-0-exec = betterlockscreen -l dimblur
 
-[module/redshift]
-type = custom/script
-interval = 5
-exec = ~/.config/polybar/modules/redshift
-click-left = ~/.config/polybar/modules/redshift-toggle
+[module/tray]
+type = custom/text
+content = 
+content-foreground = ${colors.label}
+click-left = ~/.config/polybar/modules/tray-toggle

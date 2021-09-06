@@ -9,9 +9,6 @@ super + e
 alt + Tab
     rofi -modi 'window' -show window -theme windows
 
-super + s
-    jgmenu_run >/dev/null 2>&1 &
-
 # Make sxhkd reload its configuration files:
 super + Escape
     pkill -USR1 -x sxhkd; notify-send -a 'sxhkd' 'Reloaded config'
@@ -23,9 +20,4 @@ super + Escape
 # Multimedia
 XF86Audio{Play,Stop,Next,Prev,RaiseVolume,LowerVolume}
     playerctl {play-pause,stop,next,previous,volume 0.05+,volume 0.05-}
-#    mpc {toggle,stop,next,prev,volume +5,volume -5}
-
-# Session menu
-super + x
-    pgrep -x oblogout || oblogout
 

@@ -17,6 +17,8 @@ call plug#begin('~/.vim/bundle')
   Plug 'scrooloose/nerdtree'
   Plug 'ctrlpvim/ctrlp.vim'
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'dylanaraps/wal.vim'
+  Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() } }
 call plug#end()
 
 set nocompatible
@@ -99,6 +101,6 @@ nnoremap <silent> <Leader>l :ALELint<CR>
 " Rust racer
 au FileType rust nmap <C-]> <Plug>(rust-def)
 
-colorscheme base16-default-dark
+colorscheme wal
 highlight Normal guibg=none ctermbg=none
 highlight NonText guibg=none ctermbg=none

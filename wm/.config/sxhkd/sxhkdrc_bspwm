@@ -2,6 +2,10 @@
 super + shift + Return
     ~/.config/bspwm/toggle-visibility scratchpad "termite --class scratchpad -t Scratchpad"
 
+# System monitor (htop)
+ctrl + shift + Escape
+    ~/.config/bspwm/toggle-visibility htop "termite --class htop -t htop -e htop"
+
 # Rotate (counter) clockwise while preserving layout
 super + {_,shift + }r
     bspc node @/ -C {forward,backward}
@@ -13,6 +17,10 @@ super + alt + Escape
 # Close and kill
 super + {_,shift + }q
     bspc node -{c,k}
+
+# Toggle tray
+super + t
+    ~/.config/polybar/modules/tray-toggle
 
 # Alternate between the tiled and monocle layout
 super + m
@@ -44,7 +52,7 @@ super + {p,b,comma,period}
 
 # Focus the previous/next local node
 alt + bracket{left,right}
-    bspc node -f {prev,next}.local
+    bspc node -f {prev,next}.local.!hidden.window
 
 # Focus or send to the given desktop
 super + {_,shift + }{1-9,0}

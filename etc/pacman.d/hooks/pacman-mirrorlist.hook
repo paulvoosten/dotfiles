@@ -1,11 +1,10 @@
 [Trigger]
-Operation = Install
 Operation = Upgrade
 Type = Package
 Target = pacman-mirrorlist
 
 [Action]
-Description = Updating mirrorlist...
-Depends = reflector
+Description = Updating pacman-mirrorlist with reflector and removing pacnew...
 When = PostTransaction
-Exec = /usr/bin/bash reflector -l 10 -c Netherlands --sort rate --save /etc/pacman.d/mirrorlist
+Depends = reflector
+Exec = /bin/sh -c 'systemctl start reflector.service; if [ -f /etc/pacman.d/mirrorlist.pacnew ]; then rm /etc/pacman.d/mirrorlist.pacnew; fi'
