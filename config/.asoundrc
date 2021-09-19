@@ -1,45 +1,15 @@
-pcm.dsp {
-    type plug
-    slave.pcm "dmix"
-}
-
-pcm.dmixer {
-    type dmix
-    ipc_key 1024
-    slave {
-        pcm {
-            type hw
-            card Generic
-            rate 192000
-        }
-
-    }
-}
-
-pcm.dsnooper {
-    type dsnoop
-    ipc_key 1024
-    slave {
-        pcm {
-            type hw
-            card MICROPHONE
-        }
-    }
-}
-
-pcm.!default {
-    type asym
-    playback.pcm {
-        type plug
-        slave.pcm "dmixer"
-    }
-    capture.pcm {
-        type plug
-        slave.pcm "dsnooper"
-    }
-}
-
 ctl.!default {
     type hw
-    card Generic
+    card Headset
+}
+
+pcm_slave.plug0 {
+    pcm "hw:0"
+    channels 2
+    rate 192000
+}
+
+pcm.plug0 {
+    type plug
+    slave plug0
 }
