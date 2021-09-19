@@ -6,8 +6,8 @@ case "${HOSTNAME}" in
         RECT="1260x720+650+360"
         ;;
     'arch-adcalls')
-        bspc monitor HDMI-1 -d home data chat music
-        bspc monitor DVI-D-1 -d code term game vm rand
+        bspc monitor DVI-D-1 -d home data chat music
+        bspc monitor HDMI-1 -d code term game vm rand
         RECT="1260x720+330:180"
         ;;
 esac
