@@ -15,5 +15,3 @@ stty -ixon
 
 # Add color support for TTYs
 . ~/.cache/wal/colors-tty.sh
-
-. /usr/share/nvm/init-nvm.sh

@@ -1,22 +1,8 @@
 #!/bin/bash
 alias ls='ls --color=auto'
 
-# web development aliases
-alias webs='sudo systemctl start httpd && sudo systemctl start mysqld'
-alias webr='sudo systemctl restart httpd && sudo systemctl restart mysqld'
-alias webq='sudo systemctl stop httpd && sudo systemctl stop mysqld'
-
-alias https='sudo systemctl start httpd'
-alias httpr='sudo systemctl restart httpd'
-alias httpq='sudo systemctl stop httpd'
-
-alias mysqls='sudo systemctl start mysqld'
-alias mysqlr='sudo systemctl restart mysqld'
-alias mysqlq='sudo systemctl stop mysqld'
-
-alias mongos='sudo systemctl start mongodb'
-alias mongor='sudo systemctl restart mongodb'
-alias mongoq='sudo systemctl stop mongodb'
+# docker aliases
+alias docker-compose='docker compose'
 
 # package management
 # default action        - install package(s)
