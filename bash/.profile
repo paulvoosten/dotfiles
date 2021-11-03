@@ -5,7 +5,7 @@ export XDG_CONFIG_HOME="$HOME/.config"
 export BSPWM_STATE="$XDG_CACHE_HOME/bspwm/state.json"
 export EDITOR='nvim'
 export VISUAL='nvim'
-export PATH="$HOME/.cargo/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="$HOME/.cargo/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$PATH"
 
 # DXVK
 #export DXVK_HUD=1
