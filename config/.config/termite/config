@@ -1,5 +1,5 @@
 [options]
-font = Inconsolata 10
+font = Inconsolata Nerd Font 10
 clickable_url = true
 cursor_blink = on
 cursor_shape = ibeam
