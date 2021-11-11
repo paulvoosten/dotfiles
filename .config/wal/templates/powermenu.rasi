@@ -1,0 +1,103 @@
+/*
+ * ROFI Powermenu template
+ * Author: @BaptisteBdn
+ */
+configuration {{
+    modi: "window,run,drun";
+    show-icons: true;
+    font: "RobotoMono Nerd Font 10";
+}}
+
+* {{
+    color0:              {color0};
+    color1:              {color1};
+    color2:              {color2};
+    color3:              {color3};
+    color4:              {color4};
+    color5:              {color5};
+    color6:              {color6};
+    color7:              {color7};
+    color8:              {color8};
+    color9:              {color9};
+    fg:                  rgba(255, 255, 255, 100%);
+    bg:                  #1f243aa0;
+    selected-background: {color2};
+    selected-foreground: rgba(255, 255, 255, 100%);
+}}
+
+#window {{
+    width:            450px;
+    height:           120px;
+    background-color: @color0;
+    padding:          5px;
+}}
+
+#mainbox {{
+    border:           0;
+    padding:          0;
+    children:         [listview];
+    background-color: @color0;
+}}
+
+#listview {{
+    columns:          4;
+    layout:           vertical;
+    background-color: transparent;
+}}
+
+element {{
+    margin:        8px;
+    padding:       10px;
+    border-radius: 5px;
+    orientation:   vertical;
+}}
+
+element-icon {{
+    size:             48px;
+    margin:           2px;
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    background-color: transparent;
+}}
+
+element-text {{
+    horizontal-align: 0.5;
+    vertical-align:   0.5;
+    background-color: transparent;
+    text-color:       @fg;
+}}
+
+#element.normal.normal {{
+    background-color: rgba(0, 0, 0, 0);
+    text-color:       @fg;
+}}
+
+#element.selected.normal {{
+    background-color: @selected-background;
+    text-color:       @color0;
+    border-color:     #d07ef2;
+}}
+
+#element.alternate.normal {{
+    background-color: rgba(0,0,0,0);
+    text-color:       @fg;
+}}
+
+#element-text.selected.normal {{
+    text-color:       @color0;
+}}
+
+#mode-switcher {{
+    border:       0px 0px 0px ;
+    border-color: @separatorcolor;
+}}
+
+#button {{
+    spacing:    0;
+    text-color: @fg;
+}}
+
+#button.selected {{
+    background-color: @selected-background;
+    text-color:       @selected-foreground;
+}}

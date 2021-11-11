@@ -1,0 +1,13 @@
+[user]
+    email = paulvoosten@protonmail.com
+    name = Paul Van Oosten
+[alias]
+    cleanup = "!git branch --merged|grep -v '\\*\\|master\\|production\\|staging\\|staging-production'|xargs -n 1 -r git branch -d"
+[mergetool "nvim"]
+    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[merge]
+    tool = nvim
+[mergetool]
+    prompt = false
+[pull]
+	rebase = false

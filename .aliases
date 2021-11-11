@@ -1,0 +1,33 @@
+#!/bin/bash
+alias ls='ls --color=auto'
+
+# docker aliases
+alias docker-compose='docker compose'
+
+# package management
+# default action        - install package(s)
+alias pac='yay -S'
+# [u]pdate              - update a(ll) package(s) to the latest version
+alias pacu='yay -Syu'
+# [r]emove              - remove package(s)
+alias pacr='yay -Rns'
+# [s]earch              - search for a package using one or more keywords
+alias pacs='yay -Ss'
+# [i]nfo                - show information about a package
+alias paci='yay -Si'
+# [l]ist [o]rphans      - list all packages which are orphaned
+alias paclo='yay -Qdtq'
+# [r]emove [o]rphans    - recursively remove ALL orphaned packages
+alias pacro='yay -Rsn $(yay -Qtdq)'
+# [l]ist [p]ackages     - list all explicitly installed packages
+alias paclp='yay -Qs'
+# [l]ist [i]nstalled    - list all explicitly installed packages
+alias pacli='yay -Qe'
+# [l]ist [f]iles        - list all files installed (by a given package)
+alias paclf='yay -Ql'
+# mark [expl]icit       - mark one or more packages as explicitly installed
+alias pacexpl='yay -D --asexp'
+# mark [impl]icity      - mark one or more packages as implicitly installed
+alias pacimpl='yay -D --asdep'
+# [c]lear cache
+alias pacc='yay -Sc'
