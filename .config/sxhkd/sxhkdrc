@@ -4,10 +4,10 @@ super + Return
 
 # Program launcher
 super + e
-    rofi -modi 'window,drun' -show drun -theme ~/.cache/wal/launcher.rasi
+    rofi -modi drun -show drun -theme ~/.cache/wal/launcher.rasi
 
-super + shift + e
-    rofi -modi 'Powermenu:~/.config/rofi/scripts/powermenu.sh' -show Powermenu -theme ~/.cache/wal/powermenu.rasi -icon-theme 'Reversal-black-dark'
+alt + Tab
+    rofi -modi window -show window -theme ~/.cache/wal/launcher.rasi
 
 # Make sxhkd reload its configuration files:
 super + Escape

@@ -9,26 +9,17 @@ configuration {{
 }}
 
 * {{
-    color0:              {color0};
-    color1:              {color1};
-    color2:              {color2};
-    color3:              {color3};
-    color4:              {color4};
-    color5:              {color5};
-    color6:              {color6};
-    color7:              {color7};
-    color8:              {color8};
-    color9:              {color9};
-    fg:                  rgba(255, 255, 255, 100%);
-    bg:                  #1f243aa0;
+    border:              {color5};
+    bg:                  {color0};
+    fg:                  {color7};
     selected-background: {color2};
-    selected-foreground: rgba(255, 255, 255, 100%);
+    selected-foreground: {color7};
 }}
 
 #window {{
     width:            450px;
     height:           120px;
-    background-color: @color0;
+    background-color: @bg;
     padding:          5px;
 }}
 
@@ -36,7 +27,7 @@ configuration {{
     border:           0;
     padding:          0;
     children:         [listview];
-    background-color: @color0;
+    background-color: @bg;
 }}
 
 #listview {{
@@ -68,23 +59,23 @@ element-text {{
 }}
 
 #element.normal.normal {{
-    background-color: rgba(0, 0, 0, 0);
+    background-color: @bg;
     text-color:       @fg;
 }}
 
 #element.selected.normal {{
     background-color: @selected-background;
-    text-color:       @color0;
-    border-color:     #d07ef2;
+    text-color:       @bg;
+    border-color:     @border;
 }}
 
 #element.alternate.normal {{
-    background-color: rgba(0,0,0,0);
+    background-color: @bg;
     text-color:       @fg;
 }}
 
 #element-text.selected.normal {{
-    text-color:       @color0;
+    text-color:       @bg;
 }}
 
 #mode-switcher {{

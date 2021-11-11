@@ -201,21 +201,10 @@ exec = ~/.config/polybar/modules/picom
 click-left = ~/.config/polybar/modules/picom-toggle
 
 [module/powermenu]
-type = custom/menu
-expand-right = false
-label-open = 襤
-label-close = ﰸ
-label-separator = " "
-menu-0-4 = 襤
-menu-0-4-exec = systemctl poweroff
-menu-0-3 = 鈴
-menu-0-3-exec = systemctl hibernate
-menu-0-2 = ﰇ
-menu-0-2-exec = systemctl reboot
-menu-0-1 = 
-menu-0-1-exec = bspc quit
-menu-0-0 = 
-menu-0-0-exec = betterlockscreen -l dimblur
+type = custom/text
+content-foreground = ${colors.label}
+click-left = "rofi -modi 'Powermenu:~/.config/rofi/scripts/powermenu.sh' -show Powermenu -theme ~/.cache/wal/powermenu.rasi -icon-theme 'Reversal-black-dark'"
+content = 襤
 
 [module/tray]
 type = custom/text

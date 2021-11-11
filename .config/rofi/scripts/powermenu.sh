@@ -1,17 +1,18 @@
 #!/bin/bash
 if [ -z "$@" ]; then
-    echo -en "Shutdown\0icon\x1fsystem-shutdown\n"
     echo -en "Logout\0icon\x1fsystem-log-out\n"
     echo -en "Hibernate\0icon\x1fsystem-suspend\n"
     echo -en "Reboot\0icon\x1fsystem-reboot\n"
+    echo -en "Shutdown\0icon\x1fsystem-shutdown\n"
 else
-    if [ "$1" = "Shutdown" ]; then
-        systemctl poweroff
-    elif [ "$1" = "Logout" ]; then
-        bspc quit
-    elif [ "$1" = "Reboot" ]; then
-        systemctl reboot
-    elif [ "$1" = "Hibernate" ]; then
-        systemctl hibernate
-    fi
+    case "$1" in
+        'Hibernate')
+            systemctl hibernate;;
+        'Logout')
+            bspc quit;;
+        'Reboot')
+            systemctl reboot;;
+        'Shutdown')
+            systemctl poweroff;;
+    esac
 fi

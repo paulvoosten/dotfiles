@@ -9,7 +9,7 @@
 configuration {{
     font:            "RobotoMono Nerd Font 10";
     show-icons:      true;
-    display-drun:    "";
+    display-drun:    "";
     display-window:  "类";
     disable-history: false;
     sidebar-mode:    false;
@@ -18,8 +18,7 @@ configuration {{
 * {{
     al:  #00000000;
     bg:  {color0};
-    se:  #101010ff;
-    fg:  #FFFFFFff;
+    fg:  {color7};
     ac:  {color2};
 }}
 
