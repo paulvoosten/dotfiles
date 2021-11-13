@@ -1,12 +1,12 @@
 #!/bin/bash
 case "${HOSTNAME}" in
     'arch-home')
-        bspc monitor DisplayPort-1 -d home data chat music vm
+        bspc monitor DisplayPort-1 -d web data chat music vm
         bspc monitor DisplayPort-0 -d code term game rand
         RECT="1260x720+650+360"
         ;;
     'arch-adcalls')
-        bspc monitor DVI-D-1 -d home data chat music
+        bspc monitor DVI-D-1 -d web data chat music
         bspc monitor DP-1 -d code term game vm rand
         RECT="1260x720+330:180"
         ;;
@@ -31,18 +31,17 @@ bspc config click_to_focus true
 bspc config ignore_ewmh_focus true
 bspc config split_ratio 0.5
 
-bspc rule -a Chromium desktop='home'
-bspc rule -a firefox desktop='home'
-bspc rule -a discord desktop='home'
+bspc rule -a Chromium desktop='web'
+bspc rule -a firefox desktop='web'
+bspc rule -a discord desktop='web'
 bspc rule -a Termite desktop='term'
 bspc rule -a Code desktop='code'
-bspc rule -a code-oss desktop='code'
-bspc rule -a Subl3 desktop='code'
 bspc rule -a Godot desktop='code'
 bspc rule -a jetbrains-phpstorm desktop='code'
 bspc rule -a DBeaver desktop='data'
 bspc rule -a Filezilla desktop='data'
 bspc rule -a Postman desktop='data'
+bspc rule -a Thunar desktop='data'
 bspc rule -a discord desktop='chat'
 bspc rule -a Slack desktop='chat' state=floating rectangle=${RECT}
 bspc rule -a Element desktop='chat' state=floating rectangle=${RECT}
@@ -56,6 +55,7 @@ bspc rule -a mpv state=floating rectangle=${RECT}
 bspc rule -a Pavucontrol state=floating rectangle=${RECT}
 bspc rule -a htop state=floating rectangle=${RECT}
 bspc rule -a scratchpad state=floating rectangle=${RECT}
+bspc rule -a update-pkgs state=floating rectangle=${RECT}
 
 for event in ~/.config/bspwm/events/*
 do
