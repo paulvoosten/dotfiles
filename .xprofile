@@ -7,7 +7,7 @@ esac
 xss-lock -- betterlockscreen -l dimblur &
 xidlehook --not-when-audio --not-when-fullscreen --timer 900 'betterlockscreen -l dimblur' '' &
 xsetroot -cursor_name left_ptr &
-setxkbmap -layout 'us(intl)' &
+setxkbmap -layout 'us(intl)' -option terminate:ctrl_alt_bksp &
 picom -b &
 wal -R &
 dex -a &
