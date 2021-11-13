@@ -36,7 +36,7 @@ bspc config bspwm_external_rules ~/.config/bspwm/external-rules
 bspc rule -a Chromium desktop='web'
 bspc rule -a firefox desktop='web'
 bspc rule -a discord desktop='web'
-bspc rule -a Termite desktop='term'
+bspc rule -a Alacritty desktop='term'
 bspc rule -a Code desktop='code'
 bspc rule -a Godot desktop='code'
 bspc rule -a jetbrains-phpstorm desktop='code'
