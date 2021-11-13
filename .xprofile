@@ -11,6 +11,6 @@ setxkbmap -layout 'us(intl)' &
 picom -b &
 wal -R &
 dex -a &
-sxhkd -c ~/.config/sxhkd/sxhkdrc{,_bspwm} &
-~/.config/dunst/launch.sh &
+sxhkd -c ~/.config/sxhkd/sxhkdrc{,-bspwm} &
+~/.config/dunst/launch &
 ~/.fehbg &

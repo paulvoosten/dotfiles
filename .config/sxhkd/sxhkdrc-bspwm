@@ -1,10 +1,10 @@
 # Dropdown terminal emulator
 super + shift + Return
-    ~/.config/bspwm/toggle-visibility scratchpad "termite --class scratchpad -t Scratchpad"
+    ~/.config/bspwm/toggle-visibility scratchpad "alacritty -o window.class.general=scratchpad -t Scratchpad"
 
 # System monitor (htop)
 ctrl + shift + Escape
-    ~/.config/bspwm/toggle-visibility htop "termite --class htop -t htop -e htop"
+    ~/.config/bspwm/toggle-visibility htop "alacritty -o window.class.general=htop -t htop -e htop"
 
 # Rotate (counter) clockwise while preserving layout
 super + {_,shift + }r
