@@ -1,0 +1,11 @@
+background_opacity: 0.85
+cursor:
+  style: Beam
+font:
+  normal:
+    family: RobotoMono Nerd Font
+    style: Regular
+  bold:
+    family: Inconsolata Nerd Font Mono
+    style: Bold
+  size: 10

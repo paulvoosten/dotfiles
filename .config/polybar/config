@@ -136,10 +136,11 @@ label = %percentage_used%%
 [module/packages]
 type = custom/script
 interval = 600
-format-prefix = " "
+format-prefix = 
 format-prefix-foreground = ${colors.label}
+format-prefix-padding-right = 1
 exec = ~/.config/polybar/modules/packages
-click-left = ~/.config/bspwm/toggle-visibility update-pkgs "termite --class update-pkgs -t Update -e yay"
+click-left = ~/.config/bspwm/toggle-visibility update-pkgs "alacritty -o window.class.general=update-pkgs -t Update -e yay"
 
 [module/picom]
 type = custom/script
@@ -150,5 +151,5 @@ click-left = ~/.config/polybar/modules/picom-toggle
 [module/powermenu]
 type = custom/text
 content-foreground = ${colors.critical}
-click-left = rofi -modi 'Powermenu:~/.config/rofi/scripts/powermenu.sh' -show Powermenu -theme ~/.cache/wal/powermenu.rasi -icon-theme 'Reversal-black-dark'
+click-left = rofi -modi 'Powermenu:~/.config/rofi/scripts/powermenu' -show Powermenu -theme ~/.cache/wal/powermenu.rasi -icon-theme 'Reversal-black-dark'
 content = 襤
