@@ -12,3 +12,5 @@ picom -b &
 wal -R &
 dex -a &
 sxhkd -c ~/.config/sxhkd/sxhkdrc{,_bspwm} &
+~/.config/dunst/launch.sh &
+~/.fehbg &
