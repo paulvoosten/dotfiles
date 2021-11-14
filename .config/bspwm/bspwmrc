@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 case "${HOSTNAME}" in
     'arch-home')
         bspc monitor DisplayPort-1 -d web data chat music vm

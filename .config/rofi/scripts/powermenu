@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 if [ -z "$@" ]; then
     echo -en "Logout\0icon\x1fsystem-log-out\n"
     echo -en "Hibernate\0icon\x1fsystem-suspend\n"

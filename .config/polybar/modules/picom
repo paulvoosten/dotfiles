@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 # Source pywal colors
 . ~/.cache/wal/colors.sh
 

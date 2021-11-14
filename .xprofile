@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 export XDG_SESSION_TYPE=X11
 case $HOSTNAME in
     arch-home) xrandr --output DisplayPort-0 --mode 2560x1440 --rate 165 --output DisplayPort-1 --mode 3840x2160 --rate 60 --scale 0.666666666667x0.666666666667 --primary --right-of DisplayPort-0;;
