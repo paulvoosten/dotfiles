@@ -1,6 +1,8 @@
 #!/bin/zsh
-[[ -f ~/.profile ]] && . ~/.profile
+[[ -f ~/.envvars ]] && . ~/.envvars
 
-if [ -z "$DISPLAY" ] && [ -n "$XDG_VTNR" ] && [ "$XDG_VTNR" -eq 1 ]; then
-    exec startx
+if [ -z $DISPLAY ]
+then
+    [ "$(tty)" = "/dev/tty1" ] && exec startx
+    [ "$(tty)" = "/dev/tty2" ] && exec sway
 fi

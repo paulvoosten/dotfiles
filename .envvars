@@ -16,3 +16,6 @@ export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/radeon_icd.i686.json:/usr/share
 
 # Java
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+# Wayland
+export MOZ_ENABLE_WAYLAND=1
