@@ -19,7 +19,7 @@ configuration {{
     al:  #00000000;
     bg:  {color0};
     fg:  {color7};
-    ac:  {color2};
+    bc:  {color2};
 }}
 
 window {{
@@ -27,7 +27,7 @@ window {{
     background-color: @bg;
     text-color:       @fg;
     border:           0px;
-    border-color:     @ac;
+    border-color:     @bc;
     border-radius:    12px;
     width:            30%;
     location:         center;
@@ -61,7 +61,7 @@ inputbar {{
     expand:           false;
     border:           0% 0% 0% 0%;
     border-radius:    0px;
-    border-color:     @ac;
+    border-color:     @bc;
     margin:           0% 0% 0% 0%;
     padding:          1.5%;
 }}
@@ -81,7 +81,7 @@ mainbox {{
     background-color: @al;
     border:           0% 0% 0% 0%;
     border-radius:    0% 0% 0% 0%;
-    border-color:     @ac;
+    border-color:     @bc;
     children:         [ inputbar, listview ];
     spacing:          0%;
     padding:          0%;
@@ -114,7 +114,7 @@ element-text {{
 }}
 
 element selected {{
-    background-color: @ac;
+    background-color: @bc;
     text-color:       @bg;
     border:           0% 0% 0% 0%;
     border-radius:    12px;
