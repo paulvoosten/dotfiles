@@ -39,7 +39,7 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-extra
   [ -n "$(git ls-files --others --exclude-standard)" ] && prompt+='?'
   # stashed files
   $(git rev-parse --verify refs/stash &> /dev/null) && prompt+='$'
-  [ -n "$prompt" ] && prompt=" $prompt"
+  [ -n "$prompt" ] && prompt=" [$prompt]"
   hook_com[misc]=$prompt
 }
 
@@ -63,10 +63,10 @@ set_prompt() {
         host_color='white'
     fi
 
-    PS1="%B%F{green}%D{%H:%M:%S}%f%b %B%F{%(!.red.white)}%n%f%b%B%F{green}@%f%b%B%F{$host_color}%M:%f%b%B%F{green} %~%f%b %B${vcs_info_msg_0_}%b
-%F{%(?.green.red)}%(!.#.$)%f "
-    RPS1="%B%(?..%F{red}%? ﬋%f)%b"
+    PS1="%B%F{green}[%D{%T}] %F{%(!.red.white)}%n%F{green}@%F{$host_color}%M:%F{green} %~ ${vcs_info_msg_0_}%F{green}
+%F{%(?.green.red)}%(!.#.$)%b %F{default}"
+    RPS1="%(?..%B%F{red}%? ﬋%f%b)"
 
-    PS2="%F{%(?.green.red)}>%f "
+    PS2="%B%F{%(?.green.red)}>%f%b "
 }
 
