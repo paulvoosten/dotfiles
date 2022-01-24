@@ -1,11 +1,21 @@
-background_opacity: 0.85
 cursor:
   style: Beam
 font:
   normal:
-    family: RobotoMono Nerd Font
+    family: Hack Nerd Font Mono
     style: Regular
   bold:
-    family: Inconsolata Nerd Font Mono
+    family: Hack Nerd Font Mono
     style: Bold
+  italic:
+    family: Hack Nerd Font Mono
+    style: Italic
+  bold_italic:
+    family: Hack Nerd Font Mono
+    style: Bold Italic
   size: 10
+window:
+  opacity: 0.85
+  padding:
+    x: 5
+    y: 5
