@@ -11,3 +11,5 @@
     prompt = false
 [pull]
 	rebase = false
+[remote "origin"]
+	prune = true
