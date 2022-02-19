@@ -1,0 +1,12 @@
+#!/bin/zsh
+. ~/.cache/wal/colors.sh
+
+if pgrep -x stalonetray > /dev/null; then
+    pkill -x stalonetray
+else
+    stalonetray -bg "$color0" \
+                -geometry 1x1+2526+44 \
+                --max-geometry 5x0 \
+                --grow-gravity NE \
+                --icon-gravity NE &
+fi
