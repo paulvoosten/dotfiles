@@ -1,0 +1,3 @@
+#!/bin/zsh
+~/.config/dunst/launch
+~/.local/bin/pywalfox update
