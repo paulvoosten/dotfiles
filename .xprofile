@@ -2,7 +2,7 @@
 export XDG_SESSION_TYPE=X11
 case $HOSTNAME in
     arch-home) xrandr --output DisplayPort-0 --mode 2560x1440 --rate 165 --output DisplayPort-1 --mode 3840x2160 --rate 60 --scale 0.666666666667x0.666666666667 --primary --right-of DisplayPort-0;;
-    arch-adcalls) xrandr --output DVI-D-1 --mode 1920x1080 --rate 60 --primary --output DP-1 --mode 3840x2160 --rate 60 --right-of DVI-D-1;;
+    arch-adcalls) xrandr --output DVI-D-0 --mode 1920x1080 --rate 60 --primary --output DP-0 --mode 3840x2160 --rate 60 --right-of DVI-D-0;;
 esac
 xss-lock -- betterlockscreen -l dimblur &
 xidlehook --not-when-audio --not-when-fullscreen --timer 900 'betterlockscreen -l dimblur' '' &
