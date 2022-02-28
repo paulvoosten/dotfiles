@@ -14,6 +14,7 @@ setopt autocd
 unsetopt beep
 bindkey -v
 # End of lines configured by zsh-newuser-install
+unsetopt MULTIBYTE
 
 autoload -Uz add-zsh-hook vcs_info
 
@@ -42,6 +43,25 @@ zstyle ':vcs_info:git*+set-message:*' hooks git-extra
   [ -n "$prompt" ] && prompt=" [$prompt]"
   hook_com[misc]=$prompt
 }
+
+# Keybinds
+typeset -g -A key
+
+bindkey "^?"    backward-delete-char    # Backspace
+bindkey "^[[H"  beginning-of-line       # Home
+bindkey "^[[5~" up-line-or-history      # PageUp
+bindkey "^[[3~" delete-char             # Delete
+bindkey "^[[F"  end-of-line             # End
+bindkey "^[[6~" down-line-or-history    # PageDown
+bindkey "^[[A"  up-line-or-search       # Up
+bindkey "^[[C"  forward-char            # Right
+bindkey "^[[B"  down-line-or-search     # Down
+bindkey "^[[D"  backward-char           # Left
+
+bindkey "^[[1;3C" forward-word          # Alt + left
+bindkey "^[[1;5C" forward-word          # Ctrl + left
+bindkey "^[[1;3D" backward-word         # Alt + right
+bindkey "^[[1;5D" backward-word         # Ctrl + right
 
 # Restore wal colorscheme
 (cat ~/.cache/wal/sequences &)
