@@ -1,9 +1,0 @@
-#!/bin/bash
-bspc subscribe node_add | while read -a msg ; do
-    wid=${msg[4]}
-    className=$(bspc query -T -n ${wid} | jq -r '.client | .className')
-    case "${className}" in
-        "") bspc node ${wid} -d $(bspc query -D -d 'rand');;
-    esac
-done
-

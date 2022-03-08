@@ -1,6 +1,6 @@
 # Terminal emulator
 super + Return
-    termite -t Termite
+    alacritty
 
 # Program launcher
 super + e

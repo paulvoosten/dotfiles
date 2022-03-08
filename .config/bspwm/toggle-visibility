@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 # Credit: https://my-take-on.tech/2020/07/03/some-tricks-for-sxhkd-and-bspwm/#my-take-on-creating-a-scratchpad
 if [ $# = 0 ]; then
     cat <<EOF
@@ -29,7 +29,7 @@ while [ -n "${1}" ]; do
 done
 
 if [ -z "${id}" ]; then
-    ${executable} &
+    ${=executable} &
 else
     while read -r instance; do
         bspc node "${instance}" --flag hidden --to-monitor focused --focus

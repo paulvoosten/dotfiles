@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/zsh
 pac=$(checkupdates|wc -l)
 aur=$(yay -Qum|wc -l)
 check=$((pac + aur))

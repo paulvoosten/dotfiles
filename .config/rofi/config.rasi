@@ -1,4 +1,4 @@
 configuration {
     monitor:  "primary";
-    terminal: "termite";
+    terminal: "alacritty";
 }

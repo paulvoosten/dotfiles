@@ -1,94 +1,95 @@
-/*
- * ROFI Powermenu template
- * Author: @BaptisteBdn
- */
 configuration {{
-    modi: "window,run,drun";
-    show-icons: true;
-    font: "RobotoMono Nerd Font 10";
+    font:                   "Hack Nerd Font 14";
+    show-icons:             false;
+    drun-display-format:    "{{name}}";
+    disable-history:        false;
+    sidebar-mode:           false;
 }}
 
 * {{
-    border:              {color5};
-    bg:                  {color0};
-    fg:                  {color7};
-    selected-background: {color2};
-    selected-foreground: {color7};
+    background:             {color0};
+    background-alt:         {color8};
+    foreground:             {color15};
+    border:                 {color4};
+    urgent:                 {color1};
 }}
 
-#window {{
-    width:            450px;
-    height:           120px;
-    background-color: @bg;
-    padding:          5px;
+window {{
+    transparency:           "real";
+    background-color:       @background;
+    text-color:             @foreground;
+    width:                  441px;
+    padding:                20px;
+    location:               center;
+    x-offset:               0;
+    y-offset:               0;
 }}
 
-#mainbox {{
-    border:           0;
-    padding:          0;
-    children:         [listview];
-    background-color: @bg;
+prompt {{
+    enabled:                true;
+    background-color:       @background-alt;
+    text-color:             @foreground;
 }}
 
-#listview {{
-    columns:          4;
-    layout:           vertical;
-    background-color: transparent;
+inputbar {{
+    children:               [ prompt ];
+    background-color:       @background-alt;
+    text-color:             @foreground;
+    border:                 0 0 2px;
+    border-color:           @border;
+    padding:                10px;
+    margin:                 0 70px;
+}}
+
+listview {{
+    background-color:       @background;
+    spacing:                20px;
+    cycle:                  true;
+    dynamic:                true;
+    layout:                 horizontal;
+}}
+
+mainbox {{
+    background-color:       @background;
+    children:               [ inputbar, listview ];
+    spacing:                20px;
 }}
 
 element {{
-    margin:        8px;
-    padding:       10px;
-    border-radius: 5px;
-    orientation:   vertical;
-}}
-
-element-icon {{
-    size:             48px;
-    margin:           2px;
-    horizontal-align: 0.5;
-    vertical-align:   0.5;
-    background-color: transparent;
+    background-color:       @background-alt;
+    text-color:             @foreground;
+    width:                  50px;
+    height:                 50px;
 }}
 
 element-text {{
-    horizontal-align: 0.5;
-    vertical-align:   0.5;
-    background-color: transparent;
-    text-color:       @fg;
+    background-color:       #00000000;
+    text-color:             inherit;
+    font:                   "feather 32";
+    expand:                 true;
+    horizontal-align:       0.5;
+    vertical-align:         0.5;
 }}
 
-#element.normal.normal {{
-    background-color: @bg;
-    text-color:       @fg;
+element normal.urgent,
+element alternate.urgent {{
+    background-color:       @urgent;
+    text-color:             @foreground;
 }}
 
-#element.selected.normal {{
-    background-color: @selected-background;
-    text-color:       @bg;
-    border-color:     @border;
+element normal.active,
+element alternate.active,
+element selected.active {{
+    background-color:       @background-alt;
+    text-color:             @foreground;
 }}
 
-#element.alternate.normal {{
-    background-color: @bg;
-    text-color:       @fg;
+element selected {{
+    border:                 0 0 2px;
+    border-color:           @border;
 }}
 
-#element-text.selected.normal {{
-    text-color:       @bg;
-}}
-
-#mode-switcher {{
-    border:       0px 0px 0px ;
-    border-color: @separatorcolor;
-}}
-
-#button {{
-    spacing:    0;
-    text-color: @fg;
-}}
-
-#button.selected {{
-    background-color: @selected-background;
-    text-color:       @selected-foreground;
+element selected.urgent {{
+    background-color:       @urgent;
+    text-color:             @foreground;
 }}
