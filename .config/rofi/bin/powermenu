@@ -1,8 +1,6 @@
 #!/bin/zsh
 uptime=$(uptime -p | sed -e 's/up //g')
 
-rofi_command="rofi -theme ~/.cache/wal/powermenu.rasi"
-
 shutdown=""
 reboot=""
 lock=""
@@ -10,35 +8,17 @@ suspend=""
 hibernate=""
 logout=""
 
-confirm_exit() {
-    yes=""
-    while :; do
-        answer=$(echo -e "$yes\n" | run_rofi -dmenu -p "Are you sure?" | awk '{print tolower($0)}')
-        if [[ $answer == $yes ]]; then
-            "$@"
-            return 0
-        fi
-        return 1
-    done
-}
-
 run_menu() {
-    while :; do
-        chosen="$(echo -e "$1" | run_rofi -dmenu -p " $(uptime -p | sed -e 's/up //g')" -selected-row 2)"
-        case $chosen in
-        $shutdown) confirm_exit systemctl poweroff ;;
-        $reboot) confirm_exit systemctl reboot ;;
+    chosen="$(echo -e "$1" | rofi -theme ~/.cache/wal/powermenu.rasi -dmenu -p " $(uptime -p | sed -e 's/up //g')" -selected-row 2)"
+    case $chosen in
+        $shutdown) systemctl poweroff ;;
+        $reboot) systemctl reboot ;;
         $lock) betterlockscreen -l dimblur --display 1 ;;
-        $suspend) confirm_exit systemctl suspend ;;
-        $hibernate) confirm_exit systemctl hibernate ;;
-        $logout) confirm_exit bspc quit ;;
+        $suspend) systemctl suspend ;;
+        $hibernate) systemctl hibernate ;;
+        $logout) bspc quit ;;
         *) exit 0 ;;
-        esac
-    done
-}
-
-run_rofi() {
-    rofi -theme ~/.cache/wal/powermenu.rasi "$@"
+    esac
 }
 
 run_menu "$shutdown\n$reboot\n$lock\n$suspend\n$hibernate\n$logout"
