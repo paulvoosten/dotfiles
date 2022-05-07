@@ -70,10 +70,6 @@ super + ctrl + space
 super + ctrl + shift + space
     bspc query -N -d | xargs -I id -n 1 bspc node id -p cancel
 
-# Contract a window by moving one of its sides inward
-super + alt + shift + {h,j,k,l}
-    bspc node -z {right -10 0,top 0 10,bottom 0 -10,left 10 0}
-
 # Enter resize mode (can only expand floating nodes)
 super + shift + s : {h,j,k,l}
     STEP=10; SELECTION={1,2,3,4}; \
@@ -99,4 +95,3 @@ super + plus
 # Decrease gap size by 5, down to 0
 super + minus
     [ $(bspc config window_gap) -gt 0 ] && bspc config window_gap $((`bspc config window_gap` - 5 ))
-
