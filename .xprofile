@@ -1,6 +1,6 @@
 #!/bin/zsh
 . ~/.envvars
-[[ -f ~/.xrandr ]] && . ~/.xrandr
+[[ -f ~/.startup ]] && . ~/.startup
 xss-lock -- betterlockscreen -l dimblur --display 1 &
 xidlehook --not-when-audio --not-when-fullscreen --timer 900 'betterlockscreen -l dimblur --display 1' '' &
 xsetroot -cursor_name left_ptr &

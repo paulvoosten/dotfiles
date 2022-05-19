@@ -3,8 +3,9 @@
 export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_CONFIG_HOME="$HOME/.config"
 export BSPWM_STATE="$XDG_CACHE_HOME/bspwm/state.json"
-export EDITOR='nvim'
-export VISUAL='nvim'
+export EDITOR="nvim"
+export VISUAL="nvim"
+export GTK_THEME="Nordic-darker"
 export PATH="$HOME/.cargo/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$HOME/.local/bin:$PATH"
 
 # DXVK
