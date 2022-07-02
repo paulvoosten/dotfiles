@@ -11,7 +11,7 @@ alt + Tab
 
 # Make sxhkd reload its configuration files:
 super + Escape
-    pkill -USR1 -x sxhkd; notify-send -a 'sxhkd' 'Reloaded config'
+    pkill -USR1 -x sxhkd; notify-send -a 'sxhkd' 'Reloaded keybinds'
 
 # Take screenshot of focused window/whole screen(s)
 {_,alt + ,shift + }Print
