@@ -20,3 +20,6 @@ export _JAVA_AWT_WM_NONREPARENTING=1
 
 # Wayland
 export MOZ_ENABLE_WAYLAND=1
+
+# Gcloud
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
