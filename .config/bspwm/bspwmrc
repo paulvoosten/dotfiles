@@ -1,8 +1,8 @@
 #!/bin/zsh
 case "${HOST}" in
     "arch-home")
-        bspc monitor DisplayPort-1 -d web data chat music vm
-        bspc monitor DisplayPort-0 -d code term game rand
+        bspc monitor DisplayPort-0 -d code term data vm game
+        bspc monitor DisplayPort-1 -d web chat music rand
         RECT="1260x720+650+360"
         ;;
     "arch-adcalls")
@@ -41,7 +41,7 @@ bspc rule -a Filezilla desktop="data"
 bspc rule -a Postman desktop="data"
 bspc rule -a Thunar desktop="data"
 bspc rule -a discord desktop="chat"
-bspc rule -a Slack desktop="chat" state=floating rectangle=${RECT}
+bspc rule -a Slack state=floating rectangle=${RECT}
 bspc rule -a Element desktop="chat" state=floating rectangle=${RECT}
 bspc rule -a Spotify desktop="music"
 bspc rule -a Virt-manager desktop="vm"
