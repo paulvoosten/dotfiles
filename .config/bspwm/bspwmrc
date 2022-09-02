@@ -60,6 +60,7 @@ bspc rule -a KeePass2 state=floating
 bspc rule -a mpv state=floating rectangle=${RECT}
 bspc rule -a Pavucontrol state=floating rectangle=${RECT}
 bspc rule -a htop state=floating rectangle=${RECT}
+bspc rule -a io.elementary.calculator state=floating
 bspc rule -a scratchpad state=floating marked=on rectangle=${RECT}
 bspc rule -a update-pkgs state=floating rectangle=${RECT}
 
