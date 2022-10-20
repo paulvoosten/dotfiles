@@ -6,7 +6,6 @@ case "${HOST}" in
         RECT="1260x720+650+360"
         ;;
     "arch-adcalls")
-        bspc monitor eDP-1 -d web data chat music code term game vm rand
         RECT="1260x720+330:180"
         ;;
 esac
