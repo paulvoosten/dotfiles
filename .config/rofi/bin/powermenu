@@ -13,7 +13,7 @@ run_menu() {
     case $chosen in
         $shutdown) systemctl poweroff ;;
         $reboot) systemctl reboot ;;
-        $lock) betterlockscreen -l dimblur --display 1 ;;
+        $lock) betterlockscreen -l dimblur;;
         $suspend) systemctl suspend ;;
         $hibernate) systemctl hibernate ;;
         $logout) bspc quit ;;

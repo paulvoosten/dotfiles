@@ -1,8 +1,8 @@
 #!/bin/zsh
 . ~/.envvars
 [[ -f ~/.startup ]] && . ~/.startup
-xss-lock -- betterlockscreen -l dimblur --display 1 &
-xidlehook --not-when-audio --not-when-fullscreen --timer 900 'betterlockscreen -l dimblur --display 1' '' &
+xss-lock -- betterlockscreen -l dimblur &
+xidlehook --not-when-audio --not-when-fullscreen --timer 900 'betterlockscreen -l dimblur' '' &
 xsetroot -cursor_name left_ptr &
 picom -b &
 wal -R &
