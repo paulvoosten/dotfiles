@@ -1,6 +1,8 @@
 [user]
     email = paulvoosten@protonmail.com
     name = Paul Van Oosten
+[includeIf "gitdir:~/work/"]
+    path = ~/work/.gitconfig
 [alias]
     cleanup = "!git branch --merged|grep -v '\\*\\|master\\|production\\|staging\\|staging-production'|xargs -n 1 -r git branch -d"
 [mergetool "nvim"]
@@ -15,3 +17,5 @@
 	prune = true
 [init]
 	defaultBranch = main
+[core]
+	autocrlf = input
