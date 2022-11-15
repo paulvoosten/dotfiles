@@ -5,7 +5,7 @@
 icon=
 color="$color8"
 
-if pgrep -x picom > /dev/null; then
+if pgrep -x picom >/dev/null; then
     color="$color2"
 fi
 
