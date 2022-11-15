@@ -17,6 +17,10 @@ super + Escape
 {_,alt + ,shift + }Print
     scrot -{u,s,m} "$HOME/pictures/screenshots/%Y-%m-%d %H:%M:%S.png"; notify-send -a 'Screenshot' 'Screenshot saved'
 
+# Lock
+super + alt + l
+    betterlockscreen -l dimblur
+
 # Multimedia
 XF86Audio{Play,Stop,Next,Prev,RaiseVolume,LowerVolume}
     playerctl {play-pause,stop,next,previous,volume 0.05+,volume 0.05-}
