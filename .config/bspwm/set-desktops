@@ -1,0 +1,7 @@
+#! /bin/bash
+for d in "${@:2}"
+do
+    bspc desktop "${d}" -m "${1}" 2>/dev/null
+done
+bspc monitor "${1}" -o "${@:2}" 2>/dev/null
+bspc monitor "${1}" -d "${@:2}"
