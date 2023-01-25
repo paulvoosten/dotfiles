@@ -1,17 +1,12 @@
 #!/bin/zsh
-case "${HOST}" in
-    "arch-home")
-        bspc monitor DisplayPort-0 -d code term data vm game
-        bspc monitor DisplayPort-1 -d web chat music rand
-        RECT="1260x720+650+360"
-        ;;
-    "arch-adcalls")
-        RECT="1260x720+330:180"
-        ;;
-esac
+RECT="1920x1080+0+0"
 
 # Source pywal colors
 . ~/.cache/wal/colors.sh
+
+bspc config remove_disabled_monitors true
+bspc config remove_unplugged_monitors true
+bspc config merge_overlapping_monitors true
 
 bspc config border_width 2
 bspc config window_gap 10
@@ -39,8 +34,8 @@ bspc rule -a FileZilla desktop="data"
 bspc rule -a Postman desktop="data"
 bspc rule -a Thunar desktop="data"
 bspc rule -a discord desktop="chat"
-bspc rule -a Slack state=floating rectangle=${RECT}
-bspc rule -a Element desktop="chat" state=floating rectangle=${RECT}
+bspc rule -a Slack state=fullscreen rectangle=${RECT} center=true
+bspc rule -a Element desktop="chat" state=floating rectangle=${RECT} center=true
 bspc rule -a Spotify desktop="music"
 bspc rule -a Virt-manager desktop="vm"
 bspc rule -a Code desktop="code"
@@ -55,12 +50,12 @@ bspc rule -a parsecd desktop="game"
 bspc rule -a feh state=floating
 bspc rule -a GLava layer=below state=fullscreen sticky=on
 bspc rule -a KeePass2 state=floating
-bspc rule -a mpv state=floating rectangle=${RECT}
-bspc rule -a Pavucontrol state=floating rectangle=${RECT}
-bspc rule -a htop state=floating rectangle=${RECT}
+bspc rule -a mpv state=floating rectangle=${RECT} center=true
+bspc rule -a Pavucontrol state=floating rectangle=${RECT} center=true
+bspc rule -a htop state=floating rectangle=${RECT} center=true
 bspc rule -a io.elementary.calculator state=floating
-bspc rule -a scratchpad state=floating marked=on rectangle=${RECT}
-bspc rule -a update-pkgs state=floating rectangle=${RECT}
+bspc rule -a scratchpad state=floating marked=on rectangle=${RECT} center=true
+bspc rule -a update-pkgs state=floating rectangle=${RECT} center=true
 
 wmname LG3D &
 
