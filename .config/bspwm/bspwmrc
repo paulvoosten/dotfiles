@@ -34,7 +34,7 @@ bspc rule -a FileZilla desktop="data"
 bspc rule -a Postman desktop="data"
 bspc rule -a Thunar desktop="data"
 bspc rule -a discord desktop="chat"
-bspc rule -a Slack state=fullscreen rectangle=${RECT} center=true
+bspc rule -a Slack state=floating rectangle=${RECT} center=true
 bspc rule -a Element desktop="chat" state=floating rectangle=${RECT} center=true
 bspc rule -a Spotify desktop="music"
 bspc rule -a Virt-manager desktop="vm"
