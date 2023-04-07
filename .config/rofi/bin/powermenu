@@ -9,7 +9,7 @@ hibernate=""
 logout=""
 
 run_menu() {
-    chosen="$(echo -e "$1" | rofi -theme ~/.cache/wal/powermenu.rasi -dmenu -p " $(uptime -p | sed -e 's/up //g')" -selected-row 2)"
+    chosen="$(echo -e "$1" | rofi -theme ~/.cache/wal/powermenu.rasi -dmenu -p " $(uptime -p | sed -e 's/up //g' -e 's/ days,/d/g' -e 's/ hours,/h/g' -e 's/ minutes/m/g')" -selected-row 2)"
     case $chosen in
         $shutdown) systemctl poweroff ;;
         $reboot) systemctl reboot ;;
