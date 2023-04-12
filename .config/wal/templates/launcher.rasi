@@ -1,5 +1,5 @@
 configuration {{
-    font:                   "Hack Nerd Font 10";
+    font:                   "FiraCode Nerd Font 10";
     show-icons:             true;
     display-drun:           "";
     drun-display-format:    "{{name}}";
@@ -32,7 +32,7 @@ prompt {{
     padding:                0 10px 0 0;
     background-color:       @background-alt;
     text-color:             @foreground;
-    font:                   "Hack Nerd Font 12";
+    font:                   "FiraCode Nerd Font 12";
 }}
 
 entry {{
