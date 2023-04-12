@@ -38,7 +38,6 @@ inputbar {{
     border:                 0 0 2px;
     border-color:           @border;
     padding:                10px;
-    margin:                 0 70px;
 }}
 
 listview {{
