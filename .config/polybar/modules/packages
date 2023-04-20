@@ -2,7 +2,8 @@
 pac=$(checkupdates|wc -l)
 aur=$(yay -Qum|wc -l)
 check=$((pac + aur))
+regex='^[0-9]+$'
 
-if [[ "$check" != "0" ]]; then
+if [[ $pac =~ $regex && $aur =~ $regex && ("$pac" != "0" || "$aur" != "0") ]]; then
     echo "$pac $aur"
 fi
