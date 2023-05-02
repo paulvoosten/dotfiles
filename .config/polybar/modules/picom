@@ -2,7 +2,7 @@
 # Source pywal colors
 . ~/.cache/wal/colors.sh
 
-icon=
+icon=󱡄
 color="$color8"
 
 if pgrep -x picom >/dev/null; then
