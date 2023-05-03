@@ -26,7 +26,7 @@ zstyle ':vcs_info:*' enable git
 zstyle ':vcs_info:*' check-for-changes true
 zstyle ':vcs_info:*' unstagedstr ' ?'
 zstyle ':vcs_info:*' stagedstr ' +'
-zstyle ':vcs_info:git:*' formats '%F{yellow}%b%f%F{blue}%m%f'
+zstyle ':vcs_info:git:*' formats '%F{white}󰊢%f %F{yellow}%b%f%F{blue}%m%f'
 zstyle ':vcs_info:git:*' actionformats '%F{yellow}%b%f(%F{red}%a%f)%F{blue}%m%f'
 zstyle ':vcs_info:git*+set-message:*' hooks git-extra
 
