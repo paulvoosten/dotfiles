@@ -8,14 +8,15 @@ bspc config remove_disabled_monitors true
 bspc config remove_unplugged_monitors true
 bspc config merge_overlapping_monitors true
 
-bspc config border_width 2
-bspc config window_gap 10
+bspc config border_width 1
+bspc config window_gap 0
 bspc config top_padding 0
 bspc config right_padding 0
 bspc config bottom_padding 0
 bspc config left_padding 0
 bspc config borderless_monocle true
 bspc config gapless_monocle true
+bspc config single_monocle true
 
 bspc config active_border_color "$color6"
 bspc config focused_border_color "$color4"
@@ -33,12 +34,12 @@ bspc rule -a firefox desktop="web"
 bspc rule -a discord desktop="web"
 bspc rule -a DBeaver desktop="data"
 bspc rule -a FileZilla desktop="data"
-bspc rule -a Postman desktop="data"
 bspc rule -a Thunar desktop="data"
 bspc rule -a discord desktop="chat"
 bspc rule -a Slack state=floating rectangle=${RECT} center=true
 bspc rule -a Element desktop="chat" state=floating rectangle=${RECT} center=true
 bspc rule -a Spotify desktop="music"
+bspc rule -a Postman desktop="rand"
 bspc rule -a Virt-manager desktop="vm"
 bspc rule -a Code desktop="code"
 bspc rule -a Godot desktop="code"
@@ -51,7 +52,6 @@ bspc rule -a projectascension desktop="game"
 bspc rule -a parsecd desktop="game"
 bspc rule -a feh state=floating
 bspc rule -a GLava layer=below state=fullscreen sticky=on
-bspc rule -a KeePass2 state=floating
 bspc rule -a mpv state=floating rectangle=${RECT} center=true
 bspc rule -a Pavucontrol state=floating rectangle=${RECT} center=true
 bspc rule -a htop state=floating rectangle=${RECT} center=true
@@ -60,5 +60,3 @@ bspc rule -a scratchpad state=floating marked=on rectangle=${RECT} center=true
 bspc rule -a update-pkgs state=floating rectangle=${RECT} center=true
 
 wmname LG3D &
-
-~/.config/polybar/launch &

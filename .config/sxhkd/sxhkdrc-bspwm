@@ -18,10 +18,6 @@ super + alt + Escape
 super + {_,shift + }q
     bspc node -{c,k}
 
-# Toggle tray
-super + t
-    ~/.config/polybar/modules/tray-toggle
-
 # Alternate between the tiled and monocle layout
 super + m
     bspc desktop -l next
@@ -82,11 +78,7 @@ super + {Left,Down,Up,Right}
 
 # Reset gap and border size
 super + equal
-    bspc config border_width 2; bspc config window_gap 10
-
-# Remove gap and border size
-super + shift + g
-    bspc config border_width 0; bspc config window_gap 0
+    bspc config window_gap 0
 
 # Increase gap size by 5, up to 100
 super + plus
