@@ -11,11 +11,14 @@ alt + Tab
 
 # Make sxhkd reload its configuration files:
 super + Escape
-    pkill -USR1 -x sxhkd; notify-send -a 'sxhkd' 'Reloaded keybinds'
+    pkill -USR1 -x sxhkd && notify-send -a 'sxhkd' 'Reloaded keybinds'
 
 # Take screenshot of focused window/whole screen(s)
-{_,alt + ,shift + }Print
-    scrot -{u,s,m} "$HOME/pictures/screenshots/%Y-%m-%d %H:%M:%S.png"; notify-send -a 'Screenshot' 'Screenshot saved'
+{_,alt + }Print
+    scrot -{s,u} -e 'xclip -selection clipboard -t image/png -i $f' && notify-send -a 'Screenshot' 'Screenshot copied'
+
+shift + {_,alt + }Print
+    scrot -{s,u} -f "$HOME/pictures/screenshots/%Y-%m-%d_%H:%M:%S.png" && notify-send -a 'Screenshot' 'Screenshot saved'
 
 # Lock
 super + alt + l
