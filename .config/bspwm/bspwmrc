@@ -36,8 +36,8 @@ bspc rule -a DBeaver desktop="data"
 bspc rule -a FileZilla desktop="data"
 bspc rule -a Thunar desktop="data"
 bspc rule -a discord desktop="chat"
-bspc rule -a Slack state=floating rectangle=${RECT} center=true
-bspc rule -a Element desktop="chat" state=floating rectangle=${RECT} center=true
+bspc rule -a Slack state=floating rectangle=${RECT} center=on
+bspc rule -a Element desktop="chat" state=floating rectangle=${RECT} center=on
 bspc rule -a Spotify desktop="music"
 bspc rule -a Postman desktop="rand"
 bspc rule -a Virt-manager desktop="vm"
@@ -52,11 +52,11 @@ bspc rule -a projectascension desktop="game"
 bspc rule -a parsecd desktop="game"
 bspc rule -a feh state=floating
 bspc rule -a GLava layer=below state=fullscreen sticky=on
-bspc rule -a mpv state=floating rectangle=${RECT} center=true
-bspc rule -a Pavucontrol state=floating rectangle=${RECT} center=true
-bspc rule -a htop state=floating rectangle=${RECT} center=true
-bspc rule -a io.elementary.calculator state=floating
-bspc rule -a scratchpad state=floating marked=on rectangle=${RECT} center=true
-bspc rule -a update-pkgs state=floating rectangle=${RECT} center=true
+bspc rule -a mpv state=floating rectangle=${RECT} center=on
+bspc rule -a Pavucontrol state=floating rectangle=${RECT} center=on
+bspc rule -a htop state=floating rectangle=${RECT} center=on
+bspc rule -a io.elementary.calculator state=floating center=on
+bspc rule -a scratchpad state=floating marked=on rectangle=${RECT} center=on
+bspc rule -a update-pkgs state=floating rectangle=${RECT} center=on
 
 wmname LG3D &
