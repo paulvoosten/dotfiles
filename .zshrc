@@ -31,37 +31,37 @@ zstyle ':vcs_info:git:*' actionformats '%F{yellow}%b%f(%F{red}%a%f)%F{blue}%m%f'
 zstyle ':vcs_info:git*+set-message:*' hooks git-extra
 
 +vi-git-extra() {
-  local prompt=''
-  # uncommited files
-  ! $(git diff --quiet --ignore-submodules --cached) && prompt+='+'
-  # unstaged files
-  ! $(git diff-files --quiet --ignore-submodules --) && prompt+='!'
-  # untracked files
-  [ -n "$(git ls-files --others --exclude-standard)" ] && prompt+='?'
-  # stashed files
-  $(git rev-parse --verify refs/stash &> /dev/null) && prompt+='$'
-  [ -n "$prompt" ] && prompt=" [$prompt]"
-  hook_com[misc]=$prompt
+    local prompt=''
+    # uncommited files
+    ! $(git diff --quiet --ignore-submodules --cached) && prompt+='+'
+    # unstaged files
+    ! $(git diff-files --quiet --ignore-submodules --) && prompt+='!'
+    # untracked files
+    [ -n "$(git ls-files --others --exclude-standard)" ] && prompt+='?'
+    # stashed files
+    $(git rev-parse --verify refs/stash &>/dev/null) && prompt+='$'
+    [ -n "$prompt" ] && prompt=" [$prompt]"
+    hook_com[misc]=$prompt
 }
 
 # Keybinds
 typeset -g -A key
 
-bindkey "^?"    backward-delete-char    # Backspace
-bindkey "^[[H"  beginning-of-line       # Home
-bindkey "^[[5~" up-line-or-history      # PageUp
-bindkey "^[[3~" delete-char             # Delete
-bindkey "^[[F"  end-of-line             # End
-bindkey "^[[6~" down-line-or-history    # PageDown
-bindkey "^[[A"  up-line-or-search       # Up
-bindkey "^[[C"  forward-char            # Right
-bindkey "^[[B"  down-line-or-search     # Down
-bindkey "^[[D"  backward-char           # Left
+bindkey "^?" backward-delete-char    # Backspace
+bindkey "^[[H" beginning-of-line     # Home
+bindkey "^[[5~" up-line-or-history   # PageUp
+bindkey "^[[3~" delete-char          # Delete
+bindkey "^[[F" end-of-line           # End
+bindkey "^[[6~" down-line-or-history # PageDown
+bindkey "^[[A" up-line-or-search     # Up
+bindkey "^[[C" forward-char          # Right
+bindkey "^[[B" down-line-or-search   # Down
+bindkey "^[[D" backward-char         # Left
 
-bindkey "^[[1;3C" forward-word          # Alt + left
-bindkey "^[[1;5C" forward-word          # Ctrl + left
-bindkey "^[[1;3D" backward-word         # Alt + right
-bindkey "^[[1;5D" backward-word         # Ctrl + right
+bindkey "^[[1;3C" forward-word  # Alt + left
+bindkey "^[[1;5C" forward-word  # Ctrl + left
+bindkey "^[[1;3D" backward-word # Alt + right
+bindkey "^[[1;5D" backward-word # Ctrl + right
 
 # Restore wal colorscheme
 (cat ~/.cache/wal/sequences &)
@@ -90,7 +90,12 @@ set_prompt() {
     PS2="%B%F{%(?.green.red)}>%f%b "
 }
 
-
 export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"                   # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" # This loads nvm bash_completion
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/home/paul/google-cloud-sdk/path.zsh.inc' ]; then . '/home/paul/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/home/paul/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/paul/google-cloud-sdk/completion.zsh.inc'; fi
