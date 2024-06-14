@@ -1,6 +1,8 @@
 #!/bin/zsh
 alias ls='ls --color=auto'
 
+alias vim='nvim'
+
 # docker aliases
 alias docker-compose='docker compose'
 
@@ -31,3 +33,6 @@ alias pacexpl='yay -D --asexp'
 alias pacimpl='yay -D --asdep'
 # [c]lear cache
 alias pacc='yay -Sc'
+
+[ -s "$HOME/.aliases.local" ] && . "$HOME/.aliases.local"
+
