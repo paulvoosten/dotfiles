@@ -1,5 +1,7 @@
 # The following lines were added by compinstall
 
+source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 zstyle ':completion:*' completer _expand _complete _ignored
 zstyle :compinstall filename '/home/paul/.zshrc'
 
